@@ -26,12 +26,13 @@ public class PlayerController : MonoBehaviour
       
         
      mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + movement * moveSpeed );
+
+        rb.velocity = new Vector2(movement.x, movement.y).normalized * moveSpeed;
 
         Vector2 lookDirection = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
