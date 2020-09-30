@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Bullet : MonoBehaviour
 {
     public Transform firePoint;
@@ -10,10 +11,15 @@ public class Bullet : MonoBehaviour
     public float bulletForce = 20f;
 
 
+    PlayerController playerController;
 
+    private void Start()
+    {
+        playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
+    }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) 
+        if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause) 
         {
             Shoot();
 
