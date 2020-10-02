@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
 
     //Variable Pause 
     public bool stopTimePause = false;
-    public GameObject MenuPause; 
+    public GameObject MenuPause;
+    public GameObject MenuOptions;
 
     void Start()
     {
@@ -41,9 +42,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (MenuPause.activeSelf)
+            if (MenuPause.activeSelf ^ MenuOptions.activeSelf)
             {
                 MenuPause.SetActive(false);
+                MenuOptions.SetActive(false);
                 stopTimePause = false;
             }
             else

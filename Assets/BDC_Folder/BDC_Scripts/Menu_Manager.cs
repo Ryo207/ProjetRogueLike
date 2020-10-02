@@ -8,8 +8,7 @@ using UnityEngine.UI;
 
 public class Menu_Manager : MonoBehaviour
 {
-
-    PlayerController playerController;
+    public PlayerController playerController;
     public GameObject MenuPause;
     public GameObject MenuOptions;
     public GameObject Credits;
@@ -19,7 +18,6 @@ public class Menu_Manager : MonoBehaviour
 
     private void Start()
     {
-        playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
 
         resolution = Screen.resolutions;
         resolutionDropDown.ClearOptions();
@@ -114,8 +112,6 @@ public class Menu_Manager : MonoBehaviour
         Resolution resolutions = resolution[resolutionIndex];
         Screen.SetResolution(resolutions.width, resolutions.height, Screen.fullScreen);
     }
-
-
 
     public void PlayMainMenu()
     {
