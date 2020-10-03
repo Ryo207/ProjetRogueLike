@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+    void Awake() => instance = this;
+
     //Variable Mouvement Perso
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
@@ -20,6 +23,10 @@ public class PlayerController : MonoBehaviour
     public bool stopTimePause = false;
     public GameObject MenuPause;
     public GameObject MenuOptions;
+
+    public int DamageCaC = 5 ;
+    public int DamageDist = 10;
+
 
     void Start()
     {
@@ -90,6 +97,8 @@ public class PlayerController : MonoBehaviour
         TriggerCac.SetActive(false);
         print("Goodbye");
     }
+
+
 
  
 }

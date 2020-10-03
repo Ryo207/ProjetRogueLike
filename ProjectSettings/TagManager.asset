@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - Monster
+  - Ennemy
+  - PlayerAttack
+  - EnnemyAttack
   layers:
   - Default
   - TransparentFX
