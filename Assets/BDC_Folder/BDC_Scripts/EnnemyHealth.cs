@@ -2,32 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class EnnemyHealth : MonoBehaviour
 {
-    public int life = 100;
+    public int EnnemyLife = 100;
+    public GameObject item;
+
+
 
     private void GetDamage(int damage)
     {
-        life -= damage;
-        print(life);
+        EnnemyLife -= damage;
+        print(EnnemyLife);
 
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("EnnemyAttack"))
+        if (col.gameObject.CompareTag("PlayerAttack"))
         {
 
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
         }
     }
+
     private void GetDeath()
     {
+        Instantiate(item, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
     private void Update()
     {
-        if (life <= 0)
+        if (EnnemyLife <= 0)
         {
             GetDeath();
         }
