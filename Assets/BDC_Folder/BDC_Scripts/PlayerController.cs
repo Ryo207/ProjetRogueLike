@@ -74,29 +74,55 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        AnimationMilo();
+        AnimationYAxis();
+        AnimationXAxis();
         TurnMilo();
 
     }
 
-    void AnimationMilo()
+    void AnimationYAxis()
     {
-        if (movement.y < 0)
+        if (movement.y == 0)
+        {
+            animator.SetBool("IsRunningForwardFace", false);
+            animator.SetBool("IsRunningForwardBack", false);
+        }
+        else if (movement.y < 0)
         {
             animator.SetBool("IsRunningForwardFace", true);
-            animator.SetBool("IsRunningBackwardFace", false);
+            animator.SetBool("IsRunningForwardBack", false);
+            animator.SetBool("StartTurnAround", false);
+            animator.SetInteger("Direction", 0);
         }
         else if (movement.y > 0)
         {
             animator.SetBool("IsRunningForwardFace", false);
-            animator.SetBool("IsRunningBackwardFace", true);
-        }
-        else if (movement.y == 0)
-        {
-            animator.SetBool("IsRunningForwardFace", false);
-            animator.SetBool("IsRunningBackwardFace", false);
+            animator.SetBool("IsRunningForwardBack", true);
+            animator.SetBool("StartTurnAround", false);
+            animator.SetInteger("Direction", 0);
         }
 
+    }
+    void AnimationXAxis() 
+    {
+
+        if (movement.x == 0)
+        {
+            animator.SetBool("IsRunningLeft", false);
+            animator.SetBool("IsRunningRight", false);
+        }
+
+        else if (movement.x < 0)
+        {
+            animator.SetBool("IsRunningRight", false);
+            animator.SetBool("IsRunningLeft", true);
+        }
+
+        else if (movement.x > 0)
+        {
+            animator.SetBool("IsRunningRight", true);
+            animator.SetBool("IsRunningLeft", false);
+        }
     }
     void TurnMilo()
     {
@@ -107,40 +133,48 @@ public class PlayerController : MonoBehaviour
 
         if (math.sqrt(3 ) / 2 <= sin)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 1);
         }
-        if (1 / 2 <= cos && cos < math.sqrt(3 ) / 2 && 1 / 2 <= sin && sin < math.sqrt(3 ) / 2)
+        else if (1 / 2 <= cos && cos < math.sqrt(3 ) / 2 && 1 / 2 <= sin && sin < math.sqrt(3 ) / 2)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 2);
 
         }
-        if (math.sqrt(3 ) / 2 <= cos)
+        else if (math.sqrt(3 ) / 2 <= cos)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 3);
 
         }
-        if (1 / 2 <= cos && cos < math.sqrt(3) / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
+        else if (1 / 2 <= cos && cos < math.sqrt(3) / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 4);
 
         }
-        if (sin < -math.sqrt(3) / 2)
+        else if (sin < -math.sqrt(3) / 2)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 5);
 
         }
-        if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
+        else if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 6);
 
         }
-        if (cos <= -math.sqrt(3) / 2)
+        else if (cos <= -math.sqrt(3) / 2)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 7);
 
         }
-        if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && 1 / 2 <= sin && sin < math.sqrt(3) / 2)
+        else if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && 1 / 2 <= sin && sin < math.sqrt(3) / 2)
         {
+            animator.SetBool("StartTurnAround", true);
             animator.SetInteger("Direction", 8);
 
         }
