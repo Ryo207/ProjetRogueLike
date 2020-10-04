@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public int DamageCaC = 5;
     public int DamageDist = 10;
+    public bool closeToLever;
 
 
     void Start()
@@ -71,6 +72,15 @@ public class PlayerController : MonoBehaviour
         if (stopTimePause == false)
         {
             Time.timeScale = 1;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (closeToLever == true)
+            {
+                print("Nique la bac");
+            }
 
         }
 
@@ -203,8 +213,19 @@ public class PlayerController : MonoBehaviour
         TriggerCac.SetActive(false);
         print("Goodbye");
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<LeverTrigger>())
+        {
+            closeToLever = true;
 
-
-
-
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<LeverTrigger>())
+        {
+            closeToLever = false;
+        }
+    }
 }
