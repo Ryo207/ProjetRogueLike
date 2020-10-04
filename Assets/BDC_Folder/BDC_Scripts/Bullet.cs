@@ -22,10 +22,7 @@ public class Bullet : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause) 
         {
             Shoot();
-
         }
-
-
     }
 
     void Shoot()
