@@ -25,16 +25,11 @@ public class PlayerController : MonoBehaviour
     public bool stopTimePause = false;
     public GameObject MenuPause;
     public GameObject MenuOptions;
-<<<<<<< HEAD
 
     public int DamageCaC = 5;
-=======
-    
-    public int DamageCaC = 5 ;
->>>>>>> origin/BDC_Branch
     public int DamageDist = 10;
-
     public bool closeToLever;
+
 
     void Start()
     {
@@ -79,6 +74,7 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1;
 
         }
+
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (closeToLever == true)
@@ -87,7 +83,6 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-       
 
         AnimationYAxis();
         AnimationXAxis();
@@ -218,15 +213,14 @@ public class PlayerController : MonoBehaviour
         TriggerCac.SetActive(false);
         print("Goodbye");
     }
-   private void OnTriggerEnter2D(Collider2D collision)
-   {   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.GetComponent<LeverTrigger>())
         {
             closeToLever = true;
 
         }
-   }
-
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<LeverTrigger>())
@@ -234,9 +228,4 @@ public class PlayerController : MonoBehaviour
             closeToLever = false;
         }
     }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/BDC_Branch
 }
