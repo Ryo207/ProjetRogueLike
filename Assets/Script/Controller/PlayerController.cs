@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
     public Animator animator;
 
+    //Variable bullets
+    public GameObject firePoint;
+
     //Variable Tir 
     public Camera cam;
     Vector2 mousePos;

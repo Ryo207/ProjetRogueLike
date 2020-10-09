@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-
+using UnityEngine.Animations;
 
 public class Bullet : MonoBehaviour
 {
     public Transform firePoint;
+    public Transform centerPC;
     public GameObject bulletPrefab;
-    public GameObject crosshair;
+    public Transform crosshair;
     public GameObject perso;
 
     public float bulletForce = 20f;
 
     Vector2 mousePos;
-    Vector2 persoPos;
+    Vector2 lookDirection;
 
     PlayerController playerController;
 
@@ -22,11 +23,10 @@ public class Bullet : MonoBehaviour
     {
         playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
     }
+
     void Update()
     {
-        persoPos = new Vector2(perso.transform.position.x, perso.transform.position.y);
-        mousePos = playerController.cam.ScreenToWorldPoint(Input.mousePosition);
-        crosshair.transform.position = mousePos;
+        LookDirection();
 
         if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause) 
         {
@@ -34,11 +34,23 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    void LookDirection()
+    {
+        mousePos = playerController.cam.ScreenToWorldPoint(Input.mousePosition);
+
+        lookDirection = mousePos - (Vector2)centerPC.position;
+        lookDirection.Normalize();
+
+        float lookAngle;
+        lookAngle = Vector2.SignedAngle(Vector2.up, lookDirection);
+
+        centerPC.rotation = Quaternion.Euler(0f, 0f, lookAngle + 90f);
+    }
+
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(mousePos * bulletForce, ForceMode2D.Impulse);
+        GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
 
     }
 }
