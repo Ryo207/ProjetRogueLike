@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-    private int damage = 10;
+    private float damage = 12.5f;
 
     public enum DamagerTypes
     {
@@ -23,7 +23,7 @@ public class Damager : MonoBehaviour
             case DamagerTypes.PlayerDist:
                 return PlayerController.instance.DamageDist;
             case DamagerTypes.Ennemy:
-                return damage;
+                return (int)damage;
             default:
                 return 0;
                 
