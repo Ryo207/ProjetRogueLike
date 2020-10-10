@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-    private float damage = 12.5f;
+    private float damage = 13f;
 
     public enum DamagerTypes
     {

@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnnemyHealth : MonoBehaviour
 {
     public int EnnemyLife = 100;
     public GameObject item;
-
 
 
     private void GetDamage(int damage)

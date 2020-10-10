@@ -6,37 +6,42 @@ using UnityEngine.Animations;
 
 public class Bullet : MonoBehaviour
 {
-    public Transform firePoint;
-    public Transform centerPC;
+    PlayerController playerController;
     public GameObject bulletPrefab;
-    public Transform crosshair;
     public GameObject perso;
+
+    //Intervalle de tir
+    delegate void shootFunc();
+    shootFunc Shoot;
+
+    [Range(0, 1)]
+    public float shootIntervale;
 
     public float bulletForce = 20f;
 
+    //Mouvement viseur
     Vector2 mousePos;
     Vector2 lookDirection;
-
-    PlayerController playerController;
+    public Transform firePoint;
+    public Transform centerPC;
+    public GameObject Crosshair;
 
     private void Start()
     {
         playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
+        Shoot = DoShoot;
     }
 
     void Update()
     {
         LookDirection();
-
-        if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause) 
-        {
-            Shoot();
-        }
+        Shoot();
     }
 
     void LookDirection()
     {
         mousePos = playerController.cam.ScreenToWorldPoint(Input.mousePosition);
+        Crosshair.transform.position = mousePos;
 
         lookDirection = mousePos - (Vector2)centerPC.position;
         lookDirection.Normalize();
@@ -47,10 +52,26 @@ public class Bullet : MonoBehaviour
         centerPC.rotation = Quaternion.Euler(0f, 0f, lookAngle + 90f);
     }
 
-    void Shoot()
+    void DoShoot()
     {
-        GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
+        StopCoroutine(nameof(ShootIntervale));
 
+        if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause)
+        {
+            GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
+            Shoot = DontShoot;
+        }
+    }
+
+    void DontShoot()
+    {
+        StartCoroutine(nameof(ShootIntervale));
+    }
+
+    IEnumerator ShootIntervale()
+    {
+        yield return new WaitForSeconds(shootIntervale);
+       yield return Shoot = DoShoot;
     }
 }

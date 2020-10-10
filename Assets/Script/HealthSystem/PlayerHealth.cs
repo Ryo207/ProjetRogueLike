@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("EnnemyAttack"))
+        if (col.gameObject.CompareTag("EnnemyAttack") ^ col.gameObject.CompareTag("Ennemy"))
         {
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
         }
