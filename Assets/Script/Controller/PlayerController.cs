@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public int DamageDist = 10;
     public bool closeToLever;
 
+    LeverTrigger levertrigger;
+
 
     void Start()
     {
@@ -75,13 +77,13 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
         {
-            if (closeToLever == true)
-            {
-                print("Nique la bac");
-            }
+             if (true)
+              {
 
+              }
+           
         }
 
         AnimationYAxis();
