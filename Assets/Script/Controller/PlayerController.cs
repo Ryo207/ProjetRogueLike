@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -124,18 +126,38 @@ public class PlayerController : MonoBehaviour
         if (movement.x == 0)
         {
             animator.SetBool("IsRunningLeft", false);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animator.SetBool("IsAttackingWoodenSwordRight", true);
+            }
+
             animator.SetBool("IsRunningRight", false);
         }
 
         else if (movement.x < 0)
         {
             animator.SetBool("IsRunningRight", false);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animator.SetBool("IsRunningLeft", false);
+                animator.SetBool("IsAttackingWoodenSwordLeft", true);
+            }
+
             animator.SetBool("IsRunningLeft", true);
         }
 
         else if (movement.x > 0)
         {
             animator.SetBool("IsRunningRight", true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animator.SetBool("IsRunningRight", false);
+                animator.SetBool("IsAttackingWoodenSwordRight", true);
+            }
+
             animator.SetBool("IsRunningLeft", false);
         }
     }
@@ -216,6 +238,10 @@ public class PlayerController : MonoBehaviour
         print("Hello");
         yield return new WaitForSeconds(0.1f);
         TriggerCac.SetActive(false);
+        animator.SetBool("IsAttackingWoodenSwordRight", false);
+        animator.SetBool("IsAttackingWoodenSwordLeft", false);
+
+
         print("Goodbye");
     }
     private void OnTriggerEnter2D(Collider2D collision)
