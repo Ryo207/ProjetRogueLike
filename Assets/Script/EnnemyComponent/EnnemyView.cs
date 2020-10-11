@@ -6,7 +6,6 @@ public class EnnemyView : MonoBehaviour
 {
     [SerializeField]
     PathFinding pathFinding;
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.GetComponent<PlayerController>())
