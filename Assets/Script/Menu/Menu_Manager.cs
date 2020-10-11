@@ -21,7 +21,7 @@ public class Menu_Manager : MonoBehaviour
 
         resolution = Screen.resolutions;
         resolutionDropDown.ClearOptions();
-
+            
         List<string> options = new List<string>();
 
         int currentRosolutionIndex = 0;
