@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public Image coeur5;
     public Image coeur6;
 
+    public GameObject MenuPause; 
     private void GetDamage(int damage)
     {
         PlayerLife -= damage;
@@ -39,6 +40,8 @@ public class PlayerHealth : MonoBehaviour
     private void GetDeath()
     {
         Destroy(gameObject);
+        MenuPause.SetActive(true);
+
     }
 
     private void Health(Image coeur, float maxvalue, float midvalue, float minimumvalue)
