@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7816432986287666349}
   - component: {fileID: 7816432986287666338}
   - component: {fileID: 7816432986287666339}
-  - component: {fileID: 7816432986287666336}
   - component: {fileID: -5781548362671401992}
+  - component: {fileID: -662155079660805557}
   m_Layer: 10
   m_Name: EnnemyBullet
   m_TagString: EnnemyAttack
@@ -133,18 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09032149, y: 0.0909666}
   m_EdgeRadius: 0
---- !u!114 &7816432986287666336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7816432986287666342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2fb859649786542bc912d76b8ef0d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-5781548362671401992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +146,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!114 &-662155079660805557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816432986287666342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99915c63b7cb964990f9bbba435f096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
