@@ -1,35 +1,77 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
-
+using UnityEngine.Animations;
 
 public class Bullet : MonoBehaviour
 {
-    public Transform firePoint;
+    PlayerController playerController;
     public GameObject bulletPrefab;
+    public GameObject perso;
+
+    //Intervalle de tir
+    delegate void shootFunc();
+    shootFunc Shoot;
+
+    [Range(0, 1)]
+    public float shootIntervale;
 
     public float bulletForce = 20f;
 
-
-    PlayerController playerController;
+    //Mouvement viseur
+    Vector2 mousePos;
+    Vector2 lookDirection;
+    public Transform firePoint;
+    public Transform centerPC;
+    public GameObject Crosshair;
 
     private void Start()
     {
         playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
+        Shoot = DoShoot;
     }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause) 
+        LookDirection();
+        Shoot();
+    }
+
+    void LookDirection()
+    {
+        mousePos = playerController.cam.ScreenToWorldPoint(Input.mousePosition);
+        Crosshair.transform.position = mousePos;
+
+        lookDirection = mousePos - (Vector2)centerPC.position;
+        lookDirection.Normalize();
+
+        float lookAngle;
+        lookAngle = Vector2.SignedAngle(Vector2.up, lookDirection);
+
+        centerPC.rotation = Quaternion.Euler(0f, 0f, lookAngle + 90f);
+    }
+
+    void DoShoot()
+    {
+        StopCoroutine(nameof(ShootIntervale));
+
+        if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause)
         {
-            Shoot();
+            GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
+            Shoot = DontShoot;
         }
     }
 
-    void Shoot()
+    void DontShoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        StartCoroutine(nameof(ShootIntervale));
+    }
 
+    IEnumerator ShootIntervale()
+    {
+        yield return new WaitForSeconds(shootIntervale);
+       yield return Shoot = DoShoot;
     }
 }

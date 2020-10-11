@@ -8,14 +8,12 @@ public class EnnemyHealth : MonoBehaviour
     public GameObject item;
 
 
-    private void Update()
+    private void GetDamage(int damage)
     {
-        if (EnnemyLife <= 0)
-        {
-            GetDeath();
-        }
-    }
+        EnnemyLife -= damage;
+        print(EnnemyLife);
 
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("PlayerAttack"))
@@ -25,19 +23,18 @@ public class EnnemyHealth : MonoBehaviour
         }
     }
 
-    private void GetDamage(int damage)
-    {
-        EnnemyLife -= damage;
-        print(EnnemyLife);
-
-    }
-   
     private void GetDeath()
     {
         Instantiate(item, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
-  
+    private void Update()
+    {
+        if (EnnemyLife <= 0)
+        {
+            GetDeath();
+        }
+    }
 
 }
