@@ -6646,7 +6646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9331e6d18e699f41806e50e8def73af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalLight: {fileID: 0}
+  GlobalLight: {fileID: 113231682}
+  lightMilestone: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7535,6 +7536,7 @@ MonoBehaviour:
   DamageCaC: 5
   DamageDist: 10
   closeToLever: 0
+  levertrigger: {fileID: 487487206}
 --- !u!50 &803460292
 Rigidbody2D:
   serializedVersion: 4

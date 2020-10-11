@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     public int DamageDist = 10;
     public bool closeToLever;
 
-    LeverTrigger levertrigger;
+    public LeverTrigger levertrigger;
 
 
     void Start()
@@ -84,11 +84,14 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
         {
-             if (true)
-              {
-
-              }
-           
+            if (levertrigger.lightMilestone == false)
+            {
+                levertrigger.BlueLight();
+            }
+            else if (levertrigger.lightMilestone == true)
+            {
+                levertrigger.RedLight();
+            }
         }
 
         AnimationYAxis();
