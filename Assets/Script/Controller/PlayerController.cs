@@ -26,8 +26,7 @@ public class PlayerController : MonoBehaviour
     //Variable CaC
     public GameObject TriggerCac;
 
-    //Variable Pause 
-    public bool stopTimePause = false;
+    public bool stopTimePause;
     public GameObject MenuPause;
     public GameObject MenuOptions;
 
@@ -47,14 +46,6 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-
-
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            cacAttack();
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -80,6 +71,13 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 1;
 
+        }
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            cacAttack();
         }
 
         if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
@@ -166,6 +164,7 @@ public class PlayerController : MonoBehaviour
     }
     void TurnMilo()
     {
+
         Vector2 orientation = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y).normalized;
         float cos = orientation.x;
         float sin = orientation.y;

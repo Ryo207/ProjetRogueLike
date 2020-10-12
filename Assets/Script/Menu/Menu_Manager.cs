@@ -9,13 +9,17 @@ using UnityEngine.UI;
 public class Menu_Manager : MonoBehaviour
 {
     public PlayerController playerController;
+    public Bullet bullet;
     public GameObject MenuPause;
     public GameObject MenuOptions;
     public GameObject Credits;
     public AudioMixer MainVolume;
     Resolution[] resolution;
     public Dropdown resolutionDropDown;
-
+    private void Update()
+    {
+        StopController();
+    }
     private void Start()
     {
 
@@ -42,9 +46,20 @@ public class Menu_Manager : MonoBehaviour
 
     }
 
+    void StopController()
+    {
+        if (playerController.stopTimePause == true)
+        {
+            playerController.enabled = false;
+            bullet.enabled = false;
+        }
+    }
+
     public void playGame()
     {
         SceneManager.LoadScene(0);
+        playerController.stopTimePause = false;
+        bullet.enabled = true;
 
     }
 
@@ -52,11 +67,15 @@ public class Menu_Manager : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+        playerController.stopTimePause = false;
+        bullet.enabled = true;
     }
 
     public void playRestart()
     {
         SceneManager.LoadScene(0);
+        playerController.stopTimePause = false;
+        bullet.enabled = true;
 
     }
     public void Resume()
@@ -64,6 +83,7 @@ public class Menu_Manager : MonoBehaviour
         MenuPause.SetActive(false);
         MenuOptions.SetActive(false);
         playerController.stopTimePause = false;
+        bullet.enabled = true;
         Time.timeScale = 1;
     }
 
@@ -116,5 +136,7 @@ public class Menu_Manager : MonoBehaviour
     public void PlayMainMenu()
     {
         SceneManager.LoadScene(1);
+        playerController.stopTimePause = false;
+        bullet.enabled = true;
     }
 }
