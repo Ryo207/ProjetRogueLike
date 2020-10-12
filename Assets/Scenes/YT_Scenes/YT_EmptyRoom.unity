@@ -13950,7 +13950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.4878, y: 1.0369208, z: -10}
+  m_LocalPosition: {x: -4.5760255, y: 1.1069012, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15831,6 +15831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 2024510591}
+  bullet: {fileID: 2024510593}
   MenuPause: {fileID: 331407949}
   MenuOptions: {fileID: 209276766}
   Credits: {fileID: 0}
@@ -18139,6 +18140,7 @@ GameObject:
   - component: {fileID: 1562169859}
   - component: {fileID: 1562169865}
   - component: {fileID: 1562169864}
+  - component: {fileID: 1562169866}
   m_Layer: 0
   m_Name: Ennemi #2
   m_TagString: Ennemy
@@ -18301,6 +18303,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+--- !u!95 &1562169866
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562169858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ecebc431fa3cb146895b7f3cff62982, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1584358643
 GameObject:
   m_ObjectHideFlags: 3
@@ -19409,6 +19430,7 @@ MonoBehaviour:
   DamageCaC: 5
   DamageDist: 10
   closeToLever: 0
+  levertrigger: {fileID: 0}
 --- !u!61 &2024510592
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19496,6 +19518,7 @@ MonoBehaviour:
   coeur4: {fileID: 620079846}
   coeur5: {fileID: 582396951}
   coeur6: {fileID: 918383831}
+  MenuPause: {fileID: 0}
 --- !u!1 &2048726984
 GameObject:
   m_ObjectHideFlags: 0
