@@ -56,7 +56,7 @@ public class Menu_Manager : MonoBehaviour
 
     public void playGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         playerController.stopTimePause = false;
         bullet.enabled = true;
 
@@ -64,7 +64,7 @@ public class Menu_Manager : MonoBehaviour
 
     public void quitToMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void quitGame()
@@ -77,7 +77,7 @@ public class Menu_Manager : MonoBehaviour
 
     public void playRestart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         playerController.stopTimePause = false;
         bullet.enabled = true;
 
@@ -138,7 +138,7 @@ public class Menu_Manager : MonoBehaviour
 
     public void PlayMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         playerController.stopTimePause = false;
         bullet.enabled = true;
     }
