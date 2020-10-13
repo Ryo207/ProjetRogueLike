@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/BDC_Scenes/BDC_EmptyRoom.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/save1ld-habillage.unity
-    guid: 385d5616071971a4fb11cfe35c97c1b2
-  - enabled: 1
     path: Assets/Scenes/BDC_Scenes/BDC_StartMenu.unity
     guid: d779a374890b902409dbbc60d63beab5
+  - enabled: 1
+    path: Assets/save1ld-habillage.unity
+    guid: 385d5616071971a4fb11cfe35c97c1b2
   - enabled: 0
     path: Assets/Scenes/BDC_Scenes/BDC_Credits.unity
     guid: 1960c9a0614c4de44bbcb73b4eb1bf96

@@ -351,7 +351,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013843028}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013843028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73f20ef148fa99c4c8916b468b95bda3, type: 3}
   m_Name: 
@@ -382,7 +382,7 @@ MonoBehaviour:
   bulletForce: 0
   firePoint: {fileID: 2086372277}
   centerPC: {fileID: 1774720356}
-  Crosshair: {fileID: 2075773079}
+  Crosshair: {fileID: 1180118908}
 --- !u!114 &1013843032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013843028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5735c366bb59cb42970c12eb9b7be49, type: 3}
   m_Name: 
@@ -468,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlobalLight: {fileID: 968407004}
   lightMilestone: 0
+  Light: {fileID: 0}
 --- !u!1 &1578945500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1811681764089622131, guid: 6f7bbddf00aba9b4ebd641538f05bfe8, type: 3}
