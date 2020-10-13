@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
   m_Name: CandyUp
   m_EditorClassIdentifier: 
-  Itemname: CandyUp
-  Artwork: {fileID: 21300000, guid: c1807bce9c7b7874693d99e8c84543cf, type: 3}
-  ItemID: 1
+  Itemname: HealthPotion
+  Artwork: {fileID: 21300000, guid: 871adb3e7455d9d4ab3bd655957b877e, type: 3}
+  ID: 1

@@ -48,10 +48,9 @@ public class Menu_Manager : MonoBehaviour
 
     void StopController()
     {
-        if (playerController.stopTimePause == true)
+        if (playerController.stopTimePause == false)
         {
-            playerController.enabled = false;
-            bullet.enabled = false;
+            bullet.enabled = true;
         }
     }
 
@@ -61,6 +60,11 @@ public class Menu_Manager : MonoBehaviour
         playerController.stopTimePause = false;
         bullet.enabled = true;
 
+    }
+
+    public void quitToMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void quitGame()
@@ -104,7 +108,6 @@ public class Menu_Manager : MonoBehaviour
         MainVolume.SetFloat("MainVolume",volume);
 
     }
-
     public void PlayCredits()
     {
         MenuPause.SetActive(false);

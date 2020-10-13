@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
     public Animator animator;
-
     //Variable bullets
     public GameObject firePoint;
 
@@ -100,22 +99,21 @@ public class PlayerController : MonoBehaviour
 
     void AnimationYAxis()
     {
+
+
         if (movement.y == 0)
         {
-            animator.SetBool("IsRunningForwardFace", false);
-            animator.SetBool("IsRunningForwardBack", false);
+            animator.SetFloat("Vertical", 0);
         }
         else if (movement.y < 0)
         {
-            animator.SetBool("IsRunningForwardFace", true);
-            animator.SetBool("IsRunningForwardBack", false);
+            animator.SetFloat("Vertical", -1);
             animator.SetBool("StartTurnAround", false);
             animator.SetInteger("Direction", 0);
         }
         else if (movement.y > 0)
         {
-            animator.SetBool("IsRunningForwardFace", false);
-            animator.SetBool("IsRunningForwardBack", true);
+            animator.SetFloat("Vertical", 1);
             animator.SetBool("StartTurnAround", false);
             animator.SetInteger("Direction", 0);
         }
@@ -126,40 +124,36 @@ public class PlayerController : MonoBehaviour
 
         if (movement.x == 0)
         {
-            animator.SetBool("IsRunningLeft", false);
 
             if (Input.GetKeyDown(KeyCode.E))
             {
                 animator.SetBool("IsAttackingWoodenSwordRight", true);
             }
 
-            animator.SetBool("IsRunningRight", false);
+            animator.SetFloat("Horizontal", 0);
         }
 
         else if (movement.x < 0)
         {
-            animator.SetBool("IsRunningRight", false);
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                animator.SetBool("IsRunningLeft", false);
                 animator.SetBool("IsAttackingWoodenSwordLeft", true);
             }
 
-            animator.SetBool("IsRunningLeft", true);
+            animator.SetFloat("Horizontal", -1);
         }
 
         else if (movement.x > 0)
         {
-            animator.SetBool("IsRunningRight", true);
+
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                animator.SetBool("IsRunningRight", false);
                 animator.SetBool("IsAttackingWoodenSwordRight", true);
             }
 
-            animator.SetBool("IsRunningLeft", false);
+            animator.SetFloat("Horizontal", 1);
         }
     }
     void TurnMilo()
@@ -234,11 +228,12 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine("cacAttackCoroutine");
     }
+
     IEnumerator cacAttackCoroutine()
     {
         TriggerCac.SetActive(true);
         print("Hello");
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         TriggerCac.SetActive(false);
         animator.SetBool("IsAttackingWoodenSwordRight", false);
         animator.SetBool("IsAttackingWoodenSwordLeft", false);

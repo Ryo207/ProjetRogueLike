@@ -39,7 +39,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void GetDeath()
     {
-        Destroy(gameObject);
         MenuPause.SetActive(true);
 
     }

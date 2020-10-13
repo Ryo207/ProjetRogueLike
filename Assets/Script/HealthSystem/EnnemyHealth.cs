@@ -7,7 +7,6 @@ public class EnnemyHealth : MonoBehaviour
     public int EnnemyLife = 100;
     public GameObject item;
 
-
     private void GetDamage(int damage)
     {
         EnnemyLife -= damage;
@@ -21,6 +20,16 @@ public class EnnemyHealth : MonoBehaviour
 
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
         }
+    }
+    
+    void OnCollisionEnter2D(Collision col)
+    {
+        if (col.gameObject.CompareTag("PlayerAttack"))
+        {
+
+            GetDamage(col.gameObject.GetComponent<Damager>().Damage());
+        }
+
     }
 
     private void GetDeath()
