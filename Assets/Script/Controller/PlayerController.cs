@@ -94,28 +94,41 @@ public class PlayerController : MonoBehaviour
         AnimationYAxis();
         AnimationXAxis();
         TurnMilo();
+        DetectMoving();
 
+    }
+
+    void DetectMoving()
+    {
+        if (movement.y != 0 ^ movement.x != 0)
+        {
+            animator.SetBool("Moving", true);
+        }
+
+       else if (movement.y == 0 && movement.x == 0)
+       {
+            animator.SetBool("Moving", false);
+       }
     }
 
     void AnimationYAxis()
     {
 
-
         if (movement.y == 0)
         {
             animator.SetFloat("Vertical", 0);
         }
+
         else if (movement.y < 0)
         {
             animator.SetFloat("Vertical", -1);
             animator.SetBool("StartTurnAround", false);
-            animator.SetInteger("Direction", 0);
         }
+
         else if (movement.y > 0)
         {
             animator.SetFloat("Vertical", 1);
             animator.SetBool("StartTurnAround", false);
-            animator.SetInteger("Direction", 0);
         }
 
     }
