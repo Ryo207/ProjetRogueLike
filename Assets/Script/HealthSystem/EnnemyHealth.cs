@@ -21,15 +21,15 @@ public class EnnemyHealth : MonoBehaviour
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
         }
     }
-    
-    void OnCollisionEnter2D(Collision col)
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
+
         if (col.gameObject.CompareTag("PlayerAttack"))
         {
 
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
         }
-
     }
 
     private void GetDeath()

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -95,6 +94,7 @@ public class PlayerController : MonoBehaviour
         AnimationXAxis();
         TurnMilo();
         DetectMoving();
+        AttackMilo();
 
     }
 
@@ -103,12 +103,14 @@ public class PlayerController : MonoBehaviour
         if (movement.y != 0 ^ movement.x != 0)
         {
             animator.SetBool("Moving", true);
+            animator.SetBool("StartTurnAround", false);
         }
 
        else if (movement.y == 0 && movement.x == 0)
        {
             animator.SetBool("Moving", false);
-       }
+            animator.SetBool("StartTurnAround", true);
+        }
     }
 
     void AnimationYAxis()
@@ -138,21 +140,11 @@ public class PlayerController : MonoBehaviour
         if (movement.x == 0)
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("IsAttackingWoodenSwordRight", true);
-            }
-
             animator.SetFloat("Horizontal", 0);
         }
 
         else if (movement.x < 0)
         {
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("IsAttackingWoodenSwordLeft", true);
-            }
 
             animator.SetFloat("Horizontal", -1);
         }
@@ -160,13 +152,15 @@ public class PlayerController : MonoBehaviour
         else if (movement.x > 0)
         {
 
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("IsAttackingWoodenSwordRight", true);
-            }
-
             animator.SetFloat("Horizontal", 1);
+        }
+    }
+
+    void AttackMilo()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetBool("Attack", true);
         }
     }
     void TurnMilo()
@@ -179,49 +173,49 @@ public class PlayerController : MonoBehaviour
 
         if (math.sqrt(3 ) / 2 <= sin)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 1);
+            animator.SetFloat("LookVertical", 1f);
+            animator.SetFloat("LookHorizontal", 0f);
         }
         else if (1 / 2 <= cos && cos < math.sqrt(3 ) / 2 && 1 / 2 <= sin && sin < math.sqrt(3 ) / 2)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 2);
+            animator.SetFloat("LookVertical", 0.75f);
+            animator.SetFloat("LookHorizontal", 0.75f);
 
         }
         else if (math.sqrt(3 ) / 2 <= cos)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 3);
+            animator.SetFloat("LookVertical", 0f);
+            animator.SetFloat("LookHorizontal", 1f);
 
         }
         else if (1 / 2 <= cos && cos < math.sqrt(3) / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 4);
+            animator.SetFloat("LookVertical", -0.75f);
+            animator.SetFloat("LookHorizontal", 0.75f);
 
         }
         else if (sin < -math.sqrt(3) / 2)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 5);
+            animator.SetFloat("LookVertical", -1f);
+            animator.SetFloat("LookHorizontal", 0f);
 
         }
         else if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 6);
+            animator.SetFloat("LookVertical", -0.75f);
+            animator.SetFloat("LookHorizontal", -0.75f);
 
         }
         else if (cos <= -math.sqrt(3) / 2)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 7);
+            animator.SetFloat("LookVertical", 0f);
+            animator.SetFloat("LookHorizontal", -1f);
 
         }
         else if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && 1 / 2 <= sin && sin < math.sqrt(3) / 2)
         {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 8);
+            animator.SetFloat("LookVertical", 0.75f);
+            animator.SetFloat("LookHorizontal", -0.75f);
 
         }
         //print(animator.GetInteger("Direction"));
@@ -246,10 +240,9 @@ public class PlayerController : MonoBehaviour
     {
         TriggerCac.SetActive(true);
         print("Hello");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         TriggerCac.SetActive(false);
-        animator.SetBool("IsAttackingWoodenSwordRight", false);
-        animator.SetBool("IsAttackingWoodenSwordLeft", false);
+        animator.SetBool("Attack", false);
 
 
         print("Goodbye");
