@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class Bullet : MonoBehaviour
+public class PlayerShoot : MonoBehaviour
 {
     PlayerController playerController;
     public GameObject bulletPrefab;
@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
     {
         StopCoroutine(nameof(ShootIntervale));
 
-        if (Input.GetButtonDown("Fire1") && !playerController.stopTimePause)
+        if (Input.GetButtonDown("Fire1"))
         {
             GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     //Variable Life
-    public int PlayerLife = 100;
-    public const int maxPlayerLife = 100; 
+    public int PlayerLife;
+    int maxPlayerLife = 100; 
 
     //Life display
     public Sprite emptyHearth;
