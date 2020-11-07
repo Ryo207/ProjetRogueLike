@@ -16,7 +16,7 @@ MonoBehaviour:
   Itemname: Levier
   ID: 1
   description: 
-  itemType: 0
+  itemType: 2
   damageCac: 0
   reachCac: 0
   rangeCac: 0
