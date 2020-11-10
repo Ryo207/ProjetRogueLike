@@ -17,6 +17,7 @@ public class Item : MonoBehaviour
     private ItemsSO GenerateRandomItem()
     {
         return LootManager.Instance.lootTables[Random.Range(0, LootManager.Instance.lootTables.Count)];
+        
     }
 
     void Start()

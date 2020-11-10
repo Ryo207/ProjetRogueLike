@@ -12,6 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
   m_Name: CandyUp
   m_EditorClassIdentifier: 
-  Itemname: HealthPotion
   Artwork: {fileID: 21300000, guid: 871adb3e7455d9d4ab3bd655957b877e, type: 3}
+  Itemname: HealthPotion
   ID: 1
+  description: 
+  itemType: 0
+  damageCac: 0
+  reachCac: 0
+  rangeCac: 0
+  cooldownCac: 0
+  impactEffectCac: 0
+  weaponCooldownCac: 0
+  damageDistance: 0
+  bulletType: 
+  impactEffectDistance: 0
+  weaponCooldownDistance: 0
+  cooldownDistance: 0
+  consumablesTypes: 0
