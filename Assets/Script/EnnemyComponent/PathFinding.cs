@@ -8,10 +8,10 @@ public class PathFinding : MonoBehaviour
 
 
     UnityEngine.AI.NavMeshAgent agent;
-    [SerializeField] Transform[] waypoints;
+    [SerializeField] public Transform[] waypoints;
     public Transform Player;
 
-    int currentWaypoint = 0;
+    public int currentWaypoint = 0;
     public bool FightingPhase = false;
     public float ShootingDistance;
 

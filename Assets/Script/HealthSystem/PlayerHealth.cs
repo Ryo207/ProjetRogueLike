@@ -7,7 +7,10 @@ public class PlayerHealth : MonoBehaviour
 {
     //Variable Life
     public int PlayerLife;
-    int maxPlayerLife = 100; 
+    int maxPlayerLife = 100;
+    public PlayerController controller;
+    public YT_PCAnimationHandler animHandler;
+    public PlayerShoot pcShoot;
 
     //Life display
     public Sprite emptyHearth;
@@ -40,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     private void GetDeath()
     {
         MenuPause.SetActive(true);
+
 
     }
 

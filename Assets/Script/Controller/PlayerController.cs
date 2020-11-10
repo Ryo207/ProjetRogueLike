@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.Mathematics;
@@ -15,6 +16,14 @@ public class PlayerController : MonoBehaviour
     public YT_PCAnimationHandler animHandler;
     public Vector2 movement;
 
+    [Header("VirtualAxis"), SerializeField]
+    private float xAxisSensitivity;
+    [SerializeField]
+    private float yAxisSensitivity;
+    private float virtualXRawAxis, virtualYRawAxis, virtualXAxis, virtualYAxis;
+    [SerializeField]
+    private int xAccelerationFrame, xDecelerationFrame, yAccelerationFrame, yDecelerationFrame;
+
     public Camera cam;
 
     //Variable CaC
@@ -25,28 +34,134 @@ public class PlayerController : MonoBehaviour
     public bool closeToLever;
 
     public LeverTrigger levertrigger;
-
-
-    void Start()
+    void FixedUpdate()
     {
+        doPlayerSpeed();
     }
-
     void Update()
     {
         Movement();
+        manageVirtualRawAxis();
+        manageVirtualAxis();
         Attack();
         ActivateLever();
     }
 
-    void Movement()
+    private void manageVirtualRawAxis()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetAxisRaw("Horizontal") >= xAxisSensitivity)
+        {
+            virtualXRawAxis = 1f;
+        }
+        else if (Input.GetAxisRaw("Horizontal") <= -xAxisSensitivity)
+        {
+            virtualXRawAxis = -1f;
+        }
+        else
+        {
+            virtualXRawAxis = 0f;
+        }
+
+        if (Input.GetAxisRaw("Vertical") >= xAxisSensitivity)
+        {
+            virtualYRawAxis = 1f;
+        }
+        else if (Input.GetAxisRaw("Vertical") <= -xAxisSensitivity)
+        {
+            virtualYRawAxis = -1f;
+        }
+        else
+        {
+            virtualYRawAxis = 0f;
+        }
     }
 
-    void FixedUpdate()
+    private void manageVirtualAxis()
     {
-        rb.velocity = new Vector2(movement.x, movement.y).normalized * moveSpeed;
+        if (virtualXRawAxis == 1f && virtualXAxis < 1f)
+        {
+            virtualXAxis += 1f / (float)xAccelerationFrame;
+        }
+        else if (virtualXRawAxis == -1f && virtualXAxis > -1f)
+        {
+            virtualXAxis -= 1f / (float)xAccelerationFrame;
+        }
+        else if (virtualXRawAxis == 0f)
+        {
+            if (virtualXAxis > 0f)
+            {
+                virtualXAxis -= 1f / (float)xDecelerationFrame;
+            }
+            if (virtualXAxis < 0f)
+            {
+                virtualXAxis += 1f / (float)xDecelerationFrame;
+            }
+        }
+
+        if (virtualXAxis > 1f)
+        {
+            virtualXAxis = 1f;
+        }
+        else if (virtualXAxis < -1f)
+        {
+            virtualXAxis = -1f;
+        }
+        else if (virtualXRawAxis == 0f && virtualXAxis > -(1f / (float)xDecelerationFrame) && virtualXAxis < 1f / (float)xDecelerationFrame)
+        {
+            virtualXAxis = 0f;
+        }
+
+
+        if (virtualYRawAxis == 1f && virtualYAxis < 1f)
+        {
+            virtualYAxis += 1f / (float)yAccelerationFrame;
+        }
+        else if (virtualYRawAxis == -1f && virtualYAxis > -1f)
+        {
+            virtualYAxis -= 1f / (float)yAccelerationFrame;
+        }
+        else if (virtualYRawAxis == 0f)
+        {
+            if (virtualYAxis > 0f)
+            {
+                virtualYAxis -= 1f / (float)yDecelerationFrame;
+            }
+            if (virtualYAxis < 0f)
+            {
+                virtualYAxis += 1f / (float)yDecelerationFrame;
+            }
+        }
+
+        if (virtualYAxis > 1f)
+        {
+            virtualYAxis = 1f;
+        }
+        else if (virtualYAxis < -1f)
+        {
+            virtualYAxis = -1f;
+        }
+        else if (virtualYRawAxis == 0f && virtualYRawAxis > -(1f / (float)yDecelerationFrame) && virtualYAxis < 1f / (float)yDecelerationFrame)
+        {
+            virtualYAxis = 0f;
+        }
+    }
+
+    private void doPlayerSpeed()
+    {
+        Vector2 axisVector = new Vector2(virtualXAxis, virtualYAxis);
+
+        if (axisVector.magnitude > 1f)
+        {
+            axisVector.Normalize();
+        }
+
+        rb.velocity = (axisVector * moveSpeed);
+    }
+
+    void Movement()
+    {
+        movement.x = virtualXRawAxis;
+        movement.y = virtualYRawAxis;
     }
 
     void Attack()
