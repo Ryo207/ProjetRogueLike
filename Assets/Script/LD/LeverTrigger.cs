@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LeverTrigger : MonoBehaviour
 {
-    public UnityEngine.Experimental.Rendering.Universal.Light2D GlobalLight;
+    //public UnityEngine.Experimental.Rendering.Universal.Light2D GlobalLight;
 
     public bool lightMilestone = false;
     public Animator Light;

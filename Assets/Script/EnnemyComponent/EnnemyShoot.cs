@@ -17,7 +17,6 @@ public class EnnemyShoot : MonoBehaviour
     [Range(0, 1)]
     public float shootIntervale;
 
-    Vector2 pcPos;
     Vector2 pCDirection;
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -30,25 +29,12 @@ public class EnnemyShoot : MonoBehaviour
 
     void Update()
     {
-
         if (pathFinding.FightingPhase == true)
         {
             Shoot();
         }
 
     }
-
-    /*void ShootDirection()
-    {
-        pCDirection = (Vector2)perso.position - (Vector2)centerEnnemy.position;
-        pCDirection.Normalize();
-
-        float shootAngle;
-        shootAngle = Vector2.SignedAngle(Vector2.up, pCDirection);
-
-        centerEnnemy.rotation = quaternion.Euler(0f, 0f, shootAngle + 90);
-    }*/
-
     private void DoShoot()
     {
         StopCoroutine(nameof(ShootInvervalle));

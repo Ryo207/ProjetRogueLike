@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,72 +13,172 @@ public class PlayerController : MonoBehaviour
     //Variable Mouvement Perso
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    Vector2 movement;
-    public Animator animator;
-    //Variable bullets
-    public GameObject firePoint;
+    public YT_PCAnimationHandler animHandler;
+    public Vector2 movement;
 
-    //Variable Tir 
+    [Header("VirtualAxis"), SerializeField]
+    private float xAxisSensitivity;
+    [SerializeField]
+    private float yAxisSensitivity;
+    private float virtualXRawAxis, virtualYRawAxis, virtualXAxis, virtualYAxis;
+    [SerializeField]
+    private int xAccelerationFrame, xDecelerationFrame, yAccelerationFrame, yDecelerationFrame;
+
     public Camera cam;
-    Vector2 mousePos;
 
     //Variable CaC
     public GameObject TriggerCac;
-
-    public bool stopTimePause;
-    public GameObject MenuPause;
-    public GameObject MenuOptions;
 
     public int DamageCaC = 5;
     public int DamageDist = 10;
     public bool closeToLever;
 
     public LeverTrigger levertrigger;
-
-
-    void Start()
+    void FixedUpdate()
     {
+        doPlayerSpeed();
     }
-
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        Movement();
+        manageVirtualRawAxis();
+        manageVirtualAxis();
+        Attack();
+        ActivateLever();
+    }
 
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+    private void manageVirtualRawAxis()
+    {
+        if (Input.GetAxisRaw("Horizontal") >= xAxisSensitivity)
         {
-            if (MenuPause.activeSelf ^ MenuOptions.activeSelf)
+            virtualXRawAxis = 1f;
+        }
+        else if (Input.GetAxisRaw("Horizontal") <= -xAxisSensitivity)
+        {
+            virtualXRawAxis = -1f;
+        }
+        else
+        {
+            virtualXRawAxis = 0f;
+        }
+
+        if (Input.GetAxisRaw("Vertical") >= xAxisSensitivity)
+        {
+            virtualYRawAxis = 1f;
+        }
+        else if (Input.GetAxisRaw("Vertical") <= -xAxisSensitivity)
+        {
+            virtualYRawAxis = -1f;
+        }
+        else
+        {
+            virtualYRawAxis = 0f;
+        }
+    }
+
+    private void manageVirtualAxis()
+    {
+        if (virtualXRawAxis == 1f && virtualXAxis < 1f)
+        {
+            virtualXAxis += 1f / (float)xAccelerationFrame;
+        }
+        else if (virtualXRawAxis == -1f && virtualXAxis > -1f)
+        {
+            virtualXAxis -= 1f / (float)xAccelerationFrame;
+        }
+        else if (virtualXRawAxis == 0f)
+        {
+            if (virtualXAxis > 0f)
             {
-                MenuPause.SetActive(false);
-                MenuOptions.SetActive(false);
-                stopTimePause = false;
+                virtualXAxis -= 1f / (float)xDecelerationFrame;
             }
-            else
+            if (virtualXAxis < 0f)
             {
-                MenuPause.SetActive(true);
-                stopTimePause = true;
+                virtualXAxis += 1f / (float)xDecelerationFrame;
             }
         }
 
-        if (stopTimePause == true)
+        if (virtualXAxis > 1f)
         {
-            Time.timeScale = 0;
+            virtualXAxis = 1f;
+        }
+        else if (virtualXAxis < -1f)
+        {
+            virtualXAxis = -1f;
+        }
+        else if (virtualXRawAxis == 0f && virtualXAxis > -(1f / (float)xDecelerationFrame) && virtualXAxis < 1f / (float)xDecelerationFrame)
+        {
+            virtualXAxis = 0f;
         }
 
-        if (stopTimePause == false)
-        {
-            Time.timeScale = 1;
 
+        if (virtualYRawAxis == 1f && virtualYAxis < 1f)
+        {
+            virtualYAxis += 1f / (float)yAccelerationFrame;
+        }
+        else if (virtualYRawAxis == -1f && virtualYAxis > -1f)
+        {
+            virtualYAxis -= 1f / (float)yAccelerationFrame;
+        }
+        else if (virtualYRawAxis == 0f)
+        {
+            if (virtualYAxis > 0f)
+            {
+                virtualYAxis -= 1f / (float)yDecelerationFrame;
+            }
+            if (virtualYAxis < 0f)
+            {
+                virtualYAxis += 1f / (float)yDecelerationFrame;
+            }
         }
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (virtualYAxis > 1f)
+        {
+            virtualYAxis = 1f;
+        }
+        else if (virtualYAxis < -1f)
+        {
+            virtualYAxis = -1f;
+        }
+        else if (virtualYRawAxis == 0f && virtualYRawAxis > -(1f / (float)yDecelerationFrame) && virtualYAxis < 1f / (float)yDecelerationFrame)
+        {
+            virtualYAxis = 0f;
+        }
+    }
 
+    private void doPlayerSpeed()
+    {
+        Vector2 axisVector = new Vector2(virtualXAxis, virtualYAxis);
+
+        if (axisVector.magnitude > 1f)
+        {
+            axisVector.Normalize();
+        }
+
+        rb.velocity = (axisVector * moveSpeed);
+    }
+
+    void Movement()
+    {
+        movement.x = virtualXRawAxis;
+        movement.y = virtualYRawAxis;
+    }
+
+    void Attack()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
             cacAttack();
         }
+    }
 
+    void cacAttack()
+    {
+        StartCoroutine("cacAttackCoroutine");
+    }
+
+    void ActivateLever()
+    {
         if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
         {
             if (levertrigger.lightMilestone == false)
@@ -90,158 +190,18 @@ public class PlayerController : MonoBehaviour
                 levertrigger.RedLight();
             }
         }
-
-        AnimationYAxis();
-        AnimationXAxis();
-        TurnMilo();
-
-    }
-
-    void AnimationYAxis()
-    {
-
-
-        if (movement.y == 0)
-        {
-            animator.SetBool("IsRunningForwardBack", false);
-            animator.SetBool("IsRunningForwardFace", false);
-        }
-        else if (movement.y < 0)
-        {
-            animator.SetBool("IsRunningForwardFace", true);
-            animator.SetBool("StartTurnAround", false);
-            animator.SetInteger("Direction", 0);
-        }
-        else if (movement.y > 0)
-        {
-            animator.SetBool("IsRunningForwardBack", true);
-            animator.SetBool("StartTurnAround", false);
-            animator.SetInteger("Direction", 0);
-        }
-
-    }
-    void AnimationXAxis() 
-    {
-
-        if (movement.x == 0)
-        {
-            animator.SetBool("IsRunningLeft", false);
-            animator.SetBool("IsRunningRight", false);
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("IsAttackingWoodenSwordRight", true);
-            }
-        }
-
-        else if (movement.x < 0)
-        {
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("IsAttackingWoodenSwordLeft", true);
-            }
-
-            animator.SetBool("IsRunningLeft", true);
-        }
-
-        else if (movement.x > 0)
-        {
-
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("IsAttackingWoodenSwordRight", true);
-            }
-
-            animator.SetBool("IsRunningRight", true);
-        }
-    }
-    void TurnMilo()
-    {
-
-        Vector2 orientation = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y).normalized;
-        float cos = orientation.x;
-        float sin = orientation.y;
-
-
-        if (math.sqrt(3 ) / 2 <= sin)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 1);
-        }
-        else if (1 / 2 <= cos && cos < math.sqrt(3 ) / 2 && 1 / 2 <= sin && sin < math.sqrt(3 ) / 2)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 2);
-
-        }
-        else if (math.sqrt(3 ) / 2 <= cos)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 3);
-
-        }
-        else if (1 / 2 <= cos && cos < math.sqrt(3) / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 4);
-
-        }
-        else if (sin < -math.sqrt(3) / 2)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 5);
-
-        }
-        else if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && -math.sqrt(3) / 2 <= sin && sin < -1 / 2)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 6);
-
-        }
-        else if (cos <= -math.sqrt(3) / 2)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 7);
-
-        }
-        else if (-math.sqrt(3) / 2 <= cos && cos < -1 / 2 && 1 / 2 <= sin && sin < math.sqrt(3) / 2)
-        {
-            animator.SetBool("StartTurnAround", true);
-            animator.SetInteger("Direction", 8);
-
-        }
-        //print(animator.GetInteger("Direction"));
-    }
-
-    void FixedUpdate()
-    {
-        rb.velocity = new Vector2(movement.x, movement.y).normalized * moveSpeed;
-
-        Vector2 lookDirection = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        //rb.rotation = angle;
-    }
-
-
-    void cacAttack()
-    {
-        StartCoroutine("cacAttackCoroutine");
     }
 
     IEnumerator cacAttackCoroutine()
     {
         TriggerCac.SetActive(true);
         print("Hello");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         TriggerCac.SetActive(false);
-        animator.SetBool("IsAttackingWoodenSwordRight", false);
-        animator.SetBool("IsAttackingWoodenSwordLeft", false);
-
-
+        animHandler.animator.SetBool("Attack", false);
         print("Goodbye");
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<LeverTrigger>())
@@ -250,6 +210,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<LeverTrigger>())
