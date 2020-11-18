@@ -13419,7 +13419,7 @@ Tilemap:
       - {fileID: -6989231205627183748, guid: 9473018d12a003d4f9b61ec9585a1777, type: 3}
       - {fileID: -836889397724421436, guid: 9473018d12a003d4f9b61ec9585a1777, type: 3}
       - {fileID: -4324766622674094828, guid: 9473018d12a003d4f9b61ec9585a1777, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 15, y: 1, z: 0}
@@ -15350,7 +15350,7 @@ GameObject:
   - component: {fileID: 797948896}
   m_Layer: 0
   m_Name: TilemapDestructible
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33437,6 +33437,10 @@ PrefabInstance:
       propertyPath: Light
       value: 
       objectReference: {fileID: 2137236944}
+    - target: {fileID: 2164897084733058826, guid: 79696da04bab5dc469133115fe85bb01, type: 3}
+      propertyPath: pathFinding
+      value: 
+      objectReference: {fileID: 1244852387}
     - target: {fileID: 2164897084733058830, guid: 79696da04bab5dc469133115fe85bb01, type: 3}
       propertyPath: m_Name
       value: Lever

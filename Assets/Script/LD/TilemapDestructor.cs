@@ -9,7 +9,8 @@ public class TilemapDestructor : MonoBehaviour
     [SerializeField]
     PathFinding pathFinding;
 
-    public NavMeshSurface2d surface;
+    [SerializeField]
+    NavMeshSurface2d surface;
 
     void Start()
     {
@@ -20,11 +21,12 @@ public class TilemapDestructor : MonoBehaviour
     {
         if (pathFinding.FightingPhase == true)
         {
-
-            gameObject.GetComponent<TilemapCollider2D>().enabled = false;
-            gameObject.GetComponent<TilemapRenderer>().enabled = false;
-            // surface.UpdateNavMesh(surface.navMeshData);
-            surface.BuildNavMesh();
+      
+                gameObject.GetComponent<TilemapCollider2D>().enabled = false;
+                gameObject.GetComponent<TilemapRenderer>().enabled = false;
+                // surface.UpdateNavMesh(surface.navMeshData);
+                // surface.Bake();
+                //  Debug.Log(surface);
 
         }
     }

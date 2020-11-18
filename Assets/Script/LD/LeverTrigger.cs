@@ -10,6 +10,10 @@ public class LeverTrigger : MonoBehaviour
     public bool lightMilestone = false;
     public Animator Light;
 
+    [SerializeField]
+    PathFinding pathFinding; 
+
+    
     public void Start()
     {
         Light.SetBool("IsRed", false);
@@ -27,5 +31,14 @@ public class LeverTrigger : MonoBehaviour
         lightMilestone = true;
         Light.SetBool("IsBlue", true);
         Light.SetBool("IsRed", false);
+    }
+
+    private void Update()
+    {
+        if (pathFinding.FightingPhase == true )
+        {
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 }
