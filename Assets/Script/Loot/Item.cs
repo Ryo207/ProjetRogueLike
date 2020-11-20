@@ -5,9 +5,9 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    private ItemsSO item;
+    public ItemsSO item;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
     {
         if (col.gameObject.GetComponent<PlayerController>())
         {
-            Destroy(gameObject);
+
         }
     }
 }

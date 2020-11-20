@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     //Variable Mouvement Perso
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public YT_PCAnimationHandler animHandler;
     public Vector2 movement;
 
     [Header("VirtualAxis"), SerializeField]
@@ -25,9 +24,6 @@ public class PlayerController : MonoBehaviour
     private int xAccelerationFrame, xDecelerationFrame, yAccelerationFrame, yDecelerationFrame;
 
     public Camera cam;
-
-    //Variable CaC
-    public GameObject TriggerCac;
 
     public int DamageCaC = 5;
     public int DamageDist = 10;
@@ -43,7 +39,6 @@ public class PlayerController : MonoBehaviour
         Movement();
         manageVirtualRawAxis();
         manageVirtualAxis();
-        Attack();
         ActivateLever();
     }
 
@@ -62,11 +57,11 @@ public class PlayerController : MonoBehaviour
             virtualXRawAxis = 0f;
         }
 
-        if (Input.GetAxisRaw("Vertical") >= xAxisSensitivity)
+        if (Input.GetAxisRaw("Vertical") >= yAxisSensitivity)
         {
             virtualYRawAxis = 1f;
         }
-        else if (Input.GetAxisRaw("Vertical") <= -xAxisSensitivity)
+        else if (Input.GetAxisRaw("Vertical") <= -yAxisSensitivity)
         {
             virtualYRawAxis = -1f;
         }
@@ -164,19 +159,6 @@ public class PlayerController : MonoBehaviour
         movement.y = virtualYRawAxis;
     }
 
-    void Attack()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            cacAttack();
-        }
-    }
-
-    void cacAttack()
-    {
-        StartCoroutine("cacAttackCoroutine");
-    }
-
     void ActivateLever()
     {
         if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
@@ -190,16 +172,6 @@ public class PlayerController : MonoBehaviour
                 levertrigger.RedLight();
             }
         }
-    }
-
-    IEnumerator cacAttackCoroutine()
-    {
-        TriggerCac.SetActive(true);
-        print("Hello");
-        yield return new WaitForSeconds(0.5f);
-        TriggerCac.SetActive(false);
-        animHandler.animator.SetBool("Attack", false);
-        print("Goodbye");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

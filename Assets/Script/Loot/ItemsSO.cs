@@ -20,6 +20,8 @@ public class ItemsSO : ScriptableObject
     [LabelWidth(100)]
     public int ID;
 
+    public bool isDetected = false;
+
     [TextArea]
     [HideLabel]
     [PropertySpace(SpaceBefore = 0, SpaceAfter = 40), PropertyOrder(1)]
@@ -44,6 +46,9 @@ public class ItemsSO : ScriptableObject
 
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
     public float cooldownCac;
+
+    [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
+    public float ImpactTime;
 
     [EnumPaging]
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]

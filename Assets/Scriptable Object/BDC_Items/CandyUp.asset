@@ -15,12 +15,14 @@ MonoBehaviour:
   Artwork: {fileID: 21300000, guid: 871adb3e7455d9d4ab3bd655957b877e, type: 3}
   Itemname: HealthPotion
   ID: 1
+  isDetected: 0
   description: 
   itemType: 0
   damageCac: 0
   reachCac: 0
   rangeCac: 0
   cooldownCac: 0
+  ImpactTime: 0
   impactEffectCac: 0
   weaponCooldownCac: 0
   damageDistance: 0

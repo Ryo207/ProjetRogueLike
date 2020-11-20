@@ -33,10 +33,6 @@ public class EnnemyView : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(detectionAngle, Vector3.forward);
 
             ennemyCenter.rotation = Quaternion.Slerp(ennemyCenter.rotation, rotation, speed * Time.deltaTime);
-
-            //ennemyCenter.rotation = quaternion.Euler(0f, 0f, detectionAngle);
-           
-            Debug.Log(detectionAngle);
         }
 
         if (pathFinding.FightingPhase == true)

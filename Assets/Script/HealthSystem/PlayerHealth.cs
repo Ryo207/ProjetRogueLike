@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    // Doit rajouter l'animation de prise de dégats 
+
     //Variable Life
     public int PlayerLife;
     int maxPlayerLife = 100;
@@ -40,10 +42,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    // A finir (Rajout de l'animation de mort
     private void GetDeath()
     {
         MenuPause.SetActive(true);
-
+        controller.moveSpeed = 0f;
 
     }
 

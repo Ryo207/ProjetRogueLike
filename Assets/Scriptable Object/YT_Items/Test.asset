@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
-  m_Name: New Item
+  m_Name: Test
   m_EditorClassIdentifier: 
-  Artwork: {fileID: -1998216948587803294, guid: 3ec94b28c7a5d7a49a58e7c6ca25ba84, type: 3}
-  Itemname: Levier
-  ID: 1
+  Artwork: {fileID: 21300000, guid: 653773952c42a3b40af6189e9e76808b, type: 3}
+  Itemname: Test
+  ID: 2
+  isDetected: 0
   description: 
-  itemType: 0
-  damageCac: 0
+  itemType: 2
+  damageCac: 50
   reachCac: 0
   rangeCac: 0
-  cooldownCac: 0.81
-  ImpactTime: 0
-  impactEffectCac: 3
+  cooldownCac: 0
+  ImpactTime: 0.3
+  impactEffectCac: 0
   weaponCooldownCac: 0
   damageDistance: 0
   bulletType: 
-  impactEffectDistance: 3
+  impactEffectDistance: 0
   weaponCooldownDistance: 0
   cooldownDistance: 0
-  consumablesTypes: 0
+  consumablesTypes: 1
