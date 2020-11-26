@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    public ItemsSO item;
+    public ItemsSO _Scriptable;
 
     public SpriteRenderer spriteRenderer;
 
@@ -22,20 +22,9 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        item = GenerateRandomItem();
-        spriteRenderer.sprite = item.Artwork;
+        _Scriptable = GenerateRandomItem();
+        spriteRenderer.sprite = _Scriptable.Artwork;
 
     }
 
-    void Update()
-    {
-       
-    }
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.GetComponent<PlayerController>())
-        {
-
-        }
-    }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnnemyHealth : MonoBehaviour
 {
-    public int EnnemyLife = 100;
+    public float EnnemyLife = 100;
     public GameObject item;
 
-    private void GetDamage(int damage)
+    private void GetDamage(float damage)
     {
         EnnemyLife -= damage;
         print(EnnemyLife);

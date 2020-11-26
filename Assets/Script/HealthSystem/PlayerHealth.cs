@@ -8,11 +8,12 @@ public class PlayerHealth : MonoBehaviour
     // Doit rajouter l'animation de prise de dégats 
 
     //Variable Life
-    public int PlayerLife;
-    int maxPlayerLife = 100;
+    public float PlayerLife;
+    public int maxPlayerLife = 100;
     public PlayerController controller;
     public YT_PCAnimationHandler animHandler;
     public PlayerShoot pcShoot;
+    public bool isHurt;
 
     //Life display
     public Sprite emptyHearth;
@@ -26,8 +27,24 @@ public class PlayerHealth : MonoBehaviour
     public Image coeur5;
     public Image coeur6;
 
-    public GameObject MenuPause; 
-    private void GetDamage(int damage)
+    public GameObject MenuPause;
+
+    private void Start()
+    {
+        isHurt = false;
+    }
+    private void Update()
+    {
+        ShowHealth();
+
+        checkMaxLife();
+
+        if (PlayerLife <= 0)
+        {
+            GetDeath();
+        }
+    }
+    private void GetDamage(float damage)
     {
         PlayerLife -= damage;
         print(PlayerLife);
@@ -39,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
         if (col.gameObject.CompareTag("EnnemyAttack") ^ col.gameObject.CompareTag("Ennemy"))
         {
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
+            StartCoroutine(nameof(CheckDamages));
         }
     }
 
@@ -83,14 +101,20 @@ public class PlayerHealth : MonoBehaviour
         Health(coeur1, 25f, 12.5f, 0f);
     }
 
-    private void Update()
+    private void checkMaxLife()
     {
-        ShowHealth();
-
-        if (PlayerLife <= 0)
+        if (PlayerLife > maxPlayerLife)
         {
-            GetDeath();
+            PlayerLife = maxPlayerLife;
         }
     }
 
+    IEnumerator CheckDamages()
+    {
+        isHurt = true;
+
+        yield return new WaitForSeconds(0.1f);
+
+        isHurt = false;
+    }
 }

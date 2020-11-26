@@ -4,39 +4,31 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public static PlayerAttack instance;
+    void Awake() => instance = this;
 
     //Variable CaC
     public GameObject TriggerCac;
     public YT_PCAnimationHandler animHandler;
-    float waittime = 1f;
-    float time;
+    delegate void attackFunc();
+    attackFunc attack;
+    public float attackIntervale;
     bool combo1;
     bool combo2;
-    bool timerStart;
-    public ItemsSO weapon;
+    public float impactTime;
+    public bool canAttack;
+
+    public float DamageCaC = 12.5f;
 
     void Start()
     {
-        timerStart = false;
+        attack = DoAttack;
     }
     void Update()
     {
-        if (timerStart == true)
-        {
-            if (waittime > 0)
-            {
-                waittime -= Time.deltaTime;
-                print(waittime);
-            }
-            else
-            {
-                waittime = 1f;
-                timerStart = false;
-            }
-        }
-        Attack();
+        attack();
     }
-    void Attack()
+    void DoAttack()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -51,47 +43,63 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator cacAttackCoroutine()
     {
-        yield return new WaitForSeconds(weapon.ImpactTime);
+        yield return new WaitForSeconds(impactTime);
+
         TriggerCac.SetActive(true);
         print("Hello");
-        yield return new WaitForSeconds(0.2f);
+
+        yield return new WaitForSeconds(0.1f);
+
         TriggerCac.SetActive(false);
 
-        /*if (waittime > 0 && Input.GetKey(KeyCode.E) || waittime > 0 && Input.GetKeyDown(KeyCode.E))
+        animHandler.animator.SetBool("Attack", false);
+        yield return attack = dontAttack;
+        print("Goodbye");
+
+    }
+
+    void dontAttack()
+    {
+        StartCoroutine(nameof(AttackIntervale));
+    }
+
+    IEnumerator AttackIntervale()
+    {
+        yield return new WaitForSeconds(attackIntervale);
+        yield return attack = DoAttack;
+    }
+    //Ancienne construction pour un systeme de combo, à retravailler
+
+
+
+    /*if (waittime > 0 && Input.GetKey(KeyCode.E) || waittime > 0 && Input.GetKeyDown(KeyCode.E))
+    {
+        waittime = 1;
+        animHandler.animator.SetBool("Combo1", true);
+        yield return new WaitForSeconds(weapon.ImpactTime);
+        TriggerCac.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        TriggerCac.SetActive(false);
+
+        if (waittime > 0 && Input.GetKey(KeyCode.E) || waittime > 0 && Input.GetKeyDown(KeyCode.E))
         {
-            waittime = 1;
-            animHandler.animator.SetBool("Combo1", true);
+            animHandler.animator.SetBool("Combo2", true);
             yield return new WaitForSeconds(weapon.ImpactTime);
             TriggerCac.SetActive(true);
             yield return new WaitForSeconds(0.1f);
             TriggerCac.SetActive(false);
+            animHandler.animator.SetBool("Combo1", false);
+            animHandler.animator.SetBool("Combo2", false);
+            animHandler.animator.SetBool("Attack", false);
+        }
 
-            if (waittime > 0 && Input.GetKey(KeyCode.E) || waittime > 0 && Input.GetKeyDown(KeyCode.E))
-            {
-                animHandler.animator.SetBool("Combo2", true);
-                yield return new WaitForSeconds(weapon.ImpactTime);
-                TriggerCac.SetActive(true);
-                yield return new WaitForSeconds(0.1f);
-                TriggerCac.SetActive(false);
-                animHandler.animator.SetBool("Combo1", false);
-                animHandler.animator.SetBool("Combo2", false);
-                animHandler.animator.SetBool("Attack", false);
-            }
-
-            else
-            {
-                animHandler.animator.SetBool("Combo1", false);
-                animHandler.animator.SetBool("Combo2", false);
-                animHandler.animator.SetBool("Attack", false);
-                print("Goodbye");
-
-            }
-        }*/
-
+        else
+        {
             animHandler.animator.SetBool("Combo1", false);
             animHandler.animator.SetBool("Combo2", false);
             animHandler.animator.SetBool("Attack", false);
             print("Goodbye");
 
-    }
+        }
+    }*/
 }

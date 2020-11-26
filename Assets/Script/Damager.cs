@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-    private float damage = 13f;
+    public float damage;
 
     public enum DamagerTypes
     {
         PlayerCac, PlayerDist, Ennemy
-
     }
 
-    public DamagerTypes type = DamagerTypes.Ennemy;
+    public DamagerTypes type;
 
-    public int Damage()
+    public float Damage()
     {
         switch (type)
         {
             case DamagerTypes.PlayerCac:
-                return PlayerController.instance.DamageCaC;
+                return PlayerAttack.instance.DamageCaC;
             case DamagerTypes.PlayerDist:
-                return PlayerController.instance.DamageDist;
+                return PlayerShoot.instance.DamageDist;
             case DamagerTypes.Ennemy:
-                return (int)damage;
+                return damage;
             default:
                 return 0;
                 

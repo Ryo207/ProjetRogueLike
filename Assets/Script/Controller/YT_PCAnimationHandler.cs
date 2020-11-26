@@ -7,6 +7,8 @@ using System;
 public class YT_PCAnimationHandler : MonoBehaviour
 {
     public PlayerController controller;
+    public PlayerAttack attackScipt;
+    public PlayerHealth healtSystem;
     public GameObject centerPc;
     public Animator animator;
     Vector2 mousePos;
@@ -27,6 +29,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         AnimationXAxis();
         AttackMilo();
         TurnMilo();
+        IsHurt();
 
     }
 
@@ -70,5 +73,10 @@ public class YT_PCAnimationHandler : MonoBehaviour
     void TurnMilo()
     {
         animator.SetFloat("Angle", centerPc.transform.rotation.eulerAngles.z);
+    }
+
+    void IsHurt()
+    {
+        animator.SetBool("IsHurt", healtSystem.isHurt);
     }
 }

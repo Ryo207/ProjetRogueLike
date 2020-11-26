@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Artwork: {fileID: -1998216948587803294, guid: 3ec94b28c7a5d7a49a58e7c6ca25ba84, type: 3}
   Itemname: Levier
-  ID: 1
+  ID: 2
+  Price: 0
+  IsPermanent: 0
   description: 
-  itemType: 0
+  itemType: 1
   damageCac: 0
   reachCac: 0
   rangeCac: 0
@@ -25,8 +27,11 @@ MonoBehaviour:
   impactEffectCac: 3
   weaponCooldownCac: 0
   damageDistance: 0
-  bulletType: 
+  bulletPrefab: {fileID: 0}
   impactEffectDistance: 3
   weaponCooldownDistance: 0
   cooldownDistance: 0
-  consumablesTypes: 0
+  consumableType: 0
+  healingPoints: 0
+  speedMultiplication: 0
+  damageMultiplication: 0

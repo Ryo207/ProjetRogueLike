@@ -7,6 +7,12 @@ using UnityEngine.Animations;
 
 public class PlayerShoot : MonoBehaviour
 {
+
+    public static PlayerShoot instance;
+    void Awake() => instance = this;
+
+    public float DamageDist = 12.5f;
+
     PlayerController playerController;
     public GameObject bulletPrefab;
     public GameObject perso;

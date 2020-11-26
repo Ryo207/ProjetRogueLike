@@ -20,7 +20,13 @@ public class ItemsSO : ScriptableObject
     [LabelWidth(100)]
     public int ID;
 
-    public bool isDetected = false;
+    [VerticalGroup("ScriptableObjectBaseVertical")]
+    [LabelWidth(100)]
+    public int Price;
+
+    [VerticalGroup("ScriptableObjectBaseVertical")]
+    [LabelWidth(100)]
+    public bool IsPermanent;
 
     [TextArea]
     [HideLabel]
@@ -36,10 +42,8 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
     public float damageCac;
 
-
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
     public float reachCac;
-
 
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
     public float rangeCac;
@@ -54,14 +58,11 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
     public impactEffectCacEnum impactEffectCac;
 
-    [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
-    public float weaponCooldownCac;
-
     [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
     public float damageDistance;
 
     [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
-    public string bulletType;
+    public GameObject bulletPrefab;
 
     [EnumPaging]
     [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
@@ -70,15 +71,23 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
     public float weaponCooldownDistance;
 
-    [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
-    public float cooldownDistance;
-
 
     [EnumPaging]
     [ShowIf("itemType", ItemTypeEnum.Consumables)]
-    public ConsumablesTypesEnum consumablesTypes;
+    [EnumToggleButtons]
+    public ConsumablesTypesEnum consumableType;
 
+    [EnumPaging]
+    [ShowIf("consumableType", ConsumablesTypesEnum.Heal)]
+    public int healingPoints;
 
+    [EnumPaging]
+    [ShowIf("consumableType", ConsumablesTypesEnum.Speed)]
+    public float speedMultiplication;
+
+    [EnumPaging]
+    [ShowIf("consumableType", ConsumablesTypesEnum.Strengh)]
+    public float damageMultiplication;
 }
 
 public enum ItemTypeEnum
@@ -98,5 +107,5 @@ public enum impactEffectCacEnum
 
 public enum ConsumablesTypesEnum
 {
-    Heal, Speed, Strenght
+    Heal, Speed, Strengh
 }

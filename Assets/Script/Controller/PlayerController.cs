@@ -24,9 +24,6 @@ public class PlayerController : MonoBehaviour
     private int xAccelerationFrame, xDecelerationFrame, yAccelerationFrame, yDecelerationFrame;
 
     public Camera cam;
-
-    public int DamageCaC = 5;
-    public int DamageDist = 10;
     public bool closeToLever;
 
     public LeverTrigger levertrigger;

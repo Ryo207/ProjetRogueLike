@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
-  m_Name: Test
+  m_Name: TestCacWeapon
   m_EditorClassIdentifier: 
   Artwork: {fileID: 21300000, guid: 653773952c42a3b40af6189e9e76808b, type: 3}
-  Itemname: Test
-  ID: 2
+  Itemname: TestWeapon
+  ID: 0
   Price: 0
-  IsPermanent: 0
+  IsPermanent: 1
   description: 
   itemType: 0
   damageCac: 50
   reachCac: 0
   rangeCac: 0
-  cooldownCac: 0
+  cooldownCac: 0.5
   ImpactTime: 0.3
   impactEffectCac: 0
   damageDistance: 0
