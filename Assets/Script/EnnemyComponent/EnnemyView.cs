@@ -12,6 +12,9 @@ public class EnnemyView : MonoBehaviour
     [SerializeField]
     FightingPhaseManager fpManager;
 
+    [SerializeField]
+    GameEvent TilemapDestructor;
+
     public Transform ennemyCenter;
     public Transform pC;
     public float speed = 5f;
@@ -58,6 +61,7 @@ public class EnnemyView : MonoBehaviour
             pathFinding.FightingPhase = true;
             fpManager.hiveMind = true;
             print("Hello Sir");
+            TilemapDestructor.Raise();
         }
     }
 }

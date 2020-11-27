@@ -17,18 +17,12 @@ public class TilemapDestructor : MonoBehaviour
 
     }
 
-    void Update()
+       public void bakeNavMesh()
     {
-        if (pathFinding.FightingPhase == true)
-        {
-      
-                gameObject.GetComponent<TilemapCollider2D>().enabled = false;
-                gameObject.GetComponent<TilemapRenderer>().enabled = false;
-                // surface.UpdateNavMesh(surface.navMeshData);
-                // surface.Bake();
-                //  Debug.Log(surface);
-
-        }
+        gameObject.GetComponent<TilemapCollider2D>().enabled = false;
+        gameObject.GetComponent<TilemapRenderer>().enabled = false;
+        surface.BuildNavMesh();
     }
+  
 }
             
