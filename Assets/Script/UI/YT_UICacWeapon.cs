@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class YT_UICacWeapon : MonoBehaviour
 {
-
-    public ItemsSO item;
     public Image weaponSprite;
     Sprite activeWeapon;
     // Start is called before the first frame update

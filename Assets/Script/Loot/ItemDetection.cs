@@ -89,8 +89,8 @@ public class ItemDetection : MonoBehaviour
 
             else if (consumableType == ConsumablesTypesEnum.Heal && _Scriptable.IsPermanent == true)
             {
-                health.PlayerLife += _Scriptable.healingPoints;
                 health.maxPlayerLife += _Scriptable.healingPoints;
+                health.PlayerLife += _Scriptable.healingPoints;
             }
 
             else if (consumableType == ConsumablesTypesEnum.Speed && _Scriptable.IsPermanent == false)

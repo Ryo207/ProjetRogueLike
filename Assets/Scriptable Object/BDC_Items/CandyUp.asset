@@ -16,7 +16,7 @@ MonoBehaviour:
   Itemname: HealthPotion
   ID: 1
   Price: 0
-  IsPermanent: 1
+  IsPermanent: 0
   description: 
   itemType: 2
   damageCac: 0
@@ -25,15 +25,11 @@ MonoBehaviour:
   cooldownCac: 0
   ImpactTime: 0
   impactEffectCac: 0
-  weaponCooldownCac: 0
   damageDistance: 0
-  bulletType: 
+  bulletPrefab: {fileID: 0}
   impactEffectDistance: 0
   weaponCooldownDistance: 0
-  cooldownDistance: 0
   consumableType: 0
   healingPoints: 50
   speedMultiplication: 0
-  speedMultiplicationTime: 0
   damageMultiplication: 0
-  damageMultiplicationTime: 0
