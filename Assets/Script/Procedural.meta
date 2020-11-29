@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: f1c461b1cc7f7f84e94c45add906ca19
+=======
 guid: c5e9198f1fbb7aa4bb3eb7bfd210b599
+>>>>>>> origin/LUB_Branch
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

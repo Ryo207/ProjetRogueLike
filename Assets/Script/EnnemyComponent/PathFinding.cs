@@ -11,6 +11,8 @@ public class PathFinding : MonoBehaviour
     [SerializeField] public Transform[] waypoints;
     public Transform Player;
 
+
+
     public int currentWaypoint = 0;
     public bool FightingPhase = false;
     public float ShootingDistance;
