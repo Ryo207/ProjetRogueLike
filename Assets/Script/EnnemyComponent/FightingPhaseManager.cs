@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FightingPhaseManager : MonoBehaviour
 {
+    GameObject[] ennemis;
     [SerializeField]
     PathFinding pathfinding;
     public bool hiveMind;

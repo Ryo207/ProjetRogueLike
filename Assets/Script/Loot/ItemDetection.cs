@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemDetection : MonoBehaviour
 {
@@ -9,6 +10,16 @@ public class ItemDetection : MonoBehaviour
     ItemTypeEnum itemType;
 
     ConsumablesTypesEnum consumableType;
+
+    Image imgCacWepon;
+
+    Image imgDistWeapon;
+
+    Image activeObject;
+
+    public Image[] passiveObject;
+
+    int imgIndex;
 
     PlayerController controller;
 
@@ -37,6 +48,10 @@ public class ItemDetection : MonoBehaviour
     private void Start()
     {
         itemCollider = GetComponent<CircleCollider2D>();
+        imgCacWepon = GameObject.Find("CacWeapon").GetComponent<Image>();
+        imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
+        activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
+        imgIndex = 0;
     }
     void Update()
     {
@@ -70,6 +85,9 @@ public class ItemDetection : MonoBehaviour
             attackCaC.DamageCaC = _Scriptable.damageCac;
             attackCaC.impactTime = _Scriptable.ImpactTime;
             attackCaC.attackIntervale = _Scriptable.cooldownCac;
+            imgCacWepon.sprite = _Scriptable.Artwork;
+            
+            isUsed = true;
         }
 
         if (itemType == ItemTypeEnum.DistanceWeapon)
@@ -77,6 +95,7 @@ public class ItemDetection : MonoBehaviour
             attackDist.DamageDist = _Scriptable.damageDistance;
             attackDist.bulletPrefab = _Scriptable.bulletPrefab;
             attackDist.shootIntervale = _Scriptable.weaponCooldownDistance;
+            isUsed = true;
         }
 
         else if (itemType == ItemTypeEnum.Consumables)
@@ -91,32 +110,42 @@ public class ItemDetection : MonoBehaviour
             {
                 health.maxPlayerLife += _Scriptable.healingPoints;
                 health.PlayerLife += _Scriptable.healingPoints;
+                passiveObject[imgIndex].sprite = _Scriptable.Artwork;
+                imgIndex++;
+                isUsed = true;
             }
 
             else if (consumableType == ConsumablesTypesEnum.Speed && _Scriptable.IsPermanent == false)
             {
                 controller.moveSpeed *= _Scriptable.speedMultiplication;
+                isUsed = true;
             }
 
             else if (consumableType == ConsumablesTypesEnum.Speed && _Scriptable.IsPermanent == true)
             {
                 controller.moveSpeed *= _Scriptable.speedMultiplication;
+                passiveObject[imgIndex].sprite = _Scriptable.Artwork;
+                imgIndex++;
+                isUsed = true;
             }
 
             else if (consumableType == ConsumablesTypesEnum.Strengh && _Scriptable.IsPermanent == false)
             {
                 attackCaC.DamageCaC *= _Scriptable.damageMultiplication;
                 attackDist.DamageDist *= _Scriptable.damageMultiplication;
+                isUsed = true;
             }
 
             else if (consumableType == ConsumablesTypesEnum.Strengh && _Scriptable.IsPermanent == true)
             {
                 attackCaC.DamageCaC *= _Scriptable.damageMultiplication;
                 attackDist.DamageDist *= _Scriptable.damageMultiplication;
+                passiveObject[imgIndex].sprite = _Scriptable.Artwork;
+                imgIndex++;
+                isUsed = true;
+
             }
         }
-
-        Destroy(gameObject);
     }
 
     void instantiatePlayerComponents()

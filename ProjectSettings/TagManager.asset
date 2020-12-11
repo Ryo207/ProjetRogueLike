@@ -10,6 +10,7 @@ TagManager:
   - EnnemyAttack
   - PlayerDetection
   - Item
+  - PassiveItem
   layers:
   - Default
   - TransparentFX

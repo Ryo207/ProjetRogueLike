@@ -19,6 +19,6 @@ public class Inventory : MonoBehaviour
 
     void AddObjectToInveotory()
     {
-
+        
     }
 }
