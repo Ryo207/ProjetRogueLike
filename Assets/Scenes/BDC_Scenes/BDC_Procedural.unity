@@ -331,9 +331,8 @@ MonoBehaviour:
   - {fileID: 1504077322}
   - {fileID: 1399209997}
   - {fileID: 868046072}
-  - {fileID: 0}
   marketRoom:
-  - {fileID: 1954149207346712310, guid: d49834b2300adfd459f9cc92efa7e8f3, type: 3}
+  - {fileID: 6980673568156634385, guid: 65c6925739a77c54cae35722dcb1c693, type: 3}
   moveAmount: 70
   timeBtwRoom: 1
   startTimeBtwRoom: 0.25
@@ -341,13 +340,9 @@ MonoBehaviour:
   maxX: 150
   minY: -220
   stopGeneration: 0
+  downCounter: 0
+  roomsCounter: 0
   roomsUntilMarket: 5
-  rightMin: 1
-  rightMax: 40
-  leftMin: 41
-  leftMax: 85
-  downMin: 86
-  downMax: 100
 --- !u!4 &370047268
 Transform:
   m_ObjectHideFlags: 0
