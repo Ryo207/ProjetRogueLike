@@ -42,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
 
         checkMaxLife();
 
+        animHandler.animator.SetInteger("Health", (int)PlayerLife);
+
         if (PlayerLife <= 0)
         {
             GetDeath();
@@ -66,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     // A finir (Rajout de l'animation de mort
     private void GetDeath()
     {
-        MenuPause.SetActive(true);
+
         controller.moveSpeed = 0f;
 
     }

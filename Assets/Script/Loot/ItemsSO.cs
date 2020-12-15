@@ -71,37 +71,37 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
     public float weaponCooldownDistance;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public int numberOfCharges;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool colorBomb;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool MGSBox;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool iceFlower;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool chrono;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool spinach;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool mirror;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool musicBox;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool fatherWatch;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool map;
 
-    [ShowIf("itemType", ItemTypeEnum.Active)]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public bool remote;
 
     [EnumPaging]
@@ -120,11 +120,15 @@ public class ItemsSO : ScriptableObject
     [EnumPaging]
     [ShowIf("consumableType", ConsumablesTypesEnum.Strengh)]
     public float damageMultiplication;
+
+    [EnumPaging]
+    [ShowIf("consumableType", ConsumablesTypesEnum.Coin)]
+    public int coinValue;
 }
 
 public enum ItemTypeEnum
 {
-    CacWeapon, DistanceWeapon, Consumables, Active
+    CacWeapon, DistanceWeapon, Consumables, ActiveItem
 }
 
 public enum ImpactEffectDistanceEnum
@@ -139,5 +143,5 @@ public enum impactEffectCacEnum
 
 public enum ConsumablesTypesEnum
 {
-    Heal, Speed, Strengh
+    Heal, Speed, Strengh, Coin
 }

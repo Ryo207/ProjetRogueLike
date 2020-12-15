@@ -4,42 +4,50 @@ using UnityEngine;
 
 public class YT_RoomTransition : MonoBehaviour
 {
-    int ennemisLeft = 0;
+    public int ennemisLeft = 0;
     bool killedAllEnnemis = false;
     public GameObject door;
+    public LayerMask ennemisLayer;
+    Vector2 centerdetection;
+    public Transform centerRoom;
+    public BoxCollider2D ennemisDectetion;
 
     // Start is called before the first frame update
     void Start()
     {
-        CheckNumberEnnemies();
+        ennemisDectetion = GetComponent<BoxCollider2D>();
+        centerRoom = GameObject.Find("CenterRoom").GetComponentInParent<Transform>();
+        Detection();
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckNumberEnnemies();
+        Detection();
 
         if (ennemisLeft == 0)
         {
             OpenDoor();
         }
-
-        if (killedAllEnnemis == true)
-        {
-
-        }
         
     }
 
-    void CheckNumberEnnemies()
+    void Detection()
     {
-        GameObject[] ennemis = GameObject.FindGameObjectsWithTag("Ennemy");
-        ennemisLeft = ennemis.Length;
+        Collider2D[] ennemisDetectionZone = Physics2D.OverlapBoxAll(centerRoom.position, ennemisDectetion.size, centerRoom.rotation.x, ennemisLayer);
+
+        ennemisLeft = ennemisDetectionZone.Length;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireCube(centerRoom.position, ennemisDectetion.size);
     }
 
     void OpenDoor()
     {
-        killedAllEnnemis = true;
         door.SetActive(false);
     }
 }
