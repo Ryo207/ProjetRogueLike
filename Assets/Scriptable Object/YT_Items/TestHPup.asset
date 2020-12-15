@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
-  m_Name: TestCacWeapon
+  m_Name: TestHPup
   m_EditorClassIdentifier: 
-  Artwork: {fileID: 21300000, guid: 60766e35b2326854c8add2a713bb8b59, type: 3}
-  Itemname: TestWeapon
+  Artwork: {fileID: 21300000, guid: 871adb3e7455d9d4ab3bd655957b877e, type: 3}
+  Itemname: Menfou
   ID: 0
   Price: 0
   IsPermanent: 1
   description: 
-  itemType: 0
-  damageCac: 50
+  itemType: 2
+  damageCac: 0
   reachCac: 0
   rangeCac: 0
-  cooldownCac: 0.5
-  ImpactTime: 0.3
+  cooldownCac: 0
+  ImpactTime: 0
   impactEffectCac: 0
   damageDistance: 0
   bulletPrefab: {fileID: 0}
   impactEffectDistance: 0
   weaponCooldownDistance: 0
   consumableType: 0
-  healingPoints: 0
+  healingPoints: 100
   speedMultiplication: 0
   damageMultiplication: 0
