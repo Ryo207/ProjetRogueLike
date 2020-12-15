@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         isHurt = false;
+        InstantiateScript();
     }
 
     private void FixedUpdate()
@@ -49,6 +50,13 @@ public class PlayerHealth : MonoBehaviour
             GetDeath();
         }
     }
+    void InstantiateScript()
+    {
+        controller = GetComponent<PlayerController>();
+        animHandler = GetComponent<YT_PCAnimationHandler>();
+        pcShoot = GetComponent<PlayerShoot>();
+    }
+
     private void GetDamage(float damage)
     {
         PlayerLife -= damage;

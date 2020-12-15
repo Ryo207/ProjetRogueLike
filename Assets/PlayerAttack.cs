@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         attack = DoAttack;
+        animHandler = GetComponent<YT_PCAnimationHandler>();
     }
     void Update()
     {

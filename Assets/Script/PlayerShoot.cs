@@ -15,7 +15,6 @@ public class PlayerShoot : MonoBehaviour
 
     PlayerController playerController;
     public GameObject bulletPrefab;
-    public GameObject perso;
 
     //Intervalle de tir
     delegate void shootFunc();

@@ -19,6 +19,17 @@ public class Pause_Menu_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetResolution();
+
+    }
+
+    void Update()
+    {
+        ActivateMenu();
+    }
+
+    void SetResolution()
+    {
         resolution = Screen.resolutions;
         resolutionDropDown.ClearOptions();
 
@@ -38,11 +49,7 @@ public class Pause_Menu_Manager : MonoBehaviour
         resolutionDropDown.AddOptions(options);
         resolutionDropDown.value = currentRosolutionIndex;
         resolutionDropDown.RefreshShownValue();
-    }
 
-    void Update()
-    {
-        ActivateMenu();
     }
 
     void ActivateMenu()

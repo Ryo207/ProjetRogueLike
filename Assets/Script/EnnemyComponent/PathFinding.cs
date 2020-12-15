@@ -9,11 +9,10 @@ public class PathFinding : MonoBehaviour
 
     UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] public Transform[] waypoints;
-    public Transform Player;
-    public FightingPhaseManager globalAlert;
+    Transform Player;
+    FightingPhaseManager globalAlert;
     public int currentWaypoint = 0;
     public bool FightingPhase = false;
-    public float ShootingDistance;
 
     enum EnemyStates
     {
