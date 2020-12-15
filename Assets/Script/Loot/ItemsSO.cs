@@ -71,6 +71,38 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.DistanceWeapon)]
     public float weaponCooldownDistance;
 
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public int numberOfCharges;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool colorBomb;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool MGSBox;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool iceFlower;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool chrono;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool spinach;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool mirror;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool musicBox;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool fatherWatch;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool map;
+
+    [ShowIf("itemType", ItemTypeEnum.Active)]
+    public bool remote;
 
     [EnumPaging]
     [ShowIf("itemType", ItemTypeEnum.Consumables)]
@@ -92,7 +124,7 @@ public class ItemsSO : ScriptableObject
 
 public enum ItemTypeEnum
 {
-    CacWeapon, DistanceWeapon, Consumables
+    CacWeapon, DistanceWeapon, Consumables, Active
 }
 
 public enum ImpactEffectDistanceEnum

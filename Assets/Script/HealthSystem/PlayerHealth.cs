@@ -14,18 +14,20 @@ public class PlayerHealth : MonoBehaviour
     public YT_PCAnimationHandler animHandler;
     public PlayerShoot pcShoot;
     public bool isHurt;
+    private Rigidbody2D playerBody;
 
     //Life display
     public Sprite emptyHearth;
     public Sprite halfHearth;
     public Sprite fullHearth;
     public Sprite emptyCase;
-    public Image coeur1;
+    public Image[] coeurs;
+    /*public Image coeur1;
     public Image coeur2;
     public Image coeur3;
     public Image coeur4;
     public Image coeur5;
-    public Image coeur6;
+    public Image coeur6;*/
 
     public GameObject MenuPause;
 
@@ -33,7 +35,8 @@ public class PlayerHealth : MonoBehaviour
     {
         isHurt = false;
     }
-    private void Update()
+
+    private void FixedUpdate()
     {
         ShowHealth();
 
@@ -75,7 +78,7 @@ public class PlayerHealth : MonoBehaviour
             coeur.sprite = emptyCase;
         }
 
-        else if (PlayerLife <= maxvalue && PlayerLife > midvalue)
+        else if (PlayerLife >= maxvalue && PlayerLife >= midvalue)
         {
             coeur.sprite = fullHearth;
         }
@@ -90,15 +93,20 @@ public class PlayerHealth : MonoBehaviour
             coeur.sprite = emptyHearth;
         }
     }
-
     private void ShowHealth()
     {
-        Health(coeur6, 150f, 137.5f, 125f);
-        Health(coeur5, 125f, 112.5f, 100f);
-        Health(coeur4, 100f, 87.5f, 75f);
-        Health(coeur3, 75f, 62.5f, 50f);
-        Health(coeur2, 50f, 37.5f, 25f);
-        Health(coeur1, 25f, 12.5f, 0f);
+        Health(coeurs[11], 300f, 287.5f, 275f);
+        Health(coeurs[10], 275f, 262.5f, 250f);
+        Health(coeurs[9], 250f, 237.5f, 225f);
+        Health(coeurs[8], 225f, 212.5f, 200f);
+        Health(coeurs[7], 200f, 187.5f, 175f);
+        Health(coeurs[6], 175f, 162.5f, 150f);
+        Health(coeurs[5], 150f, 137.5f, 125f);
+        Health(coeurs[4], 125f, 112.5f, 100f);
+        Health(coeurs[3], 100f, 87.5f, 75f);
+        Health(coeurs[2], 75f, 62.5f, 50f);
+        Health(coeurs[1], 50f, 37.5f, 25f);
+        Health(coeurs[0], 25f, 12.5f, 0f);
     }
 
     private void checkMaxLife()

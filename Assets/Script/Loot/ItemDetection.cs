@@ -86,7 +86,8 @@ public class ItemDetection : MonoBehaviour
             attackCaC.impactTime = _Scriptable.ImpactTime;
             attackCaC.attackIntervale = _Scriptable.cooldownCac;
             imgCacWepon.sprite = _Scriptable.Artwork;
-            
+            imgCacWepon.rectTransform.sizeDelta = new Vector2(imgCacWepon.preferredWidth, imgCacWepon.preferredHeight);
+
             isUsed = true;
         }
 
@@ -95,6 +96,15 @@ public class ItemDetection : MonoBehaviour
             attackDist.DamageDist = _Scriptable.damageDistance;
             attackDist.bulletPrefab = _Scriptable.bulletPrefab;
             attackDist.shootIntervale = _Scriptable.weaponCooldownDistance;
+            imgDistWeapon.sprite = _Scriptable.Artwork;
+            imgDistWeapon.rectTransform.sizeDelta = new Vector2(imgDistWeapon.preferredWidth * 2 , imgDistWeapon.preferredHeight * 2);
+            isUsed = true;
+        }
+
+        if (itemType == ItemTypeEnum.Active)
+        {
+            activeObject.sprite = _Scriptable.Artwork;
+            activeObject.rectTransform.sizeDelta = new Vector2(activeObject.preferredWidth * 2, activeObject.preferredHeight * 2);
             isUsed = true;
         }
 
@@ -111,6 +121,7 @@ public class ItemDetection : MonoBehaviour
                 health.maxPlayerLife += _Scriptable.healingPoints;
                 health.PlayerLife += _Scriptable.healingPoints;
                 passiveObject[imgIndex].sprite = _Scriptable.Artwork;
+                passiveObject[imgIndex].rectTransform.sizeDelta = new Vector2(passiveObject[imgIndex].preferredWidth * 2, passiveObject[imgIndex].preferredHeight * 2);
                 imgIndex++;
                 isUsed = true;
             }
@@ -125,6 +136,7 @@ public class ItemDetection : MonoBehaviour
             {
                 controller.moveSpeed *= _Scriptable.speedMultiplication;
                 passiveObject[imgIndex].sprite = _Scriptable.Artwork;
+                passiveObject[imgIndex].rectTransform.sizeDelta = new Vector2(passiveObject[imgIndex].preferredWidth * 2, passiveObject[imgIndex].preferredHeight * 2);
                 imgIndex++;
                 isUsed = true;
             }
@@ -141,6 +153,7 @@ public class ItemDetection : MonoBehaviour
                 attackCaC.DamageCaC *= _Scriptable.damageMultiplication;
                 attackDist.DamageDist *= _Scriptable.damageMultiplication;
                 passiveObject[imgIndex].sprite = _Scriptable.Artwork;
+                passiveObject[imgIndex].rectTransform.sizeDelta = new Vector2(passiveObject[imgIndex].preferredWidth * 2, passiveObject[imgIndex].preferredHeight * 2);
                 imgIndex++;
                 isUsed = true;
 
