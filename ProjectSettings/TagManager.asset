@@ -11,6 +11,7 @@ TagManager:
   - PlayerDetection
   - Item
   - PassiveItem
+  - Parry
   layers:
   - Default
   - TransparentFX
