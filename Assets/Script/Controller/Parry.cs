@@ -23,12 +23,19 @@ public class Parry : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll((Vector2)transform.position, parryRadius);
         foreach (Collider2D collider in hitColliders)
         {
-            if (collider.gameObject.CompareTag("Bullet"))
+            if (collider.gameObject.CompareTag("EnnemyAttack"))
             {
                 Destroy(collider.gameObject);
                 print("LaChanclaDeux");
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+
+        Gizmos.DrawWireSphere((Vector2)transform.position, parryRadius);
     }
 
 }

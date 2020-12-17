@@ -1582,7 +1582,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageDist: 12.5
   bulletPrefab: {fileID: 7816432986287666342, guid: de4f6819a36e66d478064c32dc28c3dd, type: 3}
-  perso: {fileID: 233082646}
   shootIntervale: 0.3
   bulletForce: 15
   firePoint: {fileID: 644004623}
@@ -1619,10 +1618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6176541906c574d489a3c93f7ff909c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerPc: {fileID: 1825023016}
   controller: {fileID: 233082653}
   attackScipt: {fileID: 233082652}
   healtSystem: {fileID: 233082651}
-  centerPc: {fileID: 1825023016}
   animator: {fileID: 233082650}
 --- !u!95 &233082650
 Animator:
@@ -1833,6 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parryCollider: {fileID: 2125154969}
+  parryRadius: 2
 --- !u!1 &238292599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2723,11 +2723,8 @@ MonoBehaviour:
   - {fileID: 192867610}
   - {fileID: 1906182197}
   - {fileID: 1928091551}
-  Player: {fileID: 0}
-  globalAlert: {fileID: 0}
   currentWaypoint: 0
   FightingPhase: 0
-  ShootingDistance: 0
   currentState: 0
 --- !u!114 &342825941
 MonoBehaviour:
@@ -2779,7 +2776,6 @@ MonoBehaviour:
   shootIntervale: 0.6
   bulletPrefab: {fileID: 7816432986287666342, guid: 12b264d31db03914da771d3c8d7e434d, type: 3}
   firePoint: {fileID: 350116740}
-  perso: {fileID: 1825023017}
 --- !u!114 &342825944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15394,7 +15390,7 @@ Tilemap:
       - {fileID: -4453628274939628172, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
       - {fileID: -1026503192004843020, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
       - {fileID: 7002252761513847822, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -5, z: 0}
@@ -15449,7 +15445,7 @@ Tilemap:
       - {fileID: -4453628274939628172, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
       - {fileID: -1026503192004843020, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
       - {fileID: 7002252761513847822, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -4, z: 0}
@@ -15493,7 +15489,7 @@ Tilemap:
       - {fileID: -6989231205627183748, guid: 9473018d12a003d4f9b61ec9585a1777, type: 3}
       - {fileID: -836889397724421436, guid: 9473018d12a003d4f9b61ec9585a1777, type: 3}
       - {fileID: -4324766622674094828, guid: 9473018d12a003d4f9b61ec9585a1777, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: -4, z: 0}
@@ -15570,7 +15566,7 @@ Tilemap:
       - {fileID: -6335110320106800805, guid: b536299151a2840409c3b690a24b134a, type: 3}
       - {fileID: 2658587838794060576, guid: b536299151a2840409c3b690a24b134a, type: 3}
       - {fileID: 8384667410778899175, guid: b536299151a2840409c3b690a24b134a, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: -2, z: 0}
@@ -15581,7 +15577,7 @@ Tilemap:
       - {fileID: 8062599979729859474, guid: 74d4e7a54b791504188981555e3b8cb9, type: 3}
       - {fileID: -7802985892790294729, guid: 74d4e7a54b791504188981555e3b8cb9, type: 3}
       - {fileID: 7496732844810515631, guid: 74d4e7a54b791504188981555e3b8cb9, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: -2, z: 0}
@@ -16521,7 +16517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightMilestone: 1
-  Light: {fileID: 45842863}
+  Lumiere: {fileID: 0}
+  stopLever: 0
   pathFinding: {fileID: 1579649210}
 --- !u!58 &1149451931
 CircleCollider2D:
@@ -25695,11 +25692,8 @@ MonoBehaviour:
   - {fileID: 451145129}
   - {fileID: 723108908}
   - {fileID: 44211319}
-  Player: {fileID: 0}
-  globalAlert: {fileID: 0}
   currentWaypoint: 0
   FightingPhase: 0
-  ShootingDistance: 0
   currentState: 0
 --- !u!4 &1579649211
 Transform:
@@ -25767,7 +25761,6 @@ MonoBehaviour:
   shootIntervale: 0.6
   bulletPrefab: {fileID: 7816432986287666342, guid: 12b264d31db03914da771d3c8d7e434d, type: 3}
   firePoint: {fileID: 1066368804}
-  perso: {fileID: 1825023017}
 --- !u!114 &1579649215
 MonoBehaviour:
   m_ObjectHideFlags: 0
