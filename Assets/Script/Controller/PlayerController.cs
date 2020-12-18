@@ -27,10 +27,15 @@ public class PlayerController : MonoBehaviour
     public bool closeToLever;
 
     public LeverTrigger levertrigger;
+
+    [SerializeField]
+    private GameObject parryCollider;
+
     void FixedUpdate()
     {
         doPlayerSpeed();
     }
+
     void Update()
     {
         Movement();

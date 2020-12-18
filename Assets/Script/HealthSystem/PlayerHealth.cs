@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         isHurt = false;
+        InstantiateScript();
     }
 
     private void FixedUpdate()
@@ -42,11 +43,20 @@ public class PlayerHealth : MonoBehaviour
 
         checkMaxLife();
 
+        animHandler.animator.SetInteger("Health", (int)PlayerLife);
+
         if (PlayerLife <= 0)
         {
             GetDeath();
         }
     }
+    void InstantiateScript()
+    {
+        controller = GetComponent<PlayerController>();
+        animHandler = GetComponent<YT_PCAnimationHandler>();
+        pcShoot = GetComponent<PlayerShoot>();
+    }
+
     private void GetDamage(float damage)
     {
         PlayerLife -= damage;
@@ -66,7 +76,7 @@ public class PlayerHealth : MonoBehaviour
     // A finir (Rajout de l'animation de mort
     private void GetDeath()
     {
-        MenuPause.SetActive(true);
+
         controller.moveSpeed = 0f;
 
     }

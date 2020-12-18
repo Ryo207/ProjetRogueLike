@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ItemDetection : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class ItemDetection : MonoBehaviour
     Image imgDistWeapon;
 
     Image activeObject;
+
+    TMP_Text numberCoins;
+
+    int currentCoins;
 
     public Image[] passiveObject;
 
@@ -43,19 +48,16 @@ public class ItemDetection : MonoBehaviour
     private void Awake()
     {
         instantiatePlayerComponents();
+        instantiateUIComponent();
+        currentCoins = 0;
     }
 
     private void Start()
     {
-        itemCollider = GetComponent<CircleCollider2D>();
-        imgCacWepon = GameObject.Find("CacWeapon").GetComponent<Image>();
-        imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
-        activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
-        imgIndex = 0;
     }
     void Update()
     {
-
+        numberCoins.text = currentCoins.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -101,7 +103,7 @@ public class ItemDetection : MonoBehaviour
             isUsed = true;
         }
 
-        if (itemType == ItemTypeEnum.Active)
+        if (itemType == ItemTypeEnum.ActiveItem)
         {
             activeObject.sprite = _Scriptable.Artwork;
             activeObject.rectTransform.sizeDelta = new Vector2(activeObject.preferredWidth * 2, activeObject.preferredHeight * 2);
@@ -158,9 +160,24 @@ public class ItemDetection : MonoBehaviour
                 isUsed = true;
 
             }
+
+            else if (consumableType == ConsumablesTypesEnum.Coin)
+            {
+                currentCoins += _Scriptable.coinValue;
+                isUsed = true;
+            }
         }
     }
 
+    void instantiateUIComponent()
+    {
+        itemCollider = GetComponent<CircleCollider2D>();
+        imgCacWepon = GameObject.Find("CacWeapon").GetComponent<Image>();
+        imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
+        activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
+        numberCoins = GameObject.Find("CurrentCoins").GetComponent<TMP_Text>();
+        imgIndex = 0;
+    }
     void instantiatePlayerComponents()
     {
         player = GameObject.Find("Perso");

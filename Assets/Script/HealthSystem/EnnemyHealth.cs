@@ -6,7 +6,12 @@ public class EnnemyHealth : MonoBehaviour
 {
     public float EnnemyLife = 100;
     public GameObject item;
+    FightingPhaseManager fpManager;
 
+    private void Start()
+    {
+        fpManager = GetComponentInParent<FightingPhaseManager>();
+    }
     private void GetDamage(float damage)
     {
         EnnemyLife -= damage;
@@ -42,6 +47,7 @@ public class EnnemyHealth : MonoBehaviour
     {
         if (EnnemyLife <= 0)
         {
+            fpManager.hiveMind = true;
             GetDeath();
         }
     }

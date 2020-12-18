@@ -8,7 +8,9 @@ public class LeverTrigger : MonoBehaviour
     //public UnityEngine.Experimental.Rendering.Universal.Light2D GlobalLight;
 
     public bool lightMilestone = false;
-    public Animator Light;
+    public Animator Lumiere;
+
+    public bool stopLever; //Relier directement le script au pathfinding, ce sera plus simple dans l'autre sens.
 
     [SerializeField]
     PathFinding pathFinding; 
@@ -16,21 +18,22 @@ public class LeverTrigger : MonoBehaviour
     
     public void Start()
     {
-        Light.SetBool("IsRed", false);
-        Light.SetBool("IsBlue",false);
+        Lumiere = GameObject.Find("LeverColor").GetComponent<Animator>();
+        Lumiere.SetBool("IsRed", false);
+        Lumiere.SetBool("IsBlue",false);
     }
     public void RedLight()
     {
         lightMilestone = false;
-        Light.SetBool("IsRed", true);
-        Light.SetBool("IsBlue", false);
+        Lumiere.SetBool("IsRed", true);
+        Lumiere.SetBool("IsBlue", false);
     }
 
     public void BlueLight()
     {
         lightMilestone = true;
-        Light.SetBool("IsBlue", true);
-        Light.SetBool("IsRed", false);
+        Lumiere.SetBool("IsBlue", true);
+        Lumiere.SetBool("IsRed", false);
     }
 
     private void Update()

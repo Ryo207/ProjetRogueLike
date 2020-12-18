@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FightingPhaseManager : MonoBehaviour
 {
-    GameObject[] ennemis;
     [SerializeField]
-    PathFinding pathfinding;
+    PathFinding[] pathfinding;
     public bool hiveMind;
 
     private void Start()
     {
+        pathfinding = GetComponentsInChildren<PathFinding>();
         hiveMind = false;
     }
 
@@ -18,8 +18,10 @@ public class FightingPhaseManager : MonoBehaviour
     {
         if (hiveMind == true)
         {
-            pathfinding.FightingPhase = true;
+            for (int i = 0; i < pathfinding.Length; i++)
+            {
+                pathfinding[i].FightingPhase = true;
+            }
         }
-        
     }
 }

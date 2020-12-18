@@ -20,11 +20,12 @@ public class EnnemyShoot : MonoBehaviour
     Vector2 pCDirection;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public Transform perso;
+    Transform perso;
 
     private void Start()
     {
         Shoot = DoShoot;
+        perso = GameObject.Find("CenterPC").GetComponent<Transform>();
     }
 
     void Update()

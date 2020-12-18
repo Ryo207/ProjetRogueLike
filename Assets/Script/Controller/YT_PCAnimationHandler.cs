@@ -6,10 +6,10 @@ using System;
 
 public class YT_PCAnimationHandler : MonoBehaviour
 {
+    public GameObject centerPc;
     public PlayerController controller;
     public PlayerAttack attackScipt;
     public PlayerHealth healtSystem;
-    public GameObject centerPc;
     public Animator animator;
     Vector2 mousePos;
  
@@ -17,12 +17,13 @@ public class YT_PCAnimationHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InstantiatePlayerComponents();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         mousePos = controller.cam.ScreenToWorldPoint(Input.mousePosition);
         DetectMoving();
         AnimationYAxis();
@@ -31,6 +32,14 @@ public class YT_PCAnimationHandler : MonoBehaviour
         TurnMilo();
         IsHurt();
 
+    }
+
+    void InstantiatePlayerComponents()
+    {
+        controller = GetComponent<PlayerController>();
+        attackScipt = GetComponent<PlayerAttack>();
+        healtSystem = GetComponent<PlayerHealth>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

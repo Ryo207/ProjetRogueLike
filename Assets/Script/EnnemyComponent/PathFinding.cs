@@ -9,13 +9,10 @@ public class PathFinding : MonoBehaviour
 
     UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] public Transform[] waypoints;
-    public Transform Player;
-
-
-
+    Transform Player;
+    FightingPhaseManager globalAlert;
     public int currentWaypoint = 0;
     public bool FightingPhase = false;
-    public float ShootingDistance;
 
     enum EnemyStates
     {
@@ -26,6 +23,8 @@ public class PathFinding : MonoBehaviour
 
     void Start()
     {
+        globalAlert = GetComponentInParent<FightingPhaseManager>();
+        Player = GameObject.Find("Perso").GetComponent<Transform>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -56,6 +55,7 @@ public class PathFinding : MonoBehaviour
 
         if (FightingPhase == true ) 
         {
+            globalAlert.hiveMind = true;
             agent.SetDestination(Player.position);
             agent.stoppingDistance = (Random.Range(5f, 8f));
         }
