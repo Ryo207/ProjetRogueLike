@@ -12,6 +12,8 @@ TagManager:
   - Item
   - PassiveItem
   - Parry
+  - Rooms
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

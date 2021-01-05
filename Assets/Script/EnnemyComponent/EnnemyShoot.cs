@@ -14,7 +14,7 @@ public class EnnemyShoot : MonoBehaviour
     delegate void shootFunc();
     shootFunc Shoot;
 
-    [Range(0, 1)]
+    [Range(0, 2)]
     public float shootIntervale;
 
     Vector2 pCDirection;
