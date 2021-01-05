@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerShoot pcShoot;
     public bool isHurt;
     private Rigidbody2D playerBody;
+    public bool isDead;
 
     //Life display
     public Sprite emptyHearth;
@@ -22,17 +23,12 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHearth;
     public Sprite emptyCase;
     public Image[] coeurs;
-    /*public Image coeur1;
-    public Image coeur2;
-    public Image coeur3;
-    public Image coeur4;
-    public Image coeur5;
-    public Image coeur6;*/
 
     public GameObject MenuPause;
 
     private void Start()
     {
+        isDead = false;
         isHurt = false;
         InstantiateScript();
     }
@@ -76,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
     // A finir (Rajout de l'animation de mort
     private void GetDeath()
     {
-
+        isDead = true;
         controller.moveSpeed = 0f;
 
     }

@@ -36,6 +36,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: Health
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsDead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2516213443127587717}
   m_Solo: 0
@@ -1089,6 +1092,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Health
     m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: IsDead
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

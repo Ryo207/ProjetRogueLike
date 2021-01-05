@@ -31,6 +31,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         AttackMilo();
         TurnMilo();
         IsHurt();
+        IsDead();
 
     }
 
@@ -74,7 +75,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
 
     void AttackMilo()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && attackScipt.canAttack == true)
         {
             animator.SetBool("Attack", true);
         }
@@ -87,5 +88,10 @@ public class YT_PCAnimationHandler : MonoBehaviour
     void IsHurt()
     {
         animator.SetBool("IsHurt", healtSystem.isHurt);
+    }
+
+    void IsDead()
+    {
+        animator.SetBool("IsDead", healtSystem.isDead);
     }
 }

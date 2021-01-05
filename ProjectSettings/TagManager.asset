@@ -26,8 +26,8 @@ TagManager:
   - EnnemyBullet
   - Ennemy
   - Wall
-  - NoColision
-  - 
+  - DectetionLayer
+  - Dialogue
   - 
   - 
   - 
