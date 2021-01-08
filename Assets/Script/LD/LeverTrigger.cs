@@ -11,7 +11,6 @@ public class LeverTrigger : MonoBehaviour
     public bool lightMilestone = false;
     public float lightIntensity;
     public YT_RoomTransition roomTransition;
-    public Animator Lumiere;
     public Light2D[] lights;
     public Light2D ambiantLight;
     public Color red;
@@ -26,7 +25,6 @@ public class LeverTrigger : MonoBehaviour
     
     public void Start()
     {
-        Lumiere = GameObject.Find("LeverColor").GetComponent<Animator>();
         chooseColor = Random.Range(1, 3);
         lightIntensity = 0.5f;
 

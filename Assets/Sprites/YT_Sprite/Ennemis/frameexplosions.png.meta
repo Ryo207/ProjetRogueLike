@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: 2c4f088e016a08e42a93ef0381e94455
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5063550682612874951
+    second: frameexplosions_0
+  - first:
+      213: 508466601804577490
+    second: frameexplosions_1
+  - first:
+      213: 7571212245764402464
+    second: frameexplosions_2
+  - first:
+      213: 5219167283769894455
+    second: frameexplosions_3
+  - first:
+      213: 6603046228818446593
+    second: frameexplosions_4
+  - first:
+      213: -6161076423025782268
+    second: frameexplosions_5
+  - first:
+      213: 5971930053192279889
+    second: frameexplosions_6
+  - first:
+      213: -3981767601506530481
+    second: frameexplosions_7
+  - first:
+      213: 3666596674056071059
+    second: frameexplosions_8
+  - first:
+      213: 4311004045229965503
+    second: frameexplosions_9
+  - first:
+      213: -8099604614082018547
+    second: frameexplosions_10
+  - first:
+      213: -1277395046007521765
+    second: frameexplosions_11
+  - first:
+      213: -5250405742928438702
+    second: frameexplosions_12
+  - first:
+      213: 6657353723741249904
+    second: frameexplosions_13
+  - first:
+      213: -6703362827216877390
+    second: frameexplosions_14
+  - first:
+      213: -6041274786776332065
+    second: frameexplosions_15
+  - first:
+      213: 8591674586051332177
+    second: frameexplosions_16
+  - first:
+      213: 8094646027667571023
+    second: frameexplosions_17
+  - first:
+      213: 2530619225629651437
+    second: frameexplosions_18
+  - first:
+      213: 7696836290728784804
+    second: frameexplosions_19
+  - first:
+      213: 7915598876140824411
+    second: frameexplosions_20
+  - first:
+      213: -3468008661280803365
+    second: frameexplosions_21
+  - first:
+      213: 3907931972019595678
+    second: frameexplosions_22
+  - first:
+      213: -919306739739766871
+    second: frameexplosions_23
+  - first:
+      213: -4364883125105235477
+    second: frameexplosions_24
+  - first:
+      213: 3407582308349686736
+    second: frameexplosions_25
+  - first:
+      213: 8577087649506810014
+    second: frameexplosions_26
+  - first:
+      213: -2756800875516893279
+    second: frameexplosions_27
+  - first:
+      213: -6624339504765260765
+    second: frameexplosions_28
+  - first:
+      213: 5011406945966717435
+    second: frameexplosions_29
+  - first:
+      213: -797440460049299929
+    second: frameexplosions_30
+  - first:
+      213: -7486650734526731241
+    second: frameexplosions_31
+  - first:
+      213: 2051698399657553466
+    second: frameexplosions_32
+  - first:
+      213: -4951684009030211924
+    second: frameexplosions_33
+  - first:
+      213: -1485346786992288864
+    second: frameexplosions_34
+  - first:
+      213: -2768801430040616770
+    second: frameexplosions_35
+  - first:
+      213: 7353108303708851650
+    second: frameexplosions_36
+  - first:
+      213: -3866825069591526143
+    second: frameexplosions_4
+  - first:
+      213: -4675133048600521001
+    second: frameexplosions_0
+  - first:
+      213: -1961710088845957312
+    second: frameexplosions_1
+  - first:
+      213: -802530786183941042
+    second: frameexplosions_5
+  - first:
+      213: 6377145021422632825
+    second: frameexplosions_6
+  - first:
+      213: 1864058069606288147
+    second: frameexplosions_7
+  - first:
+      213: 8670740272694956390
+    second: frameexplosions_8
+  - first:
+      213: 5312887506979431318
+    second: frameexplosions_9
+  - first:
+      213: 2191512471043038504
+    second: frameexplosions_10
+  - first:
+      213: -2543088911971593359
+    second: frameexplosions_12
+  - first:
+      213: -8317243772936012138
+    second: frameexplosions_13
+  - first:
+      213: 5438815386379818343
+    second: frameexplosions_14
+  - first:
+      213: 2545820566421084669
+    second: frameexplosions_15
+  - first:
+      213: 4356414980303525505
+    second: frameexplosions_18
+  - first:
+      213: -4397625260881784372
+    second: frameexplosions_19
+  - first:
+      213: 8191504704806649769
+    second: frameexplosions_20
+  - first:
+      213: 109637712505111269
+    second: frameexplosions_21
+  - first:
+      213: -7772065142586328886
+    second: frameexplosions_22
+  - first:
+      213: 1542459957426019372
+    second: frameexplosions_27
+  - first:
+      213: 9101823454890841312
+    second: frameexplosions_28
+  - first:
+      213: -4003049392729824151
+    second: frameexplosions_29
+  - first:
+      213: 7744390222079861331
+    second: frameexplosions_30
+  - first:
+      213: -7057675779883061959
+    second: frameexplosions_31
+  - first:
+      213: 5230580708554428580
+    second: frameexplosions_32
+  - first:
+      213: -1445044779212565337
+    second: frameexplosions_33
+  - first:
+      213: 841530696656941182
+    second: frameexplosions_34
+  - first:
+      213: -370483375756678720
+    second: frameexplosions_35
+  - first:
+      213: -86730137458297974
+    second: frameexplosions_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frameexplosions_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 156
+        width: 70
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ceb35b9488554640800000000000000
+      internalID: 5063550682612874951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frameexplosions_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 174
+        width: 42
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03c68c548c689f80800000000000000
+      internalID: -8099604614082018547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frameexplosions_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 154
+        width: 76
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da36bc2eaf6e0700800000000000000
+      internalID: 508466601804577490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frameexplosions_2
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 160
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02defdb6c69521960800000000000000
+      internalID: 7571212245764402464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frameexplosions_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 156
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736e1740ef43e6840800000000000000
+      internalID: 5219167283769894455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frameexplosions_4
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 156
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1050c662617465ac0800000000000000
+      internalID: -3866825069591526143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
