@@ -11,6 +11,8 @@ public class YT_PCAnimationHandler : MonoBehaviour
     public PlayerAttack attackScipt;
     public PlayerHealth healtSystem;
     public Animator animator;
+    bool pouf;
+    public ParticleSystem dust;
     Vector2 mousePos;
  
 
@@ -31,6 +33,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         AttackMilo();
         TurnMilo();
         IsHurt();
+        IsDead();
 
     }
 
@@ -40,6 +43,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         attackScipt = GetComponent<PlayerAttack>();
         healtSystem = GetComponent<PlayerHealth>();
         animator = GetComponent<Animator>();
+        dust = GetComponentInChildren <ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -54,12 +58,22 @@ public class YT_PCAnimationHandler : MonoBehaviour
         {
             animator.SetBool("Moving", true);
             animator.SetBool("StartTurnAround", false);
+
+            if (controller.movement.x > -1|| controller.movement.x < 1)
+            {
+                if (pouf == true)
+                {
+                    pouf = false;
+                    dust.Play();
+                }
+            }
         }
 
         else if (controller.movement.y == 0 && controller.movement.x == 0)
         {
             animator.SetBool("Moving", false);
             animator.SetBool("StartTurnAround", true);
+            pouf = true;
         }
     }
     void AnimationYAxis()
@@ -74,7 +88,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
 
     void AttackMilo()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && attackScipt.canAttack == true)
         {
             animator.SetBool("Attack", true);
         }
@@ -87,5 +101,10 @@ public class YT_PCAnimationHandler : MonoBehaviour
     void IsHurt()
     {
         animator.SetBool("IsHurt", healtSystem.isHurt);
+    }
+
+    void IsDead()
+    {
+        animator.SetBool("IsDead", healtSystem.isDead);
     }
 }

@@ -45,7 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
   levelMap: {fileID: 0}
+<<<<<<< HEAD
   levelTiles:
   - tileSprite: {fileID: 0}
     importColor: {r: 0, g: 0, b: 0, a: 0}
+=======
+  levelTiles: []
+>>>>>>> 7c3e15dc199a45fa2c5c9ea64cf683568b756ec7
   apply: 0

@@ -26,8 +26,8 @@ TagManager:
   - EnnemyBullet
   - Ennemy
   - Wall
-  - NoColision
-  - 
+  - DectetionLayer
+  - Dialogue
   - 
   - 
   - 
@@ -48,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1800162951
     locked: 0

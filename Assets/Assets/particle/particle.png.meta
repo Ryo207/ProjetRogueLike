@@ -1,61 +1,49 @@
 fileFormatVersion: 2
-guid: a75c394c5751fdb46a726a058d079d35
+guid: deb92fa832ee0c94b986bfc9d35f5687
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8030910649796889189
-    second: attackrightcombo_0
+      213: 6529992565953176737
+    second: particle_0
   - first:
-      213: -1330073896631545398
-    second: attackrightcombo_1
+      213: 8953772972351659839
+    second: particle_1
   - first:
-      213: -1527459800967906503
-    second: attackrightcombo_2
+      213: -5258690764220749821
+    second: particle_2
   - first:
-      213: 2121850332878409318
-    second: attackrightcombo_3
+      213: 1677388449156296112
+    second: particle_3
   - first:
-      213: -2734913536401767064
-    second: attackrightcombo_4
+      213: 4868785843396006557
+    second: particle_4
   - first:
-      213: 5810678261373632009
-    second: attackrightcombo_5
+      213: 4589903271098483578
+    second: particle_5
   - first:
-      213: 5539921767516788353
-    second: attackrightcombo_6
+      213: 6844198670548791726
+    second: particle_6
   - first:
-      213: 7803918815754170340
-    second: attackrightcombo_7
+      213: -4727388148706409852
+    second: particle_7
   - first:
-      213: 2099039478727806083
-    second: attackrightcombo_8
+      213: 5215414837735158918
+    second: particle_8
   - first:
-      213: -2920164564774757865
-    second: attackrightcombo_9
+      213: -4671883342702416803
+    second: particle_9
   - first:
-      213: -7165349891120576051
-    second: attackrightcombo_10
+      213: -5897521074493000882
+    second: particle_10
   - first:
-      213: 2609237564140175028
-    second: attackrightcombo_11
+      213: 3786686572875528537
+    second: particle_11
   - first:
-      213: 8974250429583305192
-    second: attackrightcombo_12
+      213: 939505129172198875
+    second: particle_12
   - first:
-      213: 2059055936940549582
-    second: attackrightcombo_13
-  - first:
-      213: 395090289449974038
-    second: attackrightcombo_14
-  - first:
-      213: -8879621640659996395
-    second: attackrightcombo_15
-  - first:
-      213: 1262764328951306867
-    second: attackrightcombo_16
-  - first:
-      213: -138760088846659758
-    second: attackrightcombo_13
+      213: -3150105313127299945
+    second: particle_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,29 +127,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: attackrightcombo_0
+      name: particle_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 204
-        width: 30
-        height: 43
+        x: 5
+        y: 53
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56a8b08bfa6837f60800000000000000
-      internalID: 8030910649796889189
+      spriteID: 1a4a49f24a13f9a50800000000000000
+      internalID: 6529992565953176737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_1
+      name: particle_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 204
-        width: 52
-        height: 46
+        x: 25
+        y: 51
+        width: 5
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac1d14a86d0aa8de0800000000000000
-      internalID: -1330073896631545398
+      spriteID: f3f93884411324c70800000000000000
+      internalID: 8953772972351659839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_2
+      name: particle_2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 204
-        width: 30
-        height: 41
+        x: 17
+        y: 30
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93b7e92676f5dcae0800000000000000
-      internalID: -1527459800967906503
+      spriteID: 308aef69c906507b0800000000000000
+      internalID: -5258690764220749821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_3
+      name: particle_3
       rect:
         serializedVersion: 2
-        x: 189
-        y: 204
-        width: 46
-        height: 57
+        x: 35
+        y: 28
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66e03cdb2a3527d10800000000000000
-      internalID: 2121850332878409318
+      spriteID: 0bded4648e7474710800000000000000
+      internalID: 1677388449156296112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_4
+      name: particle_4
       rect:
         serializedVersion: 2
-        x: 245
-        y: 204
-        width: 33
-        height: 54
+        x: 8
+        y: 6
+        width: 2
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8658d5bf0a2ab0ad0800000000000000
-      internalID: -2734913536401767064
+      spriteID: d92d11bbde6619340800000000000000
+      internalID: 4868785843396006557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_5
+      name: particle_5
       rect:
         serializedVersion: 2
-        x: 285
-        y: 204
-        width: 27
-        height: 42
+        x: 22
+        y: 16
+        width: 4
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90e7249a71da3a050800000000000000
-      internalID: 5810678261373632009
+      spriteID: a738a3be4bc92bf30800000000000000
+      internalID: 4589903271098483578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_6
+      name: particle_6
       rect:
         serializedVersion: 2
-        x: 322
-        y: 204
-        width: 54
-        height: 41
+        x: 36
+        y: 16
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 186da4cee71c1ec40800000000000000
-      internalID: 5539921767516788353
+      spriteID: ea1f242cd6a7bfe50800000000000000
+      internalID: 6844198670548791726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_7
+      name: particle_7
       rect:
         serializedVersion: 2
-        x: 380
-        y: 204
-        width: 51
-        height: 41
+        x: 22
+        y: 3
+        width: 5
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4efa305e0d61d4c60800000000000000
-      internalID: 7803918815754170340
+      spriteID: 48286f88681f46eb0800000000000000
+      internalID: -4727388148706409852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_8
+      name: particle_8
       rect:
         serializedVersion: 2
-        x: 440
-        y: 204
-        width: 30
-        height: 41
+        x: 38
+        y: 3
+        width: 4
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c8713e849412d10800000000000000
-      internalID: 2099039478727806083
+      spriteID: 68471879920e06840800000000000000
+      internalID: 5215414837735158918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_9
+      name: particle_9
       rect:
         serializedVersion: 2
-        x: 162
-        y: 130
-        width: 54
-        height: 53
+        x: 38
+        y: 51
+        width: 5
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71adaeecccd7977d0800000000000000
-      internalID: -2920164564774757865
+      spriteID: d5c682e3ad22a2fb0800000000000000
+      internalID: -4671883342702416803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_10
+      name: particle_10
       rect:
         serializedVersion: 2
-        x: 224
-        y: 130
-        width: 48
-        height: 59
+        x: 50
+        y: 50
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc9cf58dc309f8c90800000000000000
-      internalID: -7165349891120576051
+      spriteID: e43f67344dbc72ea0800000000000000
+      internalID: -5897521074493000882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_12
+      name: particle_11
       rect:
         serializedVersion: 2
-        x: 286
-        y: 130
-        width: 53
-        height: 52
+        x: 1
+        y: 13
+        width: 13
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e9a5b4d731fa8c70800000000000000
-      internalID: 8974250429583305192
+      spriteID: 959bcf310630d8430800000000000000
+      internalID: 3786686572875528537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_14
+      name: particle_12
       rect:
         serializedVersion: 2
-        x: 122
-        y: 130
-        width: 26
-        height: 40
+        x: 1
+        y: 4
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,29 +397,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6193fd46684ab7500800000000000000
-      internalID: 395090289449974038
+      spriteID: bd567f0ffeac90d00800000000000000
+      internalID: 939505129172198875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attackrightcombo_15
+      name: particle_13
       rect:
         serializedVersion: 2
-        x: 354
-        y: 130
-        width: 49
-        height: 54
+        x: 5
+        y: 30
+        width: 8
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 511f6900a2f35c480800000000000000
-      internalID: -8879621640659996395
+      spriteID: 7940afd58e39844d0800000000000000
+      internalID: -3150105313127299945
       vertices: []
       indices: 
       edges: []
