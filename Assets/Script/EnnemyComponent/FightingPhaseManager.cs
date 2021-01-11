@@ -6,12 +6,15 @@ public class FightingPhaseManager : MonoBehaviour
 {
     [SerializeField]
     PathFinding[] pathfinding;
+    /*[SerializeField]
+    EnnemyView[] coneColor;*/
     
     public bool hiveMind;
 
     private void Start()
     {
         pathfinding = GetComponentsInChildren<PathFinding>();
+        //coneColor = GetComponentsInChildren<EnnemyView>();
         hiveMind = false;
     }
 

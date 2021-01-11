@@ -24,6 +24,8 @@ public class ItemDetection : MonoBehaviour
 
     public Image[] passiveObject;
 
+    public Image[] chargingBarsImage;
+
     int imgIndex;
 
     PlayerController controller;
@@ -36,9 +38,13 @@ public class ItemDetection : MonoBehaviour
 
     PlayerAttack attackCaC;
 
-    GameObject detectionZone;
-
     GameObject player;
+
+    GameObject activeObjectTrigger;
+
+    public int numberOfCharges;
+
+    ItemCharge chargeScript;
 
 
     [SerializeField]
@@ -57,6 +63,7 @@ public class ItemDetection : MonoBehaviour
     }
     void Update()
     {
+
         numberCoins.text = currentCoins.ToString();
     }
 
@@ -107,6 +114,8 @@ public class ItemDetection : MonoBehaviour
         {
             activeObject.sprite = _Scriptable.Artwork;
             activeObject.rectTransform.sizeDelta = new Vector2(activeObject.preferredWidth * 2, activeObject.preferredHeight * 2);
+            numberOfCharges = _Scriptable.numberOfCharges;
+            chargeScript.chargesColor();
             isUsed = true;
         }
 
@@ -171,11 +180,13 @@ public class ItemDetection : MonoBehaviour
 
     void instantiateUIComponent()
     {
+        chargeScript = GetComponentInParent<ItemCharge>();
         itemCollider = GetComponent<CircleCollider2D>();
         imgCacWepon = GameObject.Find("CacWeapon").GetComponent<Image>();
         imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
         activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
         numberCoins = GameObject.Find("CurrentCoins").GetComponent<TMP_Text>();
+        activeObjectTrigger = GameObject.FindGameObjectWithTag("ActiveObject");
         imgIndex = 0;
     }
     void instantiatePlayerComponents()

@@ -30,21 +30,12 @@ public class EnnemyView : MonoBehaviour
     public void Start()
     {
         ennemyDetectionLight = GetComponent<Light2D>();
-
-        if (isRed == true)
-        {
-            ennemyDetectionLight.color = red;
-        }
-
-        if (isBlue == true)
-        {
-            ennemyDetectionLight.color = blue;
-        }
     }
 
     private void FixedUpdate()
     {
         detectionDirection();
+        checkColor();
     }
 
     void detectionDirection()
@@ -80,6 +71,19 @@ public class EnnemyView : MonoBehaviour
             pathFinding.FightingPhase = true;
             print("Hello Sir");
             TilemapDestructor.Raise();
+        }
+    }
+
+    void checkColor()
+    {
+        if (isRed == true)
+        {
+            ennemyDetectionLight.color = red;
+        }
+
+        if (isBlue == true)
+        {
+            ennemyDetectionLight.color = blue;
         }
     }
 }

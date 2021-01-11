@@ -47,13 +47,9 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(impactTime);
         canAttack = false;
-
-        TriggerCac.SetActive(true);
         print("Hello");
 
         yield return new WaitForSeconds(0.1f);
-
-        TriggerCac.SetActive(false);
 
         animHandler.animator.SetBool("Attack", false);
         yield return attack = dontAttack;

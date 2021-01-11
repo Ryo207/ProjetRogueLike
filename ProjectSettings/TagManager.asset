@@ -12,6 +12,8 @@ TagManager:
   - Item
   - PassiveItem
   - Parry
+  - NoDetection
+  - ActiveObject
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - Wall
   - DectetionLayer
   - Dialogue
-  - 
+  - NoDetection
   - 
   - 
   - 

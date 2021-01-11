@@ -31,6 +31,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject parryCollider;
 
+    //variable MGSBox
+    public GameObject player;
+    bool boxIsActive;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        boxIsActive = false;
+    }
+
     void FixedUpdate()
     {
         doPlayerSpeed();
@@ -42,6 +52,7 @@ public class PlayerController : MonoBehaviour
         manageVirtualRawAxis();
         manageVirtualAxis();
         ActivateLever();
+        MGSBox();
     }
 
     private void manageVirtualRawAxis()
@@ -191,5 +202,22 @@ public class PlayerController : MonoBehaviour
         {
             closeToLever = false;
         }
+    }
+
+    void MGSBox()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && boxIsActive == false)
+        {
+            boxIsActive = true;
+            StartCoroutine(nameof(NoDetectionTime));
+        }
+    }
+
+    IEnumerator NoDetectionTime()
+    {
+        player.tag = "NoDetection";
+        yield return new WaitForSeconds(10); //Valeur temporaire à modifier 
+        player.tag = "Player";
+        boxIsActive = false;
     }
 }
