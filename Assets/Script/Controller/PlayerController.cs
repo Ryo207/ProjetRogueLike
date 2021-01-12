@@ -165,11 +165,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
         {
-            if (levertrigger.lightMilestone == false)
+            if (levertrigger.lights[0].color == levertrigger.red)
             {
                 levertrigger.BlueLight();
             }
-            else if (levertrigger.lightMilestone == true)
+            else if (levertrigger.lights[0].color == levertrigger.blue)
             {
                 levertrigger.RedLight();
             }
