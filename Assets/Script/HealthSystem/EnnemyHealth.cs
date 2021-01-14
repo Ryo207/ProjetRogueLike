@@ -11,6 +11,7 @@ public class EnnemyHealth : MonoBehaviour
     EnnemyView ennemyColor;
     public LeverTrigger roomColor;
     bool bonusGiven;
+    public bool isHit;
 
 
     private void Start()
@@ -28,10 +29,15 @@ public class EnnemyHealth : MonoBehaviour
             GetDeath();
         }
 
+        if (isHit == true)
+        {
+            isHit = false;
+        }
         CheckColor();
     }
-    private void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
+        isHit = true;
         EnnemyLife -= damage;
         print(EnnemyLife);
 
@@ -50,8 +56,8 @@ public class EnnemyHealth : MonoBehaviour
 
         if (col.gameObject.CompareTag("PlayerAttack"))
         {
-
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
+            fpManager.hiveMind = true;
         }
     }
 
