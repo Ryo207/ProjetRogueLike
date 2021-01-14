@@ -20,7 +20,7 @@ public class ItemDetection : MonoBehaviour
 
     TMP_Text numberCoins;
 
-    int currentCoins;
+    public int currentCoins;
 
     public Image[] passiveObject;
 

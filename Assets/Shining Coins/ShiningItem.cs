@@ -7,7 +7,7 @@ public class ShiningItem : MonoBehaviour {
 	public float shiningTime = 1f;
 	public float width = 0.2f;
 
-	SpriteRenderer sr;
+	public SpriteRenderer sr;
 	bool isShining = false;
 
 	// Use this for initialization

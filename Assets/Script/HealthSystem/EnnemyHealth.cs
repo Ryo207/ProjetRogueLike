@@ -33,8 +33,6 @@ public class EnnemyHealth : MonoBehaviour
         {
             isHit = false;
         }
-
-        ColorBomb();
         CheckColor();
     }
     public void GetDamage(float damage)
@@ -94,24 +92,6 @@ public class EnnemyHealth : MonoBehaviour
     {
         Instantiate(item, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
-    }
-
-    void ColorBomb()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (ennemyColor.isRed == true && roomColor.lights[0].color == roomColor.blue)
-            {
-                ennemyColor.isBlue = true;
-                ennemyColor.isRed = false;
-            }
-
-            if (ennemyColor.isBlue == true && roomColor.lights[0].color == roomColor.red)
-            {
-                ennemyColor.isRed = true;
-                ennemyColor.isBlue = false;
-            }
-        }
     }
 
 }
