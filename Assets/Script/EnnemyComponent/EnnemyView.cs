@@ -19,6 +19,10 @@ public class EnnemyView : MonoBehaviour
     public Transform pC;
     public float speed = 5f;
 
+
+    private void Start()
+    {
+    }
     private void FixedUpdate()
     {
         detectionDirection();

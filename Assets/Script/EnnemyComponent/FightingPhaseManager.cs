@@ -6,6 +6,7 @@ public class FightingPhaseManager : MonoBehaviour
 {
     [SerializeField]
     PathFinding[] pathfinding;
+    
     public bool hiveMind;
 
     private void Start()

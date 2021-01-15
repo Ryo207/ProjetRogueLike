@@ -21,7 +21,7 @@ public class RoomSpawner : MonoBehaviour
 
     void Spawn()
     {
-        if (spawned == false && roomTemplate.roomCounter > 30f)
+        if (spawned == false && roomTemplate.roomCounter < 10)
         {
 
             if (openingDirection == 1)

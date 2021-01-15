@@ -9,6 +9,8 @@ public class RoomTemplate : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject[] rightRooms;
 
+    public GameObject nonRandomRoom;
+
     public List<GameObject> currentRooms;
 
     public GameObject marketRooms;

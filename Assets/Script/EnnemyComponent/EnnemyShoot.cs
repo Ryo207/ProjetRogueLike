@@ -26,6 +26,7 @@ public class EnnemyShoot : MonoBehaviour
     {
         Shoot = DoShoot;
         perso = GameObject.Find("CenterPC").GetComponent<Transform>();
+        pathFinding = GetComponent<PathFinding>();
     }
 
     void Update()

@@ -12,6 +12,8 @@ public class FirstRoom : MonoBehaviour
     private int rand;
     private bool spawned = false;
 
+    private 
+
 
     void Start()
     {
@@ -23,102 +25,107 @@ public class FirstRoom : MonoBehaviour
 
     void Spawn()
     {
-        if (spawned == false && roomTemplate.stopGeneration == false)
-        {
-            if (openingDirection == 1)
-            {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
-                {
-                    Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
-                    roomTemplate.stopGeneration = true;
-                }
+        /*  if (spawned == false && roomTemplate.stopGeneration == false)
+          {
+              if (openingDirection == 1)
+              {
+                  if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
+                  {
+                      Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
+                      roomTemplate.stopGeneration = true;
+                  }
 
-                else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
-                {
-                    Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
-                    roomTemplate.roomCounter++;
-                }
+                  else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
+                  {
+                      Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
+                      roomTemplate.roomCounter++;
+                  }
 
-                else
-                {
-                    rand = Random.Range(0, templates.bottomRooms.Length);
+                  else
+                  {
+                      rand = Random.Range(0, templates.bottomRooms.Length);
 
-                    Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
-                    roomTemplate.roomCounter++;
-                }
+                      Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                      roomTemplate.roomCounter++;
+                  }
 
-            }
+              }
 
-            else if (openingDirection == 2)
-            {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
-                {
-                    Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
-                    roomTemplate.stopGeneration = true;
-                }
+              else if (openingDirection == 2)
+              {
+                  if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
+                  {
+                      Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
+                      roomTemplate.stopGeneration = true;
+                  }
 
-                else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
-                {
-                    Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
-                    roomTemplate.roomCounter++;
-                }
-                else
-                {
-                    rand = Random.Range(0, templates.topRooms.Length);
+                  else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
+                  {
+                      Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
+                      roomTemplate.roomCounter++;
+                  }
+                  else
+                  {
+                      rand = Random.Range(0, templates.topRooms.Length);
 
-                    Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
-                    roomTemplate.roomCounter++;
-                }
+                      Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                      roomTemplate.roomCounter++;
+                  }
 
-            }
+              }
 
-            else if (openingDirection == 3)
-            {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
-                {
-                    Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
-                    roomTemplate.stopGeneration = true;
-                }
+              else if (openingDirection == 3)
+              {
+                  if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
+                  {
+                      Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
+                      roomTemplate.stopGeneration = true;
+                  }
 
-                else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
-                {
-                    Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
-                    roomTemplate.roomCounter++;
-                }
-                else
-                {
-                    rand = Random.Range(0, templates.leftRooms.Length);
+                  else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
+                  {
+                      Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
+                      roomTemplate.roomCounter++;
+                  }
+                  else
+                  {
+                      rand = Random.Range(0, templates.leftRooms.Length);
 
-                    Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
-                }
+                      Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                  }
 
-            }
+              }
 
-            else if (openingDirection == 4)
-            {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
-                {
-                    Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
-                    roomTemplate.stopGeneration = true;
-                }
+              else if (openingDirection == 4)
+              {
+                  if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss)
+                  {
+                      Instantiate(templates.bossRooms, transform.position, templates.bossRooms.transform.rotation);
+                      roomTemplate.stopGeneration = true;
+                  }
 
-                else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
-                {
-                    Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
-                    roomTemplate.roomCounter++;
-                }
-                else
-                {
-                    rand = Random.Range(0, templates.leftRooms.Length);
+                  else if (roomTemplate.roomCounter == roomTemplate.roomsUntilMarket)
+                  {
+                      Instantiate(templates.marketRooms, transform.position, templates.marketRooms.transform.rotation);
+                      roomTemplate.roomCounter++;
+                  }
+                  else
+                  {
+                      rand = Random.Range(0, templates.leftRooms.Length);
 
-                    Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                      Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
 
-                }
+                  }
 
-            }
-            spawned = true;
-        }
+              }
+              spawned = true;
+          }*/
+
+
+        Instantiate(templates.nonRandomRoom, transform.position, templates.nonRandomRoom.transform.rotation);
+        roomTemplate.roomCounter++;
+
     }
 
- 
+
 }
