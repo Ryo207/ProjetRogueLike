@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FightingPhaseManager : MonoBehaviour
 {
+
+    public static FightingPhaseManager instance;
+    void Awake() => instance = this;
+
     [SerializeField]
     PathFinding[] pathfinding;
     

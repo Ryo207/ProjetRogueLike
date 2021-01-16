@@ -22,6 +22,9 @@ public class EnnemyView : MonoBehaviour
 
     private void Start()
     {
+        fpManager = FightingPhaseManager.instance;
+        pC = PlayerController.instance.transform;
+
     }
     private void FixedUpdate()
     {
