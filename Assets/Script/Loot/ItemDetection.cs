@@ -12,6 +12,8 @@ public class ItemDetection : MonoBehaviour
 
     ConsumablesTypesEnum consumableType;
 
+    activeItem activeName;
+
     Image imgCacWepon;
 
     Image imgDistWeapon;
@@ -45,6 +47,18 @@ public class ItemDetection : MonoBehaviour
     public int numberOfCharges;
 
     ItemCharge chargeScript;
+
+    //intervalle Item Actif
+    public bool ColorBomb;
+    public bool MGSBox;
+    public bool iceFlower;
+    public bool chrono;
+    public bool spinach;
+    public bool mirror;
+    public bool musicBox;
+    public bool fatherWatch;
+    public bool map;
+    public bool remote;
 
 
     [SerializeField]
@@ -116,6 +130,84 @@ public class ItemDetection : MonoBehaviour
             activeObject.rectTransform.sizeDelta = new Vector2(activeObject.preferredWidth * 2, activeObject.preferredHeight * 2);
             numberOfCharges = _Scriptable.numberOfCharges;
             chargeScript.chargesColor();
+            switch (activeName)
+            {
+                case activeItem.colorBomb:
+                    ColorBomb = true;
+                    musicBox = false;
+                    mirror = false;
+                    MGSBox = false;
+                    map = false;
+                    iceFlower = false;
+                    fatherWatch = false;
+                    chrono = false;
+                    break;
+                case activeItem.chrono:
+                    chrono = true;
+                    musicBox = false;
+                    mirror = false;
+                    MGSBox = false;
+                    map = false;
+                    iceFlower = false;
+                    fatherWatch = false;
+                    break;
+                case activeItem.fatherWatch:
+                    fatherWatch = true;
+                    musicBox = false;
+                    mirror = false;
+                    MGSBox = false;
+                    map = false;
+                    iceFlower = false;
+                    chrono = false;
+                    break;
+                case activeItem.iceFlower:
+                    iceFlower = true;
+                    musicBox = false;
+                    mirror = false;
+                    MGSBox = false;
+                    map = false;
+                    fatherWatch = false;
+                    chrono = false;
+                    break;
+                case activeItem.map:
+                    map = true;
+                    musicBox = false;
+                    mirror = false;
+                    MGSBox = false;
+                    iceFlower = false;
+                    fatherWatch = false;
+                    chrono = false;
+                    break;
+                case activeItem.MGSBox:
+                    MGSBox = true;
+                    musicBox = false;
+                    mirror = false;
+                    map = false;
+                    iceFlower = false;
+                    fatherWatch = false;
+                    chrono = false;
+                    break;
+                case activeItem.mirror:
+                    mirror = true;
+                    musicBox = false;
+                    MGSBox = false;
+                    map = false;
+                    iceFlower = false;
+                    fatherWatch = false;
+                    chrono = false;
+                    break;
+                case activeItem.musicBox:
+                    musicBox = true;
+                    mirror = false;
+                    MGSBox = false;
+                    map = false;
+                    iceFlower = false;
+                    fatherWatch = false;
+                    chrono = false;
+                    break;
+                default:
+                    break;
+            }
             isUsed = true;
         }
 

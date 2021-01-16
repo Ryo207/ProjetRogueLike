@@ -11,10 +11,12 @@ public class PlayerShoot : MonoBehaviour
     public static PlayerShoot instance;
     void Awake() => instance = this;
 
-    public float DamageDist = 12.5f;
+    public float DamageDist;
 
     PlayerController playerController;
     public GameObject bulletPrefab;
+    Damager damagePerBullet;
+    bool playOnce;
 
     //Intervalle de tir
     delegate void shootFunc();
@@ -42,6 +44,7 @@ public class PlayerShoot : MonoBehaviour
     {
         LookDirection();
         Shoot();
+        damagePerBullet = bulletPrefab.GetComponent<Damager>();
     }
 
     void LookDirection()
@@ -68,6 +71,12 @@ public class PlayerShoot : MonoBehaviour
             fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
             Shoot = DontShoot;
         }
+    }
+
+    void strengUp()
+    {
+        if (playOnce == true)
+        damagePerBullet.damage *= 2f;
     }
 
     void DontShoot()

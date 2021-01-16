@@ -12,8 +12,8 @@ TagManager:
   - Item
   - PassiveItem
   - Parry
-  - NoDetection
-  - ActiveObject
+  - Rooms
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -28,9 +28,9 @@ TagManager:
   - EnnemyBullet
   - Ennemy
   - Wall
-  - DectetionLayer
-  - Dialogue
-  - NoDetection
+  - NoColision
+  - 
+  - 
   - 
   - 
   - 
@@ -50,7 +50,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Player
-    uniqueID: 1800162951
     locked: 0

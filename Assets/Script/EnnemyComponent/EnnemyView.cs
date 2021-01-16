@@ -3,39 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
 using UnityEngine.Animations;
-using UnityEngine.Experimental.Rendering.Universal;
 
 public class EnnemyView : MonoBehaviour
 {
     [SerializeField]
-    public bool isRed;
-    public bool isBlue;
-
-
-    public Light2D ennemyDetectionLight;
-    public Color blue;
-    public Color red;
-
-    [SerializeField]
     PathFinding pathFinding;
 
     [SerializeField]
-    GameEvent TilemapDestructor;
+    FightingPhaseManager fpManager;
 
+    [SerializeField]
+    GameEvent TilemapDestructor;
 
     public Transform ennemyCenter;
     public Transform pC;
     public float speed = 5f;
 
-    public void Start()
-    {
-        ennemyDetectionLight = GetComponent<Light2D>();
-    }
 
+    private void Start()
+    {
+    }
     private void FixedUpdate()
     {
         detectionDirection();
-        checkColor();
     }
 
     void detectionDirection()
@@ -66,24 +56,12 @@ public class EnnemyView : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.GetComponent<PlayerController>())
         {
             pathFinding.FightingPhase = true;
+            fpManager.hiveMind = true;
             print("Hello Sir");
             TilemapDestructor.Raise();
-        }
-    }
-
-    void checkColor()
-    {
-        if (isRed == true)
-        {
-            ennemyDetectionLight.color = red;
-        }
-
-        if (isBlue == true)
-        {
-            ennemyDetectionLight.color = blue;
         }
     }
 }

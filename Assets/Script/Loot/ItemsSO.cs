@@ -126,6 +126,11 @@ public class ItemsSO : ScriptableObject
     public int coinValue;
 }
 
+public enum activeItem
+{ colorBomb, MGSBox, iceFlower, chrono, spinach, mirror, musicBox, fatherWatch, map, remote
+
+}
+
 public enum ItemTypeEnum
 {
     CacWeapon, DistanceWeapon, Consumables, ActiveItem
