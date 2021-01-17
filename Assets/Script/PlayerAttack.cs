@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         attack = DoAttack;
+        canAttack = true;
         animHandler = GetComponent<YT_PCAnimationHandler>();
     }
     void Update()
@@ -45,13 +46,10 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator cacAttackCoroutine()
     {
         yield return new WaitForSeconds(impactTime);
-
-        TriggerCac.SetActive(true);
+        canAttack = false;
         print("Hello");
 
         yield return new WaitForSeconds(0.1f);
-
-        TriggerCac.SetActive(false);
 
         animHandler.animator.SetBool("Attack", false);
         yield return attack = dontAttack;
@@ -62,12 +60,16 @@ public class PlayerAttack : MonoBehaviour
     void dontAttack()
     {
         StartCoroutine(nameof(AttackIntervale));
+        Debug.Log("Start Coroutine");
     }
 
     IEnumerator AttackIntervale()
     {
         yield return new WaitForSeconds(attackIntervale);
+        canAttack = true;
+        Debug.Log("AttackIntervaleOver");
         yield return attack = DoAttack;
+        StopAllCoroutines();
     }
     //Ancienne construction pour un systeme de combo, à retravailler
 

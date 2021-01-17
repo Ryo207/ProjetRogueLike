@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1843104464388148611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelMap
+      value: 
+      objectReference: {fileID: 2800000, guid: a73720897424b1b4cb9af2ed9affc06b, type: 3}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[0].tileSprite
+      value: 
+      objectReference: {fileID: 11400000, guid: b562ddd059e77d843a31f61c11bd3866,
+        type: 2}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[0].importColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[1].tileSprite
+      value: 
+      objectReference: {fileID: 11400000, guid: 54c06429593509e4fa2e9219cea9a26a,
+        type: 2}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[1].importColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[1].importColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[1].importColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530852464582090419, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: levelTiles.Array.data[1].importColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687008547978787206, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150772241721622569, guid: 294677321b3351e40851deadaeeffd23,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Builder Example
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294677321b3351e40851deadaeeffd23, type: 3}

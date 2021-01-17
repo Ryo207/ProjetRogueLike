@@ -4,16 +4,40 @@ using UnityEngine;
 
 public class EnnemyHealth : MonoBehaviour
 {
-    public float EnnemyLife = 100;
+    public float EnnemyLife;
+    public int normalLife;
     public GameObject item;
     FightingPhaseManager fpManager;
+    EnnemyView ennemyColor;
+    public LeverTrigger roomColor;
+    bool bonusGiven;
+    public bool isHit;
+
 
     private void Start()
     {
         fpManager = GetComponentInParent<FightingPhaseManager>();
+        ennemyColor = GetComponentInChildren<EnnemyView>();
+        roomColor = GameObject.Find("Lever").GetComponent<LeverTrigger>();
+        bonusGiven = true;
     }
-    private void GetDamage(float damage)
+    private void Update()
     {
+        if (EnnemyLife <= 0)
+        {
+            fpManager.hiveMind = true;
+            GetDeath();
+        }
+
+        if (isHit == true)
+        {
+            isHit = false;
+        }
+        CheckColor();
+    }
+    public void GetDamage(float damage)
+    {
+        isHit = true;
         EnnemyLife -= damage;
         print(EnnemyLife);
 
@@ -22,8 +46,8 @@ public class EnnemyHealth : MonoBehaviour
     {
         if (col.gameObject.CompareTag("PlayerAttack"))
         {
-
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
+            fpManager.hiveMind = true;
         }
     }
 
@@ -32,8 +56,35 @@ public class EnnemyHealth : MonoBehaviour
 
         if (col.gameObject.CompareTag("PlayerAttack"))
         {
-
             GetDamage(col.gameObject.GetComponent<Damager>().Damage());
+            fpManager.hiveMind = true;
+        }
+    }
+
+    void CheckColor()
+    {
+        if (ennemyColor.isRed == true && roomColor.lights[0].color == roomColor.red && bonusGiven == true)
+        {
+            bonusGiven = false;
+            EnnemyLife *= 1.35f;
+        }
+
+        else if (ennemyColor.isRed == true && roomColor.lights[0].color == roomColor.blue && EnnemyLife > normalLife)
+        {
+            bonusGiven = true;
+            EnnemyLife = normalLife;
+        }
+
+        if (ennemyColor.isBlue == true && roomColor.lights[0].color == roomColor.blue && bonusGiven == true)
+        {
+            bonusGiven = false;
+            EnnemyLife *= 1.35f;
+        }
+
+        else if (ennemyColor.isBlue == true && roomColor.lights[0].color == roomColor.red && EnnemyLife > normalLife)
+        {
+            bonusGiven = true;
+            EnnemyLife = normalLife;
         }
     }
 
@@ -41,15 +92,6 @@ public class EnnemyHealth : MonoBehaviour
     {
         Instantiate(item, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
-    }
-
-    private void Update()
-    {
-        if (EnnemyLife <= 0)
-        {
-            fpManager.hiveMind = true;
-            GetDeath();
-        }
     }
 
 }

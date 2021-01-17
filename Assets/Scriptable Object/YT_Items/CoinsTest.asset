@@ -44,4 +44,4 @@ MonoBehaviour:
   healingPoints: 0
   speedMultiplication: 0
   damageMultiplication: 0
-  coinValue: 5
+  coinValue: 10

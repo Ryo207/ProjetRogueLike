@@ -22,6 +22,9 @@ public class EnnemyShoot : MonoBehaviour
     public Transform firePoint;
     Transform perso;
 
+    //Variable animator
+    public bool isShooting;
+
     private void Start()
     {
         Shoot = DoShoot;
@@ -40,6 +43,7 @@ public class EnnemyShoot : MonoBehaviour
     private void DoShoot()
     {
         StopCoroutine(nameof(ShootInvervalle));
+        isShooting = true;
 
         pCDirection = (perso.transform.position - transform.position).normalized * bulletForce;
         GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -51,6 +55,7 @@ public class EnnemyShoot : MonoBehaviour
 
     void dontShoot()
     {
+        isShooting = false;
         StartCoroutine(nameof(ShootInvervalle));
     }
 
