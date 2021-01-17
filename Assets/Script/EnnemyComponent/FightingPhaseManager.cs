@@ -4,18 +4,40 @@ using UnityEngine;
 
 public class FightingPhaseManager : MonoBehaviour
 {
+
+    public static FightingPhaseManager instance;
+    void Awake() => instance = this;
+
     [SerializeField]
     PathFinding[] pathfinding;
-    
+    [SerializeField]
+    EnnemyView[] ennemyColor;
+    [SerializeField]
+    LeverTrigger roomColor;
+    [SerializeField]
+    ItemDetection activeItem;
+    [SerializeField]
+    YT_RoomTransition detectPlayer;
     public bool hiveMind;
 
     private void Start()
     {
         pathfinding = GetComponentsInChildren<PathFinding>();
+        ennemyColor = GetComponentsInChildren<EnnemyView>();
+        roomColor = GetComponentInParent<LeverTrigger>();
+        activeItem = GameObject.Find("DetectionZone").GetComponent<ItemDetection>();
+        detectPlayer = GameObject.Find("EnnemisDetection").GetComponent<YT_RoomTransition>();
         hiveMind = false;
     }
 
     private void Update()
+    {
+        DetectHiveMind();
+
+        ColorBomb();
+    }
+
+    void DetectHiveMind()
     {
         if (hiveMind == true)
         {
@@ -23,6 +45,29 @@ public class FightingPhaseManager : MonoBehaviour
             {
                 pathfinding[i].FightingPhase = true;
             }
+        }
+    }
+    void ColorBomb()
+    {
+
+        if (activeItem.ColorBomb == true && detectPlayer.pIsInside == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            for (int i = 0; i < ennemyColor.Length; i++)
+            {
+                if (ennemyColor[i].isRed == true && roomColor.lights[0].color == roomColor.blue)
+                {
+                    ennemyColor[i].isBlue = true;
+                    ennemyColor[i].isRed = false;
+                }
+
+                if (ennemyColor[i].isBlue == true && roomColor.lights[0].color == roomColor.red)
+                {
+                    ennemyColor[i].isRed = true;
+                    ennemyColor[i].isBlue = false;
+                }
+
+            }
+
         }
     }
 }

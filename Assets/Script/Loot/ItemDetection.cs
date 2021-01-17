@@ -42,8 +42,6 @@ public class ItemDetection : MonoBehaviour
 
     GameObject player;
 
-    GameObject activeObjectTrigger;
-
     public int numberOfCharges;
 
     ItemCharge chargeScript;
@@ -102,6 +100,7 @@ public class ItemDetection : MonoBehaviour
     {
         itemType = _Scriptable.itemType;
         consumableType = _Scriptable.consumableType;
+        activeName = _Scriptable.activeItemName;
 
         if (itemType == ItemTypeEnum.CacWeapon)
         {
@@ -130,83 +129,96 @@ public class ItemDetection : MonoBehaviour
             activeObject.rectTransform.sizeDelta = new Vector2(activeObject.preferredWidth * 2, activeObject.preferredHeight * 2);
             numberOfCharges = _Scriptable.numberOfCharges;
             chargeScript.chargesColor();
-            switch (activeName)
+
+            if (_Scriptable.colorBomb == true)
             {
-                case activeItem.colorBomb:
-                    ColorBomb = true;
-                    musicBox = false;
-                    mirror = false;
-                    MGSBox = false;
-                    map = false;
-                    iceFlower = false;
-                    fatherWatch = false;
-                    chrono = false;
-                    break;
-                case activeItem.chrono:
-                    chrono = true;
-                    musicBox = false;
-                    mirror = false;
-                    MGSBox = false;
-                    map = false;
-                    iceFlower = false;
-                    fatherWatch = false;
-                    break;
-                case activeItem.fatherWatch:
-                    fatherWatch = true;
-                    musicBox = false;
-                    mirror = false;
-                    MGSBox = false;
-                    map = false;
-                    iceFlower = false;
-                    chrono = false;
-                    break;
-                case activeItem.iceFlower:
-                    iceFlower = true;
-                    musicBox = false;
-                    mirror = false;
-                    MGSBox = false;
-                    map = false;
-                    fatherWatch = false;
-                    chrono = false;
-                    break;
-                case activeItem.map:
-                    map = true;
-                    musicBox = false;
-                    mirror = false;
-                    MGSBox = false;
-                    iceFlower = false;
-                    fatherWatch = false;
-                    chrono = false;
-                    break;
-                case activeItem.MGSBox:
-                    MGSBox = true;
-                    musicBox = false;
-                    mirror = false;
-                    map = false;
-                    iceFlower = false;
-                    fatherWatch = false;
-                    chrono = false;
-                    break;
-                case activeItem.mirror:
-                    mirror = true;
-                    musicBox = false;
-                    MGSBox = false;
-                    map = false;
-                    iceFlower = false;
-                    fatherWatch = false;
-                    chrono = false;
-                    break;
-                case activeItem.musicBox:
-                    musicBox = true;
-                    mirror = false;
-                    MGSBox = false;
-                    map = false;
-                    iceFlower = false;
-                    fatherWatch = false;
-                    chrono = false;
-                    break;
-                default:
-                    break;
+                ColorBomb = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                Debug.Log("ColorBomb Taken");
+
+            }
+            if(_Scriptable.chrono == true)
+            {
+                chrono = true;
+                ColorBomb = false;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+            }
+            if(_Scriptable.fatherWatch == true)
+            {
+                ColorBomb = false;
+                fatherWatch = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                chrono = false;
+            }
+            if(_Scriptable.iceFlower == true)
+            {
+                ColorBomb = false;
+                iceFlower = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                fatherWatch = false;
+                chrono = false;
+            }
+            if(_Scriptable.map == true)
+            {
+                ColorBomb = false;
+                map = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+            }
+            if(_Scriptable.MGSBox == true)
+            {
+                ColorBomb = false;
+                MGSBox = true;
+                musicBox = false;
+                mirror = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+            }
+            if (_Scriptable.mirror == true)
+            {
+                ColorBomb = false;
+                mirror = true;
+                musicBox = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+            }
+            if (_Scriptable.musicBox == true)
+            {
+                ColorBomb = false;
+                musicBox = true;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
             }
             isUsed = true;
         }
@@ -278,7 +290,6 @@ public class ItemDetection : MonoBehaviour
         imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
         activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
         numberCoins = GameObject.Find("CurrentCoins").GetComponent<TMP_Text>();
-        activeObjectTrigger = GameObject.FindGameObjectWithTag("ActiveObject");
         imgIndex = 0;
     }
     void instantiatePlayerComponents()

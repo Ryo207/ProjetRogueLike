@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Scriptable: {fileID: 11400000, guid: 7b984665a1da85640b089dec767b948e, type: 2}
   spriteRenderer: {fileID: 0}
+  isConstant: 1
 --- !u!50 &-3083518271786664887
 Rigidbody2D:
   serializedVersion: 4

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
   m_Name: ColorBomb
   m_EditorClassIdentifier: 
-  Artwork: {fileID: 21300000, guid: cb4b5b62e5f80424d85f793eee3f7b40, type: 3}
+  Artwork: {fileID: 21300000, guid: 31ea230c9ab44144b9033dc49bfc95c1, type: 3}
   Itemname: Color Bomb
   ID: 1
   Price: 15
@@ -30,6 +30,7 @@ MonoBehaviour:
   impactEffectDistance: 0
   weaponCooldownDistance: 0
   numberOfCharges: 5
+  activeItemName: 0
   colorBomb: 1
   MGSBox: 0
   iceFlower: 0
