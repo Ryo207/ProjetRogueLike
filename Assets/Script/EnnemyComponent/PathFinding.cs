@@ -68,30 +68,32 @@ public class PathFinding : MonoBehaviour
                 }
             }
 
+            if (FightingPhase == false && isPhantom == false && isCrystalSpawner == false)
+            {
+                currentState = EnemyStates.Patrolling;
+            }
+
+            if (currentState == EnemyStates.Patrolling)
+            {
+                if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) <= 0.6f)
+                {
+                    currentWaypoint++;
+                    if (currentWaypoint == waypoints.Length)
+                    {
+                        currentWaypoint = 0;
+                    }
+                    agent.SetDestination(waypoints[currentWaypoint].position);
+
+                }
+            }
         }
+
         if (isCrystalSpawner == true)
         {
             agent.isStopped = true;  
         }
 
-        if (FightingPhase == false && isPhantom == false)
-        {
-            currentState = EnemyStates.Patrolling;
-        }
-
-        if (currentState == EnemyStates.Patrolling && FightingPhase == false && isCrystalSpawner == false && isPhantom == false)
-        {
-            if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) <= 0.6f)
-            {
-                currentWaypoint++;
-                if (currentWaypoint == waypoints.Length)
-                {
-                    currentWaypoint = 0;
-                }
-                agent.SetDestination(waypoints[currentWaypoint].position);
-
-            }
-        }
+    
 
         if (isPhantom == true && FightingPhase == false && isTeleporting == true)
         {
