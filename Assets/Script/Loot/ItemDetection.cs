@@ -40,8 +40,6 @@ public class ItemDetection : MonoBehaviour
 
     GameObject player;
 
-    GameObject activeObjectTrigger;
-
     public int numberOfCharges;
 
     ItemCharge chargeScript;
@@ -186,7 +184,6 @@ public class ItemDetection : MonoBehaviour
         imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
         activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
         numberCoins = GameObject.Find("CurrentCoins").GetComponent<TMP_Text>();
-        activeObjectTrigger = GameObject.FindGameObjectWithTag("ActiveObject");
         imgIndex = 0;
     }
     void instantiatePlayerComponents()

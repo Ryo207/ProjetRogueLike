@@ -30,6 +30,8 @@ public class EnnemyView : MonoBehaviour
     public void Start()
     {
         ennemyDetectionLight = GetComponent<Light2D>();
+        pathFinding = GetComponentInParent<PathFinding>();
+        pC = GameObject.Find("Perso").GetComponent<Transform>();
     }
 
     private void FixedUpdate()
