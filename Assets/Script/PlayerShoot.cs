@@ -16,6 +16,7 @@ public class PlayerShoot : MonoBehaviour
     PlayerController playerController;
     public GameObject bulletPrefab;
     Damager damagePerBullet;
+    public bool shoot;
     bool playOnce;
 
     //Intervalle de tir
@@ -67,6 +68,7 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            shoot = true;
             GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
             Shoot = DontShoot;
@@ -81,6 +83,7 @@ public class PlayerShoot : MonoBehaviour
 
     void DontShoot()
     {
+        shoot = false;
         StartCoroutine(nameof(ShootIntervale));
     }
 

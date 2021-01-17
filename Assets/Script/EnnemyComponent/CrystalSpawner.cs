@@ -13,7 +13,7 @@ public class CrystalSpawner : MonoBehaviour
 
     public GameObject fpManager;
 
-    [Range(0, 2)]
+    [Range(0, 5)]
     public float shootIntervale;
     private bool alreadyShooting;
 

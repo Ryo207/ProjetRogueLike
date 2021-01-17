@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 4038325895236025586}
   - component: {fileID: 1099402797896859202}
   - component: {fileID: 8832854336107893587}
+  - component: {fileID: 1242283666865843360}
   m_Layer: 11
   m_Name: BDC_Crystal
   m_TagString: Ennemy
@@ -471,3 +472,16 @@ MonoBehaviour:
   Phantom: {fileID: 0}
   teleportTime: 1.5
   currentState: 0
+--- !u!114 &1242283666865843360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5539744497119033785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ac3052a95d9bc43b5574fd34eb7fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathFinding: {fileID: 8832854336107893587}

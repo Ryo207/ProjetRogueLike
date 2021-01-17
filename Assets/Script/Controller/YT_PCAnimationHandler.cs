@@ -10,6 +10,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
     public PlayerController controller;
     public PlayerAttack attackScipt;
     public PlayerHealth healtSystem;
+    public PlayerShoot shootScript;
     public Animator animator;
     bool pouf;
     public ParticleSystem dust;
@@ -34,6 +35,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         TurnMilo();
         IsHurt();
         IsDead();
+        doShoot();
 
     }
 
@@ -44,6 +46,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         healtSystem = GetComponent<PlayerHealth>();
         animator = GetComponent<Animator>();
         dust = GetComponentInChildren <ParticleSystem>();
+        shootScript = GetComponent<PlayerShoot>();
     }
 
     private void FixedUpdate()
@@ -106,5 +109,10 @@ public class YT_PCAnimationHandler : MonoBehaviour
     void IsDead()
     {
         animator.SetBool("IsDead", healtSystem.isDead);
+    }
+
+    void doShoot()
+    {
+        animator.SetBool("Shoot", shootScript.shoot);
     }
 }
