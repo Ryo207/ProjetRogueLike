@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7beba286a4d24d49b2023440114e015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnnemyLife: 1
-  normalLife: 0
+  EnnemyLife: 20
+  normalLife: 20
   item: {fileID: 1273961589800361513, guid: dde3ccd521b728c4f8bc7afb7fd79d70, type: 3}
   roomColor: {fileID: 0}
   isHit: 0
@@ -190,11 +190,14 @@ MonoBehaviour:
   - {fileID: 6001624716336014668}
   - {fileID: 6001624715797073230}
   currentWaypoint: 0
-  FightingPhase: 0
+  FightingPhase: 1
   isCrystalSpawner: 0
   isPhantom: 1
   Phantom: {fileID: 1058390542181884386}
   teleportTime: 1.5
+  minimumRange: 0
+  maximumRange: 0.1
+  speed: 7
   currentState: 0
 --- !u!114 &6724597410203181512
 MonoBehaviour:

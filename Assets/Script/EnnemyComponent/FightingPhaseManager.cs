@@ -24,8 +24,6 @@ public class FightingPhaseManager : MonoBehaviour
 
     private void Start()
     {
-        pathfinding = GetComponentsInChildren<PathFinding>();
-        ennemyColor = GetComponentsInChildren<EnnemyView>();
         roomColor = GetComponentInParent<LeverTrigger>();
         itemCharge = GameObject.Find("Perso").GetComponent<ItemCharge>();
         activeItem = GameObject.Find("DetectionZone").GetComponent<ItemDetection>();
@@ -35,6 +33,8 @@ public class FightingPhaseManager : MonoBehaviour
 
     private void Update()
     {
+        pathfinding = GetComponentsInChildren<PathFinding>();
+        ennemyColor = GetComponentsInChildren<EnnemyView>();
         DetectHiveMind();
 
         ColorBomb();

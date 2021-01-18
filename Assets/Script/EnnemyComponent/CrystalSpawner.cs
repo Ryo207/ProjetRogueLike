@@ -20,7 +20,6 @@ public class CrystalSpawner : MonoBehaviour
 
     private void Start()
     {
-
     }
 
 
@@ -35,7 +34,7 @@ public class CrystalSpawner : MonoBehaviour
 
     private void SpawnCrystal()
     {
-
+        
         randfp = Random.Range(0, firePoint.Length);
 
         StopCoroutine(nameof(ShootInvervalle));
