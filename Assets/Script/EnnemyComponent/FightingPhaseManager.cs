@@ -14,14 +14,14 @@ public class FightingPhaseManager : MonoBehaviour
 
     private void Start()
     {
-        pathfinding = GetComponentsInChildren<PathFinding>();
-        ennemyColor = GetComponentsInChildren<EnnemyView>();
         roomColor = GetComponentInParent<LeverTrigger>();
         hiveMind = false;
     }
 
     private void Update()
     {
+        pathfinding = GetComponentsInChildren<PathFinding>();
+        ennemyColor = GetComponentsInChildren<EnnemyView>();
         DetectHiveMind();
         ColorBomb();
     }
