@@ -140,6 +140,7 @@ public class ItemDetection : MonoBehaviour
                 iceFlower = false;
                 fatherWatch = false;
                 chrono = false;
+                spinach = false;
                 Debug.Log("ColorBomb Taken");
 
             }
@@ -153,6 +154,7 @@ public class ItemDetection : MonoBehaviour
                 map = false;
                 iceFlower = false;
                 fatherWatch = false;
+                spinach = false;
             }
             if(_Scriptable.fatherWatch == true)
             {
@@ -164,6 +166,7 @@ public class ItemDetection : MonoBehaviour
                 map = false;
                 iceFlower = false;
                 chrono = false;
+                spinach = false;
             }
             if(_Scriptable.iceFlower == true)
             {
@@ -175,6 +178,7 @@ public class ItemDetection : MonoBehaviour
                 map = false;
                 fatherWatch = false;
                 chrono = false;
+                spinach = false;
             }
             if(_Scriptable.map == true)
             {
@@ -186,6 +190,7 @@ public class ItemDetection : MonoBehaviour
                 iceFlower = false;
                 fatherWatch = false;
                 chrono = false;
+                spinach = false;
             }
             if(_Scriptable.MGSBox == true)
             {
@@ -197,6 +202,8 @@ public class ItemDetection : MonoBehaviour
                 iceFlower = false;
                 fatherWatch = false;
                 chrono = false;
+                spinach = false;
+                Debug.Log("CapeTaken");
             }
             if (_Scriptable.mirror == true)
             {
@@ -208,6 +215,7 @@ public class ItemDetection : MonoBehaviour
                 iceFlower = false;
                 fatherWatch = false;
                 chrono = false;
+                spinach = false;
             }
             if (_Scriptable.musicBox == true)
             {
@@ -219,6 +227,20 @@ public class ItemDetection : MonoBehaviour
                 iceFlower = false;
                 fatherWatch = false;
                 chrono = false;
+                spinach = false;
+            }
+            if (_Scriptable.spinach == true)
+            {
+                spinach = true;
+                ColorBomb = false;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                Debug.Log("Potiondeforce Taken");
             }
             isUsed = true;
         }

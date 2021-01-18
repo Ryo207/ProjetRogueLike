@@ -35,12 +35,16 @@ public class PlayerController : MonoBehaviour
 
     //variable MGSBox
     public GameObject player;
-    bool boxIsActive;
+    [SerializeField]
+    ItemDetection activeItem;
+    [SerializeField]
+    ItemCharge itemCharge;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        boxIsActive = false;
+        activeItem = GetComponentInChildren<ItemDetection>();
+        itemCharge = GetComponent<ItemCharge>();
     }
 
     void FixedUpdate()
@@ -208,9 +212,9 @@ public class PlayerController : MonoBehaviour
 
     void MGSBox()
     {
-        if (Input.GetKeyDown(KeyCode.M) && boxIsActive == false)
+        if (Input.GetKeyDown(KeyCode.Space) && activeItem.MGSBox == true &&  itemCharge.useActiveItem == true)
         {
-            boxIsActive = true;
+            itemCharge.chargesisUsed();
             StartCoroutine(nameof(NoDetectionTime));
         }
     }
@@ -220,6 +224,5 @@ public class PlayerController : MonoBehaviour
         player.tag = "NoDetection";
         yield return new WaitForSeconds(10); //Valeur temporaire à modifier 
         player.tag = "Player";
-        boxIsActive = false;
     }
 }

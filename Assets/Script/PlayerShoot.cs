@@ -35,9 +35,15 @@ public class PlayerShoot : MonoBehaviour
     public Transform centerPC;
     public GameObject Crosshair;
 
+    //variable Epinard
+    ItemCharge itemCharge;
+    ItemDetection activeItem;
+
     private void Start()
     {
         playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
+        itemCharge = GetComponent<ItemCharge>();
+        activeItem = GetComponentInChildren<ItemDetection>();
         Shoot = DoShoot;
     }
 
@@ -45,6 +51,7 @@ public class PlayerShoot : MonoBehaviour
     {
         LookDirection();
         Shoot();
+        strengUp();
         damagePerBullet = bulletPrefab.GetComponent<Damager>();
     }
 
@@ -77,19 +84,22 @@ public class PlayerShoot : MonoBehaviour
 
     void strengUp()
     {
-        if (playOnce == true)
-        damagePerBullet.damage *= 2f;
+        if (Input.GetKeyDown(KeyCode.Space) && activeItem.spinach == true && itemCharge.useActiveItem == true)
+        {
+            itemCharge.chargesisUsed();
+            damagePerBullet.damage *= 2;
+        }
     }
 
     void DontShoot()
     {
-        shoot = false;
         StartCoroutine(nameof(ShootIntervale));
     }
 
     IEnumerator ShootIntervale()
     {
         yield return new WaitForSeconds(shootIntervale);
-       yield return Shoot = DoShoot;
+        shoot = false;
+        yield return Shoot = DoShoot;
     }
 }

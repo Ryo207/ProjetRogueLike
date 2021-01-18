@@ -74,39 +74,38 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public int numberOfCharges;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     [EnumPaging]
-    [EnumToggleButtons]
+    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public activeItem activeItemName;
 
-    [ShowIf("itemType", activeItem.colorBomb)]
+    [ShowIf("activeItemName", activeItem.colorBomb)]
     public bool colorBomb;
 
-    [ShowIf("itemType", activeItem.MGSBox)]
+    [ShowIf("activeItemName", activeItem.MGSBox)]
     public bool MGSBox;
 
-    [ShowIf("itemType", activeItem.iceFlower)]
+    [ShowIf("activeItemName", activeItem.iceFlower)]
     public bool iceFlower;
 
-    [ShowIf("itemType", activeItem.chrono)]
+    [ShowIf("activeItemName", activeItem.chrono)]
     public bool chrono;
 
-    [ShowIf("itemType", activeItem.spinach)]
+    [ShowIf("activeItemName", activeItem.spinach)]
     public bool spinach;
 
-    [ShowIf("itemType", activeItem.mirror)]
+    [ShowIf("activeItemName", activeItem.mirror)]
     public bool mirror;
 
-    [ShowIf("itemType", activeItem.musicBox)]
+    [ShowIf("activeItemName", activeItem.musicBox)]
     public bool musicBox;
 
-    [ShowIf("itemType", activeItem.fatherWatch)]
+    [ShowIf("activeItemName", activeItem.fatherWatch)]
     public bool fatherWatch;
 
-    [ShowIf("itemType", activeItem.map)]
+    [ShowIf("activeItemName", activeItem.map)]
     public bool map;
 
-    [ShowIf("itemType", activeItem.remote)]
+    [ShowIf("activeItemName", activeItem.remote)]
     public bool remote;
 
     [ShowIf("itemType", ItemTypeEnum.Consumables)]

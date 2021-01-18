@@ -18,6 +18,8 @@ public class FightingPhaseManager : MonoBehaviour
     ItemDetection activeItem;
     [SerializeField]
     YT_RoomTransition detectPlayer;
+    [SerializeField]
+    ItemCharge itemCharge;
     public bool hiveMind;
 
     private void Start()
@@ -25,6 +27,7 @@ public class FightingPhaseManager : MonoBehaviour
         pathfinding = GetComponentsInChildren<PathFinding>();
         ennemyColor = GetComponentsInChildren<EnnemyView>();
         roomColor = GetComponentInParent<LeverTrigger>();
+        itemCharge = GameObject.Find("Perso").GetComponent<ItemCharge>();
         activeItem = GameObject.Find("DetectionZone").GetComponent<ItemDetection>();
         detectPlayer = GameObject.Find("EnnemisDetection").GetComponent<YT_RoomTransition>();
         hiveMind = false;
@@ -50,8 +53,9 @@ public class FightingPhaseManager : MonoBehaviour
     void ColorBomb()
     {
 
-        if (activeItem.ColorBomb == true && detectPlayer.pIsInside == true && Input.GetKeyDown(KeyCode.Space))
+        if (activeItem.ColorBomb == true && itemCharge.useActiveItem == true && Input.GetKeyDown(KeyCode.Space))
         {
+            itemCharge.chargesisUsed();
             for (int i = 0; i < ennemyColor.Length; i++)
             {
                 if (ennemyColor[i].isRed == true && roomColor.lights[0].color == roomColor.blue)

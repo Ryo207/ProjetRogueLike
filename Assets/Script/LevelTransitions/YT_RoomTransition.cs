@@ -14,14 +14,15 @@ public class YT_RoomTransition : MonoBehaviour
     public Transform centerRoom;
     public BoxCollider2D ennemisDectetion;
     Collider2D[] playerArray;
-    public 
+    public ItemCharge activeItemCharge;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         ennemisDectetion = GetComponent<BoxCollider2D>();
         centerRoom = transform.parent.GetComponentInParent<Transform>();
         doorsAnimator = GetComponentInParent<YTH_DoorAnimHandler>();
+        activeItemCharge = GameObject.Find("Perso").GetComponent<ItemCharge>();
         Detection();
         allEnnemiesDead = false;
     }
@@ -34,6 +35,12 @@ public class YT_RoomTransition : MonoBehaviour
         if (ennemisLeft == 0)
         {
             OpenDoor();
+            if(allEnnemiesDead == false)
+            {
+                activeItemCharge.itemReady += 1;
+                activeItemCharge.chargeback();
+
+            }
             allEnnemiesDead = true;
         }
 

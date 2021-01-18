@@ -35,7 +35,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         TurnMilo();
         IsHurt();
         IsDead();
-        doShoot();
+        DoShoot();
 
     }
 
@@ -111,7 +111,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         animator.SetBool("IsDead", healtSystem.isDead);
     }
 
-    void doShoot()
+    void DoShoot()
     {
         animator.SetBool("Shoot", shootScript.shoot);
     }

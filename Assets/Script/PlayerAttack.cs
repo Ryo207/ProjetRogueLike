@@ -20,15 +20,25 @@ public class PlayerAttack : MonoBehaviour
 
     public float DamageCaC = 12.5f;
 
+    //variable Epinard
+    ItemCharge itemCharge;
+    ItemDetection activeItem;
+    [SerializeField]
+    Damager damager;
+
     void Start()
     {
         attack = DoAttack;
         canAttack = true;
         animHandler = GetComponent<YT_PCAnimationHandler>();
+        itemCharge = GetComponent<ItemCharge>();
+        activeItem = GetComponentInChildren<ItemDetection>();
+        damager = GetComponentInChildren<Damager>();
     }
     void Update()
     {
         attack();
+        strengUp();
     }
     void DoAttack()
     {
@@ -70,6 +80,14 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log("AttackIntervaleOver");
         yield return attack = DoAttack;
         StopAllCoroutines();
+    }
+
+    void strengUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && activeItem.spinach == true && itemCharge.useActiveItem == true)
+        {
+            damager.damage *= 2;
+        }
     }
     //Ancienne construction pour un systeme de combo, à retravailler
 
