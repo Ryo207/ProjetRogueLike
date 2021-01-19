@@ -12,6 +12,8 @@ public class ItemDetection : MonoBehaviour
 
     ConsumablesTypesEnum consumableType;
 
+    activeItem activeName;
+
     Image imgCacWepon;
 
     Image imgDistWeapon;
@@ -40,11 +42,21 @@ public class ItemDetection : MonoBehaviour
 
     GameObject player;
 
-    GameObject activeObjectTrigger;
-
     public int numberOfCharges;
 
     ItemCharge chargeScript;
+
+    //intervalle Item Actif
+    public bool ColorBomb;
+    public bool MGSBox;
+    public bool iceFlower;
+    public bool chrono;
+    public bool spinach;
+    public bool mirror;
+    public bool musicBox;
+    public bool fatherWatch;
+    public bool map;
+    public bool remote;
 
 
     [SerializeField]
@@ -88,6 +100,7 @@ public class ItemDetection : MonoBehaviour
     {
         itemType = _Scriptable.itemType;
         consumableType = _Scriptable.consumableType;
+        activeName = _Scriptable.activeItemName;
 
         if (itemType == ItemTypeEnum.CacWeapon)
         {
@@ -116,6 +129,119 @@ public class ItemDetection : MonoBehaviour
             activeObject.rectTransform.sizeDelta = new Vector2(activeObject.preferredWidth * 2, activeObject.preferredHeight * 2);
             numberOfCharges = _Scriptable.numberOfCharges;
             chargeScript.chargesColor();
+
+            if (_Scriptable.colorBomb == true)
+            {
+                ColorBomb = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                spinach = false;
+                Debug.Log("ColorBomb Taken");
+
+            }
+            if(_Scriptable.chrono == true)
+            {
+                chrono = true;
+                ColorBomb = false;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                spinach = false;
+            }
+            if(_Scriptable.fatherWatch == true)
+            {
+                ColorBomb = false;
+                fatherWatch = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                chrono = false;
+                spinach = false;
+            }
+            if(_Scriptable.iceFlower == true)
+            {
+                ColorBomb = false;
+                iceFlower = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                fatherWatch = false;
+                chrono = false;
+                spinach = false;
+            }
+            if(_Scriptable.map == true)
+            {
+                ColorBomb = false;
+                map = true;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                spinach = false;
+            }
+            if(_Scriptable.MGSBox == true)
+            {
+                ColorBomb = false;
+                MGSBox = true;
+                musicBox = false;
+                mirror = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                spinach = false;
+                Debug.Log("CapeTaken");
+            }
+            if (_Scriptable.mirror == true)
+            {
+                ColorBomb = false;
+                mirror = true;
+                musicBox = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                spinach = false;
+            }
+            if (_Scriptable.musicBox == true)
+            {
+                ColorBomb = false;
+                musicBox = true;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                spinach = false;
+            }
+            if (_Scriptable.spinach == true)
+            {
+                spinach = true;
+                ColorBomb = false;
+                musicBox = false;
+                mirror = false;
+                MGSBox = false;
+                map = false;
+                iceFlower = false;
+                fatherWatch = false;
+                chrono = false;
+                Debug.Log("Potiondeforce Taken");
+            }
             isUsed = true;
         }
 
@@ -186,7 +312,6 @@ public class ItemDetection : MonoBehaviour
         imgDistWeapon = GameObject.Find("DistWeapon").GetComponent<Image>();
         activeObject = GameObject.Find("ActiveObject").GetComponent<Image>();
         numberCoins = GameObject.Find("CurrentCoins").GetComponent<TMP_Text>();
-        activeObjectTrigger = GameObject.FindGameObjectWithTag("ActiveObject");
         imgIndex = 0;
     }
     void instantiatePlayerComponents()

@@ -11,10 +11,13 @@ public class PlayerShoot : MonoBehaviour
     public static PlayerShoot instance;
     void Awake() => instance = this;
 
-    public float DamageDist = 12.5f;
+    public float DamageDist;
 
     PlayerController playerController;
     public GameObject bulletPrefab;
+    Damager damagePerBullet;
+    public bool shoot;
+    bool playOnce;
 
     //Intervalle de tir
     delegate void shootFunc();
@@ -32,9 +35,15 @@ public class PlayerShoot : MonoBehaviour
     public Transform centerPC;
     public GameObject Crosshair;
 
+    //variable Epinard
+    ItemCharge itemCharge;
+    ItemDetection activeItem;
+
     private void Start()
     {
         playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
+        itemCharge = GetComponent<ItemCharge>();
+        activeItem = GetComponentInChildren<ItemDetection>();
         Shoot = DoShoot;
     }
 
@@ -42,6 +51,8 @@ public class PlayerShoot : MonoBehaviour
     {
         LookDirection();
         Shoot();
+        strengUp();
+        damagePerBullet = bulletPrefab.GetComponent<Damager>();
     }
 
     void LookDirection()
@@ -64,9 +75,19 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            shoot = true;
             GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
             Shoot = DontShoot;
+        }
+    }
+
+    void strengUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && activeItem.spinach == true && itemCharge.useActiveItem == true)
+        {
+            itemCharge.chargesisUsed();
+            damagePerBullet.damage *= 2;
         }
     }
 
@@ -78,6 +99,7 @@ public class PlayerShoot : MonoBehaviour
     IEnumerator ShootIntervale()
     {
         yield return new WaitForSeconds(shootIntervale);
-       yield return Shoot = DoShoot;
+        shoot = false;
+        yield return Shoot = DoShoot;
     }
 }

@@ -11,6 +11,9 @@ public class EnnemyView : MonoBehaviour
     public bool isRed;
     public bool isBlue;
 
+    [SerializeField]
+    FightingPhaseManager fpManager;
+
 
     public Light2D ennemyDetectionLight;
     public Color blue;
@@ -27,9 +30,11 @@ public class EnnemyView : MonoBehaviour
     public Transform pC;
     public float speed = 5f;
 
+
     public void Start()
     {
         ennemyDetectionLight = GetComponent<Light2D>();
+        fpManager = FightingPhaseManager.instance;
     }
 
     private void FixedUpdate()
@@ -40,27 +45,31 @@ public class EnnemyView : MonoBehaviour
 
     void detectionDirection()
     {
-        if (pathFinding.FightingPhase == false)
+        if (pathFinding.isCrystalSpawner == false)
         {
-            Vector2 detectionDirection = pathFinding.waypoints[pathFinding.currentWaypoint].position - ennemyCenter.position;
-            detectionDirection.Normalize();
+            if (pathFinding.FightingPhase == false)
+            {
+                Vector2 detectionDirection = pathFinding.waypoints[pathFinding.currentWaypoint].position - ennemyCenter.position;
+                detectionDirection.Normalize();
 
-            float detectionAngle = Vector2.SignedAngle(Vector2.up, detectionDirection);
+                float detectionAngle = Vector2.SignedAngle(Vector2.up, detectionDirection);
 
-            Quaternion rotation = Quaternion.AngleAxis(detectionAngle, Vector3.forward);
+                Quaternion rotation = Quaternion.AngleAxis(detectionAngle, Vector3.forward);
 
-            ennemyCenter.rotation = Quaternion.Slerp(ennemyCenter.rotation, rotation, speed * Time.deltaTime);
+                ennemyCenter.rotation = Quaternion.Slerp(ennemyCenter.rotation, rotation, speed * Time.deltaTime);
+            }
+
+            if (pathFinding.FightingPhase == true)
+            {
+                Vector2 targetDirection = pC.position - ennemyCenter.position;
+                targetDirection.Normalize();
+
+                float centerAngle = Vector2.SignedAngle(Vector2.up, targetDirection);
+
+                ennemyCenter.rotation = Quaternion.Euler(0f, 0f, centerAngle);
+            }
         }
-
-        if (pathFinding.FightingPhase == true)
-        {
-            Vector2 targetDirection = pC.position - ennemyCenter.position;
-            targetDirection.Normalize();
-
-            float centerAngle = Vector2.SignedAngle(Vector2.up, targetDirection);
-
-            ennemyCenter.rotation = Quaternion.Euler(0f, 0f, centerAngle);
-        }
+       
     }
 
 

@@ -74,56 +74,65 @@ public class ItemsSO : ScriptableObject
     [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
     public int numberOfCharges;
 
+    [EnumPaging]
     [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    public activeItem activeItemName;
+
+    [ShowIf("activeItemName", activeItem.colorBomb)]
     public bool colorBomb;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.MGSBox)]
     public bool MGSBox;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.iceFlower)]
     public bool iceFlower;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.chrono)]
     public bool chrono;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.spinach)]
     public bool spinach;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.mirror)]
     public bool mirror;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.musicBox)]
     public bool musicBox;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.fatherWatch)]
     public bool fatherWatch;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.map)]
     public bool map;
 
-    [ShowIf("itemType", ItemTypeEnum.ActiveItem)]
+    [ShowIf("activeItemName", activeItem.remote)]
     public bool remote;
 
-    [EnumPaging]
     [ShowIf("itemType", ItemTypeEnum.Consumables)]
+    [EnumPaging]
     [EnumToggleButtons]
     public ConsumablesTypesEnum consumableType;
 
-    [EnumPaging]
+    [ShowIf("itemType", ItemTypeEnum.Consumables)]
     [ShowIf("consumableType", ConsumablesTypesEnum.Heal)]
     public int healingPoints;
 
-    [EnumPaging]
+    [ShowIf("itemType", ItemTypeEnum.Consumables)]
     [ShowIf("consumableType", ConsumablesTypesEnum.Speed)]
     public float speedMultiplication;
 
-    [EnumPaging]
+    [ShowIf("itemType", ItemTypeEnum.Consumables)]
     [ShowIf("consumableType", ConsumablesTypesEnum.Strengh)]
     public float damageMultiplication;
 
-    [EnumPaging]
+    [ShowIf("itemType", ItemTypeEnum.Consumables)]
     [ShowIf("consumableType", ConsumablesTypesEnum.Coin)]
     public int coinValue;
+}
+
+public enum activeItem
+{ 
+    colorBomb, MGSBox, iceFlower, chrono, spinach, mirror, musicBox, fatherWatch, map, remote
 }
 
 public enum ItemTypeEnum
