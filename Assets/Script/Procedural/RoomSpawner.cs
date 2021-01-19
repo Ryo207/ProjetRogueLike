@@ -16,17 +16,17 @@ public class RoomSpawner : MonoBehaviour
     void Start()
     {
         roomTemplate = GameObject.Find("RoomTemplate").GetComponent<RoomTemplate>();
-        Invoke("Spawn",0.1f ) ;
+        Invoke("Spawn",0.5f ) ;
     }
 
     void Spawn()
     {
-        if (spawned == false && roomTemplate.roomCounter < 10)
+        if (spawned == false && roomTemplate.roomCounter < 20)
         {
 
             if (openingDirection == 1)
             {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
+                if (roomTemplate.roomCounter >= roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
                 {
                     Instantiate(roomTemplate.bossRooms, transform.position, roomTemplate.bossRooms.transform.rotation);
                     roomTemplate.bossSpawned = true;
@@ -52,7 +52,7 @@ public class RoomSpawner : MonoBehaviour
 
             else if (openingDirection == 2)
             {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
+                if (roomTemplate.roomCounter >= roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
                 {
                     Instantiate(roomTemplate.bossRooms, transform.position, roomTemplate.bossRooms.transform.rotation);
                     roomTemplate.bossSpawned = true;
@@ -76,7 +76,7 @@ public class RoomSpawner : MonoBehaviour
 
             else if (openingDirection == 3)
             {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
+                if (roomTemplate.roomCounter >= roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
                 {
                     Instantiate(roomTemplate.bossRooms, transform.position, roomTemplate.bossRooms.transform.rotation);
                     roomTemplate.bossSpawned = true;
@@ -99,7 +99,7 @@ public class RoomSpawner : MonoBehaviour
 
             else if (openingDirection == 4)
             {
-                if (roomTemplate.roomCounter == roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
+                if (roomTemplate.roomCounter >= roomTemplate.roomsUntilBoss && roomTemplate.bossSpawned == false)
                 {
                     Instantiate(roomTemplate.bossRooms, transform.position, roomTemplate.bossRooms.transform.rotation);
                     roomTemplate.bossSpawned = true;
@@ -129,7 +129,6 @@ public class RoomSpawner : MonoBehaviour
         {
             if (collision.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
-                Instantiate(roomTemplate.marketRooms, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 
 

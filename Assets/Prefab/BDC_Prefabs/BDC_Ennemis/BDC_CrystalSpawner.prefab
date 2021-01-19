@@ -347,7 +347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6631039286920734911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.53, y: 5.58, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5187316482419979319}
@@ -571,4 +571,7 @@ MonoBehaviour:
   isPhantom: 0
   Phantom: {fileID: 0}
   teleportTime: 1.5
+  minimumRange: 0
+  maximumRange: 0
+  speed: 0
   currentState: 0
