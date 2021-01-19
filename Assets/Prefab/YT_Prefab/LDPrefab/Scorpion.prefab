@@ -126,8 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7beba286a4d24d49b2023440114e015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnnemyLife: 1
+  EnnemyLife: 25
+  normalLife: 25
   item: {fileID: 1273961589800361513, guid: dde3ccd521b728c4f8bc7afb7fd79d70, type: 3}
+  roomColor: {fileID: 0}
+  isHit: 0
 --- !u!58 &6099630071174424466
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,6 +184,13 @@ MonoBehaviour:
   waypoints: []
   currentWaypoint: 0
   FightingPhase: 0
+  isCrystalSpawner: 0
+  isPhantom: 0
+  Phantom: {fileID: 0}
+  teleportTime: 1.5
+  minimumRange: 0
+  maximumRange: 0
+  speed: 0
   currentState: 0
 --- !u!114 &9168432826113494452
 MonoBehaviour:
@@ -213,6 +223,7 @@ MonoBehaviour:
   shootIntervale: 0.6
   bulletPrefab: {fileID: 7816432986287666342, guid: 12b264d31db03914da771d3c8d7e434d, type: 3}
   firePoint: {fileID: 9168432825539846805}
+  isShooting: 0
 --- !u!95 &520256655655781984
 Animator:
   serializedVersion: 3
@@ -246,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnnemiAnnimator: {fileID: 520256655655781984}
   centerEnnemy: {fileID: 9168432825368020234}
+  health: {fileID: 0}
+  shoot: {fileID: 0}
 --- !u!1 &9168432825368020234
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,8 +525,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec00ca75ff144b4b8fbfe83a5091170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathFinding: {fileID: 8836471337739252232}
+  isRed: 0
+  isBlue: 0
   fpManager: {fileID: 0}
+  ennemyDetectionLight: {fileID: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  red: {r: 0, g: 0, b: 0, a: 0}
+  pathFinding: {fileID: 8836471337739252232}
   TilemapDestructor: {fileID: 0}
   ennemyCenter: {fileID: 9168432825368020235}
   pC: {fileID: 0}
