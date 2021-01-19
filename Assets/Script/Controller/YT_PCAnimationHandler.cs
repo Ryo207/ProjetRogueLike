@@ -14,6 +14,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
     public Animator animator;
     bool pouf;
     public ParticleSystem dust;
+    public ItemUpgrade itemUpgrade;
     Vector2 mousePos;
  
 
@@ -26,7 +27,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        itemUpgrade = GameObject.Find("Enclume").GetComponent<ItemUpgrade>();
         mousePos = controller.cam.ScreenToWorldPoint(Input.mousePosition);
         DetectMoving();
         AnimationYAxis();
@@ -36,6 +37,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         IsHurt();
         IsDead();
         DoShoot();
+        weaponAnim();
 
     }
 
@@ -114,5 +116,11 @@ public class YT_PCAnimationHandler : MonoBehaviour
     void DoShoot()
     {
         animator.SetBool("Shoot", shootScript.shoot);
+    }
+
+    void weaponAnim()
+    {
+        animator.SetBool("Level2", itemUpgrade.level2);
+        animator.SetBool("Level3", itemUpgrade.level3);
     }
 }

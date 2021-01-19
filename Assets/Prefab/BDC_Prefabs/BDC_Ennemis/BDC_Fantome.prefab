@@ -16,9 +16,8 @@ GameObject:
   - component: {fileID: 8194116213819762940}
   - component: {fileID: 2346350486809316193}
   - component: {fileID: 6724597410203181512}
-  - component: {fileID: 650712215430487468}
   - component: {fileID: 8816373319392289961}
-  - component: {fileID: 5553173459084797465}
+  - component: {fileID: 5873480764348876874}
   m_Layer: 11
   m_Name: BDC_Fantome
   m_TagString: Ennemy
@@ -85,12 +84,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3619703553628116160, guid: c22e42f529a40eb4b880ccbe066ddc4d, type: 3}
+  m_Sprite: {fileID: 5072804657769422887, guid: 74d4bff2839438545ae142fde515c7ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1.1875, y: 2.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -213,24 +212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   type: 2
---- !u!114 &650712215430487468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058390542181884386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ae685576bb5654d9c890f70b3e8ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathFinding: {fileID: 2346350486809316193}
-  bulletForce: 15
-  shootIntervale: 0.6
-  bulletPrefab: {fileID: 7816432986287666342, guid: 12b264d31db03914da771d3c8d7e434d, type: 3}
-  firePoint: {fileID: 8042816633057168008}
-  isShooting: 0
 --- !u!95 &8816373319392289961
 Animator:
   serializedVersion: 3
@@ -241,7 +222,7 @@ Animator:
   m_GameObject: {fileID: 1058390542181884386}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af5a4207fd1321e468d000b2636fb84b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2334711c8939f0c4db2e834347b9af7e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -250,7 +231,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5553173459084797465
+--- !u!114 &5873480764348876874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,13 +240,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1058390542181884386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49b58afaa8decd45a615d6a7bd2f682, type: 3}
+  m_Script: {fileID: 11500000, guid: 5208204c40073684c8ceb4acf6fdd59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnnemiAnnimator: {fileID: 8816373319392289961}
+  EnnemiAnnimator: {fileID: 0}
   centerEnnemy: {fileID: 7225924268202108794}
   health: {fileID: 0}
-  shoot: {fileID: 0}
 --- !u!1 &4857493566482549224
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRed: 0
   isBlue: 0
+  fpManager: {fileID: 0}
   ennemyDetectionLight: {fileID: 0}
   blue: {r: 0, g: 0, b: 0, a: 0}
   red: {r: 0, g: 0, b: 0, a: 0}

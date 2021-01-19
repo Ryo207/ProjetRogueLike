@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
-  m_Name: ArcLourd
+  m_Name: Arbalette
   m_EditorClassIdentifier: 
-  Artwork: {fileID: 21300000, guid: a356965373338ac41b09a263a1448d2b, type: 3}
-  Itemname: Arc Lourd
+  Artwork: {fileID: 21300000, guid: b3c7319a2d7a80748a73ff9121c983ba, type: 3}
+  Itemname: Arbalette
   ID: 2
   Price: 15
   IsPermanent: 1
   description: 
   itemType: 1
   damageCac: 0
-  reachCac: 0
-  rangeCac: 0
   cooldownCac: 0
   ImpactTime: 0
   impactEffectCac: 0
   damageDistance: 18
-  bulletPrefab: {fileID: 7816432986287666342, guid: 3dd4bb831927f7e459c7d67b0ec94223, type: 3}
+  bulletPrefab: {fileID: 7816432986287666342, guid: de4f6819a36e66d478064c32dc28c3dd, type: 3}
   impactEffectDistance: 4
-  weaponCooldownDistance: 1
+  weaponCooldownDistance: 0.4
   numberOfCharges: 0
+  activeItemName: 0
   colorBomb: 0
   MGSBox: 0
   iceFlower: 0

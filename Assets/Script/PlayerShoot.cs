@@ -22,6 +22,7 @@ public class PlayerShoot : MonoBehaviour
     //Intervalle de tir
     delegate void shootFunc();
     shootFunc Shoot;
+    PlayerController controller;
 
     [Range(0, 1)]
     public float shootIntervale;
@@ -45,6 +46,7 @@ public class PlayerShoot : MonoBehaviour
         itemCharge = GetComponent<ItemCharge>();
         activeItem = GetComponentInChildren<ItemDetection>();
         Shoot = DoShoot;
+        controller = GetComponent<PlayerController>();
     }
 
     void Update()
@@ -75,11 +77,18 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            controller.moveSpeed = 0;
             shoot = true;
-            GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
-            Shoot = DontShoot;
+            StartCoroutine(nameof(waitShoot));
         }
+    }
+
+    IEnumerator waitShoot()
+    {
+        Shoot = DontShoot;
+        yield return new WaitForSeconds(0.15f);
+        GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
     }
 
     void strengUp()
@@ -87,8 +96,15 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && activeItem.spinach == true && itemCharge.useActiveItem == true)
         {
             itemCharge.chargesisUsed();
-            damagePerBullet.damage *= 2;
+            StartCoroutine(nameof(damageBoostTimer));
         }
+    }
+    IEnumerator damageBoostTimer()
+    {
+        DamageDist *= 2;
+        yield return new WaitForSeconds(30);
+        DamageDist /= 2;
+
     }
 
     void DontShoot()
@@ -100,6 +116,7 @@ public class PlayerShoot : MonoBehaviour
     {
         yield return new WaitForSeconds(shootIntervale);
         shoot = false;
+        controller.moveSpeed = 8;
         yield return Shoot = DoShoot;
     }
 }

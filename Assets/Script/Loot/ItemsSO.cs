@@ -43,12 +43,6 @@ public class ItemsSO : ScriptableObject
     public float damageCac;
 
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
-    public float reachCac;
-
-    [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
-    public float rangeCac;
-
-    [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
     public float cooldownCac;
 
     [ShowIf("itemType", ItemTypeEnum.CacWeapon)]
