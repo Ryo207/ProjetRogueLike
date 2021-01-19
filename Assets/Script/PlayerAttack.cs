@@ -23,8 +23,6 @@ public class PlayerAttack : MonoBehaviour
     //variable Epinard
     ItemCharge itemCharge;
     ItemDetection activeItem;
-    [SerializeField]
-    Damager damager;
 
     void Start()
     {
@@ -33,7 +31,6 @@ public class PlayerAttack : MonoBehaviour
         animHandler = GetComponent<YT_PCAnimationHandler>();
         itemCharge = GetComponent<ItemCharge>();
         activeItem = GetComponentInChildren<ItemDetection>();
-        damager = GetComponentInChildren<Damager>();
     }
     void Update()
     {
@@ -86,9 +83,21 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && activeItem.spinach == true && itemCharge.useActiveItem == true)
         {
-            damager.damage *= 2;
+            StartCoroutine(nameof(damageBoostTimer));
         }
     }
+    IEnumerator damageBoostTimer()
+    {
+        DamageCaC *= 2;
+        yield return new WaitForSeconds(30);
+        DamageCaC /= 2;
+
+    }
+}
+
+
+
+
     //Ancienne construction pour un systeme de combo, à retravailler
 
 
@@ -123,4 +132,3 @@ public class PlayerAttack : MonoBehaviour
 
         }
     }*/
-}

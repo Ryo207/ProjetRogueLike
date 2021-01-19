@@ -20,8 +20,5 @@ public class ExplosionCrystal : MonoBehaviour
     {
         yield return new WaitForSeconds(delayUntilDestroy);
         Destroy(gameObject);
-        
     }
-
-
 }

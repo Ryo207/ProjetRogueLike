@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Animation_Main_Menu : MonoBehaviour
 {
-    public Animator SplashScreen1;
-    public Animator SplashScreen2;
-    public Animator SplashScreen3;
-    public Animator SplashScreen4;
+    public Animator SplashScreen;
     void Start()
     {
-        
+        SplashScreen = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -18,10 +15,7 @@ public class Animation_Main_Menu : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SplashScreen1.SetBool("Gone", true);
-            SplashScreen2.SetBool("Gone", true);
-            SplashScreen3.SetBool("Gone", true);
-            SplashScreen4.SetBool("Gone", true);
+            SplashScreen.SetBool("Gone", true);
         }
     }
 }

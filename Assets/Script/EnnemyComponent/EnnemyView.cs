@@ -33,6 +33,7 @@ public class EnnemyView : MonoBehaviour
 
     public void Start()
     {
+        pC = GameObject.Find("Perso").GetComponent<Transform>();
         ennemyDetectionLight = GetComponent<Light2D>();
         fpManager = FightingPhaseManager.instance;
     }

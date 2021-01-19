@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
-  m_Name: New Item
+  m_Name: SpeedBoots
   m_EditorClassIdentifier: 
-  Artwork: {fileID: 0}
-  Itemname: 
+  Artwork: {fileID: 21300000, guid: 9a0767c24dddc0c4b8943fb31d26d77c, type: 3}
+  Itemname: Bottes de vitesse
   ID: 0
   Price: 0
-  IsPermanent: 0
+  IsPermanent: 1
   description: 
-  itemType: 0
+  itemType: 2
   damageCac: 0
-  reachCac: 0
-  rangeCac: 0
   cooldownCac: 0
   ImpactTime: 0
   impactEffectCac: 0
@@ -29,7 +27,20 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   impactEffectDistance: 0
   weaponCooldownDistance: 0
-  consumableType: 0
+  numberOfCharges: 0
+  activeItemName: 0
+  colorBomb: 0
+  MGSBox: 0
+  iceFlower: 0
+  chrono: 0
+  spinach: 0
+  mirror: 0
+  musicBox: 0
+  fatherWatch: 0
+  map: 0
+  remote: 0
+  consumableType: 1
   healingPoints: 0
-  speedMultiplication: 0
+  speedMultiplication: 1.5
   damageMultiplication: 0
+  coinValue: 0

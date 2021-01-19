@@ -277,8 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec00ca75ff144b4b8fbfe83a5091170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRed: 0
+  isRed: 1
   isBlue: 0
+  fpManager: {fileID: 0}
   ennemyDetectionLight: {fileID: 0}
   blue: {r: 0, g: 0, b: 0, a: 0}
   red: {r: 0, g: 0, b: 0, a: 0}
@@ -303,11 +304,10 @@ GameObject:
   - component: {fileID: 3739766270525501607}
   - component: {fileID: 2234798497196554643}
   - component: {fileID: 4038325895236025586}
-  - component: {fileID: 1099402797896859202}
   - component: {fileID: 8832854336107893587}
   - component: {fileID: 1242283666865843360}
   - component: {fileID: -3987191324594067940}
-  - component: {fileID: 8071636237507050013}
+  - component: {fileID: 139500817934799537}
   m_Layer: 11
   m_Name: BDC_Crystal
   m_TagString: Ennemy
@@ -371,7 +371,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 3619703553628116160, guid: c22e42f529a40eb4b880ccbe066ddc4d, type: 3}
+  m_Sprite: {fileID: -1939804760465488689, guid: 4b822597357e6ab4db0f8e7c92154513, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -482,7 +482,7 @@ Animator:
   m_GameObject: {fileID: 5539744497119033785}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af5a4207fd1321e468d000b2636fb84b, type: 2}
+  m_Controller: {fileID: 9100000, guid: a96bcfcd98f819a4e8e03c856112f568, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -491,22 +491,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1099402797896859202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539744497119033785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49b58afaa8decd45a615d6a7bd2f682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnnemiAnnimator: {fileID: 4038325895236025586}
-  centerEnnemy: {fileID: 2744569063062224673}
-  health: {fileID: 0}
-  shoot: {fileID: 0}
 --- !u!114 &8832854336107893587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayUntilDestroy: 0.4
---- !u!114 &8071636237507050013
+--- !u!114 &139500817934799537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -566,12 +550,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5539744497119033785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ae685576bb5654d9c890f70b3e8ed1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5208204c40073684c8ceb4acf6fdd59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathFinding: {fileID: 8832854336107893587}
-  bulletForce: 0
-  shootIntervale: 10000
-  bulletPrefab: {fileID: 7816432986287666342, guid: 5603c186167594246b30a6b168e38009, type: 3}
-  firePoint: {fileID: 6276332908069152049}
-  isShooting: 0
+  EnnemiAnnimator: {fileID: 0}
+  centerEnnemy: {fileID: 2744569063062224673}
+  health: {fileID: 0}
