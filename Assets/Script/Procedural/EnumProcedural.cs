@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class EnumProcedural : MonoBehaviour
 {
+
+
+    public roomType type;
+
+    public enum roomType
+    {
+        B_room, BL_room, BLR_room, BR_room, L_room, LR_room, R_room, T_room, TB_room, TBL_room, TBLR_room, TBR_room, TL_room, TLR_room, TR_room, Market_room, Boss_room
+
+    }
+
     public GameObject[] Broom;
-
     public GameObject[] BLroom;
-
     public GameObject[] BLRroom;
     public GameObject[] BRroom;
     public GameObject[] Lroom;
@@ -21,21 +29,17 @@ public class EnumProcedural : MonoBehaviour
     public GameObject[] TLroom;
     public GameObject[] TLRroom;
     public GameObject[] TRroom;
+    public GameObject[] Marketroom;
+    public GameObject[] Bossroom;
 
     private int rand;
 
-    public roomType type;
-
-    public enum roomType
-    {
-        B_room, BL_room, BLR_room, BR_room, L_room, LR_room, R_room, T_room, TB_room, TBL_room, TBLR_room, TBR_room, TL_room, TLR_room, TR_room  
-
-    }
 
     void Start()
     {
         switch (type)
         {
+   
             case roomType.B_room:
                 rand = Random.Range(0, Broom.Length);
                 Instantiate(Broom[rand], transform.position, Broom[rand].transform.rotation);
@@ -95,6 +99,14 @@ public class EnumProcedural : MonoBehaviour
             case roomType.TR_room:
                 rand = Random.Range(0, TRroom.Length);
                 Instantiate(TRroom[rand], transform.position, TRroom[rand].transform.rotation);
+                break;
+            case roomType.Market_room:
+                rand = Random.Range(0, Marketroom.Length);
+                Instantiate(Marketroom[rand], transform.position, Marketroom[rand].transform.rotation);
+                break;
+            case roomType.Boss_room:
+                rand = Random.Range(0, Bossroom.Length);
+                Instantiate(Bossroom[rand], transform.position, Bossroom[rand].transform.rotation);
                 break;
             default:
                 break;

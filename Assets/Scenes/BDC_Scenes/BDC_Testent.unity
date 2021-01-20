@@ -383,8 +383,12 @@ PrefabInstance:
       value: PointDeSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 4595439523606613957, guid: 4e6e903d6ef7bf046ad4c57789bd83c5, type: 3}
+      propertyPath: Marketroom.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595439523606613957, guid: 4e6e903d6ef7bf046ad4c57789bd83c5, type: 3}
       propertyPath: type
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5619532975131976204, guid: 4e6e903d6ef7bf046ad4c57789bd83c5, type: 3}
       propertyPath: m_LocalPosition.x

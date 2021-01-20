@@ -16,6 +16,7 @@ public class PathFinding : MonoBehaviour
 
     public bool isCrystalSpawner;
     public bool isPhantom;
+    public bool isPillar;
 
     public GameObject Phantom;
 
