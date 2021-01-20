@@ -305,6 +305,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5578935539884438509, guid: 6f0fc130b71fc714a8ba97f1c941f31a, type: 3}
   m_PrefabInstance: {fileID: 5578935539855142548}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &61526668 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2518123224907067869, guid: 712faf5a04efd664981513f10636d075, type: 3}
+  m_PrefabInstance: {fileID: 1630764163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &75768747
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +636,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112061312}
   m_CullTransparentMesh: 0
+--- !u!1 &148938445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2518123224907067866, guid: 712faf5a04efd664981513f10636d075, type: 3}
+  m_PrefabInstance: {fileID: 1630764163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &148938446
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148938445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.4321551}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.375, y: 4.6875}
+    newSize: {x: 6.375, y: 4.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.375, y: 7.5518103}
+  m_EdgeRadius: 0
+--- !u!114 &148938447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148938445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769575c56bad65d47a172e6b3bea679c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &154785187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &288359993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8542,7 +8590,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &858736827
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14696,7 +14744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1234498966
 Transform:
   m_ObjectHideFlags: 0
@@ -15815,7 +15863,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1525276140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16217,6 +16265,10 @@ PrefabInstance:
     - target: {fileID: 2518123224907067867, guid: 712faf5a04efd664981513f10636d075, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454035106683454552, guid: 712faf5a04efd664981513f10636d075, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712faf5a04efd664981513f10636d075, type: 3}
@@ -18234,7 +18286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252414785133815767}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.29, y: 2.15, z: 0}
+  m_LocalPosition: {x: 5.67, y: -3.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3252414783789670878}
@@ -18469,7 +18521,11 @@ PrefabInstance:
     - target: {fileID: 3960434902354206664, guid: 4e297b5d51ca75b449c8c90b2aab6bbe, type: 3}
       propertyPath: doors.Array.data[2]
       value: 
-      objectReference: {fileID: 1736417947}
+      objectReference: {fileID: 61526668}
+    - target: {fileID: 3960434902354206664, guid: 4e297b5d51ca75b449c8c90b2aab6bbe, type: 3}
+      propertyPath: doors.Array.data[3]
+      value: 
+      objectReference: {fileID: 61526668}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e297b5d51ca75b449c8c90b2aab6bbe, type: 3}
 --- !u!1001 &4205498424686684518
@@ -18686,7 +18742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[11].second.m_AnimationSpeed
-      value: 5
+      value: 5.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[13].second.m_AnimationSpeed
@@ -18714,11 +18770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[27].second.m_AnimationSpeed
-      value: 5
+      value: 5.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[19].second.m_AnimationSpeed
-      value: 5.0000005
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[17].second.m_AnimationSpeed
@@ -29059,6 +29115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 547988277}
     m_Modifications:
+    - target: {fileID: 2106229661, guid: 54b0e1579f4004246bcd10b63bc4f973, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6713022021195835504, guid: 54b0e1579f4004246bcd10b63bc4f973, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.38

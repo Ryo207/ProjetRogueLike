@@ -24,10 +24,23 @@ public class YTH_DoorAnimHandler : MonoBehaviour
                 openDoor(doors[i]);
             }
         }
+
+        if (ennemisDectection.pIsInside == true)
+        {
+            for(int i = 0; i < numberofDoors; i++)
+            {
+                closeDoor(doors[i]);
+            }
+        }
     }
 
     void openDoor(Animator doors)
     {
         doors.SetBool("IsOpen", true);
+    }
+
+    void closeDoor(Animator doors)
+    {
+        doors.SetBool("PlayerInside", true);
     }
 }

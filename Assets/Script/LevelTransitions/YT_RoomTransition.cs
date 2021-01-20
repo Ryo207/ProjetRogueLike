@@ -5,8 +5,6 @@ using UnityEngine;
 public class YT_RoomTransition : MonoBehaviour
 {
     public int ennemisLeft = 0;
-    public YTH_DoorAnimHandler doorsAnimator;
-    public GameObject door;
     public LayerMask ennemisLayer;
     public LayerMask playerLayer;
     public bool allEnnemiesDead;
@@ -21,7 +19,6 @@ public class YT_RoomTransition : MonoBehaviour
     {
         ennemisDectetion = GetComponent<BoxCollider2D>();
         centerRoom = transform.parent.GetComponentInParent<Transform>();
-        doorsAnimator = GetComponentInParent<YTH_DoorAnimHandler>();
         activeItemCharge = GameObject.Find("Perso").GetComponent<ItemCharge>();
         Detection();
         allEnnemiesDead = false;

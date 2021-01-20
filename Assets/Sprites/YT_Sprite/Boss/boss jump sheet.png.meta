@@ -1,0 +1,490 @@
+fileFormatVersion: 2
+guid: 690a92ea8b80c7647bf032e262b4fb9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5882389979439865585
+    second: boss jump sheet_0
+  - first:
+      213: 8891953302609774724
+    second: boss jump sheet_1
+  - first:
+      213: 1783627608342577616
+    second: boss jump sheet_2
+  - first:
+      213: 6980923793777344933
+    second: boss jump sheet_3
+  - first:
+      213: 5472439100305837
+    second: boss jump sheet_4
+  - first:
+      213: 765667625036399424
+    second: boss jump sheet_5
+  - first:
+      213: -7057470823572303019
+    second: boss jump sheet_6
+  - first:
+      213: -7192592012196333183
+    second: boss jump sheet_7
+  - first:
+      213: 970511080041840855
+    second: boss jump sheet_8
+  - first:
+      213: 3578857043292548288
+    second: boss jump sheet_9
+  - first:
+      213: 2318480450244454522
+    second: boss jump sheet_10
+  - first:
+      213: -234020985768084743
+    second: boss jump sheet_11
+  - first:
+      213: -7950069451045533507
+    second: boss jump sheet_12
+  - first:
+      213: 7610236581724753630
+    second: boss jump sheet_13
+  - first:
+      213: -3963420507518128872
+    second: boss jump sheet_14
+  - first:
+      213: 4851886653973738683
+    second: boss jump sheet_15
+  - first:
+      213: -2070950679930118798
+    second: boss jump sheet_16
+  - first:
+      213: 3129400689797807863
+    second: boss jump sheet_17
+  - first:
+      213: 3851275512288972448
+    second: boss jump sheet_18
+  - first:
+      213: -1179381524273941735
+    second: boss jump sheet_19
+  - first:
+      213: 7566312401456218253
+    second: boss jump sheet_20
+  - first:
+      213: 7219442531756395646
+    second: boss jump sheet_21
+  - first:
+      213: 4259051421519626612
+    second: boss jump sheet_22
+  - first:
+      213: -4559289721666515061
+    second: boss jump sheet_23
+  - first:
+      213: 1489657558491870344
+    second: boss jump sheet_24
+  - first:
+      213: 4679673207179798435
+    second: boss jump sheet_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss jump sheet_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 16
+        width: 100
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f016b2dda7d8d5ea0800000000000000
+      internalID: -5882389979439865585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 17
+        width: 88
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488ca69ca60966b70800000000000000
+      internalID: 8891953302609774724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_2
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 20
+        width: 78
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1c6d61cd7b0c810800000000000000
+      internalID: 1783627608342577616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_3
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 17
+        width: 70
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1cb24343931e060800000000000000
+      internalID: 6980923793777344933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 20
+        width: 70
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1f0a48721731000800000000000000
+      internalID: 5472439100305837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_5
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 20
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043cf46f5a230aa00800000000000000
+      internalID: 765667625036399424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_6
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 20
+        width: 82
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5531a449da3de0e90800000000000000
+      internalID: -7057470823572303019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_7
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 20
+        width: 94
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189b9b24ca7ce2c90800000000000000
+      internalID: -7192592012196333183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_8
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 22
+        width: 94
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d089707fa2f77d00800000000000000
+      internalID: 970511080041840855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_9
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 26
+        width: 94
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc6b5fe487aaa130800000000000000
+      internalID: 3578857043292548288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 26
+        width: 52
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7822878fa5ec2020800000000000000
+      internalID: 2318480450244454522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 24
+        width: 52
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa7e41472790ccf0800000000000000
+      internalID: -234020985768084743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 27
+        width: 52
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5, y: -0.25688073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db80fbe94fdaba190800000000000000
+      internalID: -7950069451045533507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss jump sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 27
+        width: 52
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5192308, y: -0.52293575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede036ea9ddfc9960800000000000000
+      internalID: 7610236581724753630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
