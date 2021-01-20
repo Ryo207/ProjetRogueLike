@@ -8,9 +8,9 @@ public class LootManager : Singleton<LootManager>
     
 
         private void Awake()
-    {
-        CreateSingleton(true);
-    }
+        {
+          CreateSingleton(true);
+        }
 
     void Start()
     {

@@ -30,7 +30,7 @@ public class BuyItem : MonoBehaviour
 
     private void Update()
     {
-        checkIfBuy();
+        CheckIfBuy();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -53,13 +53,14 @@ public class BuyItem : MonoBehaviour
         
     }
 
-    void checkIfBuy()
+    void CheckIfBuy()
     {
         if (itemCost <= coinCount.currentCoins && Input.GetKeyDown(KeyCode.I) && isInside == true)
         {
             Instantiate(item, gameObject.transform.position, Quaternion.identity);
-            Destroy(gameObject);
             Debug.Log("ObjectTaken");
+            coinCount.currentCoins -= itemCost;
+            Destroy(gameObject);
         }
     }
 

@@ -10,9 +10,11 @@ public class YT_PCAnimationHandler : MonoBehaviour
     public PlayerController controller;
     public PlayerAttack attackScipt;
     public PlayerHealth healtSystem;
+    public PlayerShoot shootScript;
     public Animator animator;
     bool pouf;
     public ParticleSystem dust;
+    public ItemUpgrade itemUpgrade;
     Vector2 mousePos;
  
 
@@ -25,7 +27,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        itemUpgrade = GameObject.Find("Enclume").GetComponent<ItemUpgrade>();
         mousePos = controller.cam.ScreenToWorldPoint(Input.mousePosition);
         DetectMoving();
         AnimationYAxis();
@@ -34,6 +36,8 @@ public class YT_PCAnimationHandler : MonoBehaviour
         TurnMilo();
         IsHurt();
         IsDead();
+        DoShoot();
+        weaponAnim();
 
     }
 
@@ -44,6 +48,7 @@ public class YT_PCAnimationHandler : MonoBehaviour
         healtSystem = GetComponent<PlayerHealth>();
         animator = GetComponent<Animator>();
         dust = GetComponentInChildren <ParticleSystem>();
+        shootScript = GetComponent<PlayerShoot>();
     }
 
     private void FixedUpdate()
@@ -106,5 +111,16 @@ public class YT_PCAnimationHandler : MonoBehaviour
     void IsDead()
     {
         animator.SetBool("IsDead", healtSystem.isDead);
+    }
+
+    void DoShoot()
+    {
+        animator.SetBool("Shoot", shootScript.shoot);
+    }
+
+    void weaponAnim()
+    {
+        animator.SetBool("Level2", itemUpgrade.level2);
+        animator.SetBool("Level3", itemUpgrade.level3);
     }
 }

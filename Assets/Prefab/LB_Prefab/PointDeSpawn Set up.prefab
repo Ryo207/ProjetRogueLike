@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1811446064341745217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6876394585663418635}
+  - component: {fileID: 3267094214666230978}
+  m_Layer: 0
+  m_Name: PointDeSpawn Set up
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6876394585663418635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811446064341745217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3267094214666230978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811446064341745217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71816de084f2f9741ac078823e9d69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  Broom:
+  - {fileID: 7850360777778323880, guid: e981669bd6bc03445806933a84ac0a62, type: 3}
+  BLroom:
+  - {fileID: 4561361718455111946, guid: bed32de5cc333a643b383e70e4c54da5, type: 3}
+  - {fileID: 8665236797938149136, guid: d19e9a252f973ae4ba134a4a91fc7fb5, type: 3}
+  - {fileID: 396743132044752286, guid: 06ef38e5be42fca49a3d4d6cd6490f6f, type: 3}
+  - {fileID: 3162279277201366166, guid: 94735b855bf9fdc42b6f09c038a6f2a0, type: 3}
+  - {fileID: 7139713456216126988, guid: 24af783cd164dc347b312d9c753df468, type: 3}
+  - {fileID: 2336125879860280987, guid: 11a4cd266f6f11b4fa088cea627e5f97, type: 3}
+  - {fileID: 5104095571668475512, guid: b9971a9aa00d1d54485dbdf7d06eb237, type: 3}
+  BLRroom: []
+  BRroom: []
+  Lroom:
+  - {fileID: 3168080110954409586, guid: addf289ed3ce24d49a8c0c44324bb6b4, type: 3}
+  - {fileID: 8678272280798214459, guid: 36452bf58006a4f45890a533ba04e0f4, type: 3}
+  - {fileID: 4017155351105459744, guid: 67a7bf90527851442922c6c6e0c35cdf, type: 3}
+  LRroom:
+  - {fileID: 4871762138169841948, guid: c40a3b9d31ae2cb4ea2ffc0aee8caddc, type: 3}
+  - {fileID: 4623594125169482654, guid: c1055e8426ae59e429a6cafcb8025973, type: 3}
+  - {fileID: 6967782534048635027, guid: 3aab08997a85ceb4995f02edeeddc5a0, type: 3}
+  Rroom:
+  - {fileID: 8430646402692915388, guid: 78ff9d75e56a0de42abdd8c4cd2b7062, type: 3}
+  - {fileID: 2517156586216860028, guid: b4f6f1823d2fd4b4a8906a51c21dd780, type: 3}
+  Troom:
+  - {fileID: 7399755087061952085, guid: 46e24bfdd7cc27b42845ecf1425f1e2b, type: 3}
+  - {fileID: 8576213974864638075, guid: b390d3fdf102f9d4493847e8363895cd, type: 3}
+  TBroom:
+  - {fileID: 5117964224424699921, guid: fa62d322a6cb1a94baf1f9d5cd522b44, type: 3}
+  TBLroom: []
+  TBLRroom:
+  - {fileID: 7200351963951569129, guid: 5b36dcbe536155749a2e5e7a9ba1a09e, type: 3}
+  - {fileID: 8439918737924605524, guid: 7f946fae93d3d5d4e80f8be93c26c3f4, type: 3}
+  TBRroom: []
+  TLroom:
+  - {fileID: 5331757269738984985, guid: 4e6ddd6887d077b45a3759b39dbcfd28, type: 3}
+  - {fileID: 6087345771459941196, guid: b0eb185de14b7864d99830136f295626, type: 3}
+  TLRroom:
+  - {fileID: 8230497878270614868, guid: e3b396276f19ae849a549d23e9f2aa3c, type: 3}
+  - {fileID: 5073003264262848225, guid: 51af8e51a125e5d42a62e732d950fc04, type: 3}
+  - {fileID: 7752480946474293328, guid: 6808ea05d73ed524bbb038d5d8daf9c1, type: 3}
+  TRroom: []
+  Marketroom:
+  - {fileID: 6980673568156634385, guid: 2ef458d285c6d694e817a5c6fbdf9e0c, type: 3}
+  Bossroom:
+  - {fileID: 2005877050260117599, guid: b3f4c2577ad285144ba135dc362dd172, type: 3}

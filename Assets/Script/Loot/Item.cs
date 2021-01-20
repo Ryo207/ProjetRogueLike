@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    public bool isConstant;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,9 +22,21 @@ public class Item : MonoBehaviour
         
     }
 
+    private ItemsSO ConstantItem()
+    {
+        return LootManager.Instance.lootTables[0];
+    }
+
     void Start()
     {
-        _Scriptable = GenerateRandomItem();
+        if(isConstant == true)
+        {
+            ConstantItem();
+        }
+        else
+        {
+            _Scriptable = GenerateRandomItem();
+        }
         spriteRenderer.sprite = _Scriptable.Artwork;
 
     }

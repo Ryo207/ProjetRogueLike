@@ -1,0 +1,406 @@
+fileFormatVersion: 2
+guid: 470f2a11035d6f0408c5e2aca2a90887
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 89267075820160159
+    second: "animebossfrontk\xE9kifai_0"
+  - first:
+      213: -1889804776853354985
+    second: "animebossfrontk\xE9kifai_1"
+  - first:
+      213: -8590422288566290021
+    second: "animebossfrontk\xE9kifai_2"
+  - first:
+      213: -4668552981874781289
+    second: "animebossfrontk\xE9kifai_3"
+  - first:
+      213: -2102857763665545333
+    second: "animebossfrontk\xE9kifai_4"
+  - first:
+      213: 2096773171424269626
+    second: "animebossfrontk\xE9kifai_5"
+  - first:
+      213: 5311123992865723346
+    second: "animebossfrontk\xE9kifai_6"
+  - first:
+      213: 7633493160313885347
+    second: "animebossfrontk\xE9kifai_7"
+  - first:
+      213: -703739252277997359
+    second: "animebossfrontk\xE9kifai_8"
+  - first:
+      213: -5116226948677832797
+    second: "animebossfrontk\xE9kifai_9"
+  - first:
+      213: -4889804276625709282
+    second: "animebossfrontk\xE9kifai_10"
+  - first:
+      213: 4589574910282750285
+    second: "animebossfrontk\xE9kifai_11"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_0"
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 5
+        width: 100
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f940668bee32d3100800000000000000
+      internalID: 89267075820160159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_1"
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 14
+        width: 124
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45238096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716c1dc619016c5e0800000000000000
+      internalID: -1889804776853354985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_2"
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 15
+        width: 132
+        height: 81
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46913582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99786b4170b8c880800000000000000
+      internalID: -8590422288566290021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_3"
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 14
+        width: 142
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36538464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793534c4cc7f53fb0800000000000000
+      internalID: -4668552981874781289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_4"
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 13
+        width: 142
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36538464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87fa8f510621d2e0800000000000000
+      internalID: -2102857763665545333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_5"
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 13
+        width: 142
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5, y: 0.34545454}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a351059171c391d10800000000000000
+      internalID: 2096773171424269626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_6"
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 13
+        width: 142
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36538464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3d0d8c127e4b940800000000000000
+      internalID: 5311123992865723346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_7"
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 8
+        width: 116
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51807225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a212e7d59d9fe960800000000000000
+      internalID: 7633493160313885347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_8"
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 8
+        width: 74
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48314607}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0987de0e0db36f0800000000000000
+      internalID: -703739252277997359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_9"
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 4
+        width: 70
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50537634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afe6c572b28ff8b0800000000000000
+      internalID: -5116226948677832797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_10"
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 7
+        width: 78
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17e98eeaece32cb0800000000000000
+      internalID: -4889804276625709282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animebossfrontk\xE9kifai_11"
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 4
+        width: 88
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50537634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49d275701271bf30800000000000000
+      internalID: 4589574910282750285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

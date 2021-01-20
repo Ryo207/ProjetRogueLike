@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab38b0146da240b4ea7c0237f9c3736a, type: 3}
+  m_Name: EpeeLum
+  m_EditorClassIdentifier: 
+  Artwork: {fileID: 21300000, guid: 8815b79bebaec794aae6975534faee13, type: 3}
+  Itemname: "\xE9p\xE9e lumi\xE8re"
+  ID: 0
+  Price: 0
+  IsPermanent: 1
+  description: 
+  itemType: 0
+  damageCac: 26
+  cooldownCac: 0.3
+  ImpactTime: 0
+  impactEffectCac: 4
+  damageDistance: 0
+  bulletPrefab: {fileID: 0}
+  impactEffectDistance: 0
+  weaponCooldownDistance: 0
+  numberOfCharges: 0
+  activeItemName: 0
+  colorBomb: 0
+  MGSBox: 0
+  iceFlower: 0
+  chrono: 0
+  spinach: 0
+  mirror: 0
+  musicBox: 0
+  fatherWatch: 0
+  map: 0
+  remote: 0
+  consumableType: 0
+  healingPoints: 0
+  speedMultiplication: 0
+  damageMultiplication: 0
+  coinValue: 0

@@ -11,14 +11,18 @@ public class PlayerShoot : MonoBehaviour
     public static PlayerShoot instance;
     void Awake() => instance = this;
 
-    public float DamageDist = 12.5f;
+    public float DamageDist;
 
     PlayerController playerController;
     public GameObject bulletPrefab;
+    Damager damagePerBullet;
+    public bool shoot;
+    bool playOnce;
 
     //Intervalle de tir
     delegate void shootFunc();
     shootFunc Shoot;
+    PlayerController controller;
 
     [Range(0, 1)]
     public float shootIntervale;
@@ -32,16 +36,25 @@ public class PlayerShoot : MonoBehaviour
     public Transform centerPC;
     public GameObject Crosshair;
 
+    //variable Epinard
+    ItemCharge itemCharge;
+    ItemDetection activeItem;
+
     private void Start()
     {
         playerController = GameObject.Find("Perso").GetComponent<PlayerController>();
+        itemCharge = GetComponent<ItemCharge>();
+        activeItem = GetComponentInChildren<ItemDetection>();
         Shoot = DoShoot;
+        controller = GetComponent<PlayerController>();
     }
 
     void Update()
     {
         LookDirection();
         Shoot();
+        strengUp();
+        damagePerBullet = bulletPrefab.GetComponent<Damager>();
     }
 
     void LookDirection()
@@ -64,10 +77,34 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
-            Shoot = DontShoot;
+            controller.moveSpeed = 0;
+            shoot = true;
+            StartCoroutine(nameof(waitShoot));
         }
+    }
+
+    IEnumerator waitShoot()
+    {
+        Shoot = DontShoot;
+        yield return new WaitForSeconds(0.15f);
+        GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
+    }
+
+    void strengUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && activeItem.spinach == true && itemCharge.useActiveItem == true)
+        {
+            itemCharge.chargesisUsed();
+            StartCoroutine(nameof(damageBoostTimer));
+        }
+    }
+    IEnumerator damageBoostTimer()
+    {
+        DamageDist *= 2;
+        yield return new WaitForSeconds(30);
+        DamageDist /= 2;
+
     }
 
     void DontShoot()
@@ -78,6 +115,8 @@ public class PlayerShoot : MonoBehaviour
     IEnumerator ShootIntervale()
     {
         yield return new WaitForSeconds(shootIntervale);
-       yield return Shoot = DoShoot;
+        shoot = false;
+        controller.moveSpeed = 8;
+        yield return Shoot = DoShoot;
     }
 }

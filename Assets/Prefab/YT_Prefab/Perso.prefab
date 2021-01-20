@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6141741dfd61fa244a2c377c0b138a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   type: 0
 --- !u!1 &6451700436848314387
 GameObject:
@@ -289,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6451700437337457684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.59, y: -6.81, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6451700436848314386}
@@ -383,14 +384,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rb: {fileID: 6451700437337457683}
-  animHandler: {fileID: 6451700437337457691}
   movement: {x: 0, y: 0}
+  xAxisSensitivity: 0
+  yAxisSensitivity: 0
+  xAccelerationFrame: 0
+  xDecelerationFrame: 0
+  yAccelerationFrame: 0
+  yDecelerationFrame: 0
   cam: {fileID: 0}
-  TriggerCac: {fileID: 6451700435993051678}
-  DamageCaC: 5
-  DamageDist: 10
   closeToLever: 0
   levertrigger: {fileID: 0}
+  parryCollider: {fileID: 0}
+  player: {fileID: 0}
+  activeItem: {fileID: 0}
+  itemCharge: {fileID: 0}
 --- !u!61 &6451700437337457903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -429,8 +436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f20ef148fa99c4c8916b468b95bda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageDist: 0
   bulletPrefab: {fileID: 7816432986287666342, guid: de4f6819a36e66d478064c32dc28c3dd, type: 3}
-  perso: {fileID: 6451700437337457684}
+  shoot: 0
   shootIntervale: 0.3
   bulletForce: 15
   firePoint: {fileID: 6451700436999425473}
@@ -468,19 +476,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerLife: 100
+  maxPlayerLife: 100
   controller: {fileID: 6451700437337457680}
   animHandler: {fileID: 6451700437337457691}
   pcShoot: {fileID: 6451700437337457902}
+  isHurt: 0
+  isDead: 0
   emptyHearth: {fileID: 21300000, guid: bab2070d1e6babc45893ea1e7f85fb8e, type: 3}
   halfHearth: {fileID: 21300000, guid: 22e8511b40d62ee49906036f8063b4da, type: 3}
   fullHearth: {fileID: 21300000, guid: 3f659129d9017b140bcb923ab6c6b7f0, type: 3}
   emptyCase: {fileID: 21300000, guid: 21e40f9469dd8a74e8854f1a470f936b, type: 3}
-  coeur1: {fileID: 0}
-  coeur2: {fileID: 0}
-  coeur3: {fileID: 0}
-  coeur4: {fileID: 0}
-  coeur5: {fileID: 0}
-  coeur6: {fileID: 0}
+  coeurs: []
   MenuPause: {fileID: 0}
 --- !u!114 &6451700437337457691
 MonoBehaviour:
@@ -494,5 +500,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6176541906c574d489a3c93f7ff909c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerPc: {fileID: 0}
   controller: {fileID: 6451700437337457680}
+  attackScipt: {fileID: 0}
+  healtSystem: {fileID: 0}
+  shootScript: {fileID: 0}
   animator: {fileID: 6451700437337457901}
+  dust: {fileID: 0}
+  itemUpgrade: {fileID: 0}

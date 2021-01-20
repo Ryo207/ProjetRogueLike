@@ -14,22 +14,20 @@ public class ItemCharge : MonoBehaviour
     public Sprite whiteCase;
     public Sprite emptyCase;
 
-    bool useActiveItem;
+    public bool useActiveItem;
+
+    public int itemReady;
 
 
 
     private void Start()
     {
         activeItem = GetComponentInChildren<ItemDetection>();
+        useActiveItem = true;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            useActiveItem = true;
-            chargesisUsed();
-        }
     }
     public void chargesColor()
     {
@@ -37,17 +35,35 @@ public class ItemCharge : MonoBehaviour
         {
             chargingBarsImage[i].sprite = whiteCase;
             chargingBarsImage[i].color = green;
+            useActiveItem = true;
+        }
+
+        for (int i = activeItem.numberOfCharges; i < chargingBarsImage.Length; i++)
+        {
+            chargingBarsImage[i].sprite = emptyCase;
         }
     }
 
-    void chargesisUsed()
+    public void chargesisUsed()
     {
-        if (useActiveItem == true)
+        for (int i = 0; i < activeItem.numberOfCharges; i++)
         {
-            for (int i = 0; i < activeItem.numberOfCharges; i++)
-            {
-                chargingBarsImage[i].color = white;
-            }
+            chargingBarsImage[i].color = white;
+            useActiveItem = false;
+            itemReady = -1;
+        }
+    }
+
+    public void chargeback()
+    {
+        if(itemReady <= chargingBarsImage.Length)
+        {
+            chargingBarsImage[itemReady].color = green;
+        }
+        if(itemReady == chargingBarsImage.Length)
+        {
+            useActiveItem = true;
+            Debug.Log("CanUseItem");
         }
     }
 }

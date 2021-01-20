@@ -5,19 +5,21 @@ using UnityEngine;
 public class YT_RoomTransition : MonoBehaviour
 {
     public int ennemisLeft = 0;
-    public YTH_DoorAnimHandler doorsAnimator;
-    public GameObject door;
     public LayerMask ennemisLayer;
+    public LayerMask playerLayer;
     public bool allEnnemiesDead;
+    public bool pIsInside;
     public Transform centerRoom;
     public BoxCollider2D ennemisDectetion;
+    Collider2D[] playerArray;
+    public ItemCharge activeItemCharge;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         ennemisDectetion = GetComponent<BoxCollider2D>();
         centerRoom = transform.parent.GetComponentInParent<Transform>();
-        doorsAnimator = GetComponentInParent<YTH_DoorAnimHandler>();
+        activeItemCharge = GameObject.Find("Perso").GetComponent<ItemCharge>();
         Detection();
         allEnnemiesDead = false;
     }
@@ -30,24 +32,49 @@ public class YT_RoomTransition : MonoBehaviour
         if (ennemisLeft == 0)
         {
             OpenDoor();
+            if(allEnnemiesDead == false)
+            {
+                activeItemCharge.itemReady += 1;
+                activeItemCharge.chargeback();
+
+            }
             allEnnemiesDead = true;
         }
+
+        isInside();
         
     }
 
     void Detection()
     {
         Collider2D[] ennemisDetectionZone = Physics2D.OverlapBoxAll(centerRoom.position, ennemisDectetion.size, centerRoom.rotation.x, ennemisLayer);
+        Collider2D[] playerDetectionZone = Physics2D.OverlapBoxAll(centerRoom.position, ennemisDectetion.size, centerRoom.rotation.x, playerLayer);
 
+        playerArray = playerDetectionZone;
         ennemisLeft = ennemisDetectionZone.Length;
     }
 
-    /*private void OnDrawGizmos()
+    private void isInside()
+    {
+        if (playerArray == null || playerArray.Length == 0)
+        {
+            pIsInside = false;
+        }
+        for (int i = 0; i < playerArray.Length; i++)
+        {
+            if (playerArray[i] != null)
+            {
+                pIsInside = true;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
         Gizmos.DrawWireCube(centerRoom.position, ennemisDectetion.size);
-    }*/
+    }
 
     void OpenDoor()
     {
