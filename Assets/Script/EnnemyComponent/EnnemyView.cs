@@ -46,7 +46,7 @@ public class EnnemyView : MonoBehaviour
 
     void detectionDirection()
     {
-        if (pathFinding.isCrystalSpawner == false)
+        if (pathFinding.isCrystalSpawner == false &! pathFinding.isPillar == true)
         {
             if (pathFinding.FightingPhase == false)
             {
@@ -72,6 +72,7 @@ public class EnnemyView : MonoBehaviour
         }
        
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D col)
