@@ -281,8 +281,8 @@ MonoBehaviour:
   isBlue: 0
   fpManager: {fileID: 0}
   ennemyDetectionLight: {fileID: 0}
-  blue: {r: 0, g: 0, b: 0, a: 0}
-  red: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0.627451, b: 1, a: 1}
+  red: {r: 1, g: 0.11372549, b: 0, a: 1}
   pathFinding: {fileID: 8832854336107893587}
   TilemapDestructor: {fileID: 11400000, guid: a30cb9b5a43c6854c86b0d60d08ca8e8, type: 2}
   ennemyCenter: {fileID: 6276332908069152049}
@@ -509,6 +509,7 @@ MonoBehaviour:
   FightingPhase: 0
   isCrystalSpawner: 0
   isPhantom: 0
+  isPillar: 0
   Phantom: {fileID: 0}
   teleportTime: 1.5
   minimumRange: 0

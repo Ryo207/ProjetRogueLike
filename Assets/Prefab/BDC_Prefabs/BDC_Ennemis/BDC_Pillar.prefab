@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 903004415858021394}
   - component: {fileID: 6875488767384081462}
   - component: {fileID: 6875488767384081465}
+  - component: {fileID: 8466117764499747743}
   m_Layer: 11
   m_Name: BDC_Pillar
   m_TagString: Ennemy
@@ -330,7 +331,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: db6374c26fcdd1e40945331dd06a8f56, type: 3}
+  m_Sprite: {fileID: 2136416847804729536, guid: e579b163eb74ee742954957034232175, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -476,3 +477,22 @@ MonoBehaviour:
   - {fileID: 4219410421594800128}
   - {fileID: 4219410420386702779}
   isShooting: 0
+--- !u!95 &8466117764499747743
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875488767384081464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 431908d487845d64e8f114ba5ff57c2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

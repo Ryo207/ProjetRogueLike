@@ -32,8 +32,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058390542181884386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.599168, y: -6.922147, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534332558166752618}
@@ -184,6 +184,7 @@ MonoBehaviour:
   FightingPhase: 1
   isCrystalSpawner: 0
   isPhantom: 1
+  isPillar: 0
   Phantom: {fileID: 1058390542181884386}
   teleportTime: 1.5
   minimumRange: 0
@@ -425,9 +426,9 @@ MonoBehaviour:
   isRed: 0
   isBlue: 0
   fpManager: {fileID: 0}
-  ennemyDetectionLight: {fileID: 0}
-  blue: {r: 0, g: 0, b: 0, a: 0}
-  red: {r: 0, g: 0, b: 0, a: 0}
+  ennemyDetectionLight: {fileID: 8446692520764140999}
+  blue: {r: 0, g: 0.627451, b: 1, a: 1}
+  red: {r: 1, g: 0.11372549, b: 0, a: 1}
   pathFinding: {fileID: 2346350486809316193}
   TilemapDestructor: {fileID: 11400000, guid: a30cb9b5a43c6854c86b0d60d08ca8e8, type: 2}
   ennemyCenter: {fileID: 1534332558166752618}
