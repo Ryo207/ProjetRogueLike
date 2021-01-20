@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8423128678905559296}
   - component: {fileID: 8423128678905559303}
   - component: {fileID: 8423128678905559298}
+  - component: {fileID: 2996858181931133462}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -112,7 +113,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9331e6d18e699f41806e50e8def73af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightMilestone: 1
-  Lumiere: {fileID: 0}
+  isRed: 0
+  isBlue: 0
+  lightIntensity: 0
+  roomTransition: {fileID: 0}
+  lights: []
+  ambiantLight: {fileID: 0}
+  red: {r: 1, g: 0.113484085, b: 0, a: 1}
+  blue: {r: 0, g: 0.6293888, b: 1, a: 1}
   stopLever: 0
-  pathFinding: {fileID: 0}
+  ennemiDetection: {fileID: 0}
+--- !u!95 &2996858181931133462
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8423128678905559302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ee49c914dc8a9a4dba269745ae192e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

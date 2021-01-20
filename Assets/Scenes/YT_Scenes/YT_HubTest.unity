@@ -17349,7 +17349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123474770f5bdb34a95121d6d58e206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 154785188}
+  - {fileID: 93645059}
+  - {fileID: 1602715015}
+  - {fileID: 925031279}
   currentWaypoint: 0
   FightingPhase: 0
   isCrystalSpawner: 0
@@ -18065,7 +18069,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3125, y: 2.5}
+    oldSize: {x: 1.375, y: 2.4375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -18710,11 +18714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[27].second.m_AnimationSpeed
-      value: 5.0000005
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[19].second.m_AnimationSpeed
-      value: 5
+      value: 5.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 4727489555740398700, guid: fd82f7449d8be904eabe6cb6e918b1bd, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[17].second.m_AnimationSpeed
@@ -28222,7 +28226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.063520834, y: 0.90529627}
   m_AnchorMax: {x: 0.063520834, y: 0.90529627}
-  m_AnchoredPosition: {x: -121.19943, y: 107.5}
+  m_AnchoredPosition: {x: -121.19919, y: 107.5}
   m_SizeDelta: {x: 243, y: 207}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &5297171107819395076
@@ -29260,43 +29264,43 @@ PrefabInstance:
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[0]
       value: 
-      objectReference: {fileID: 597148341}
+      objectReference: {fileID: 915322657}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[1]
       value: 
-      objectReference: {fileID: 898732363}
+      objectReference: {fileID: 1498182357}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[2]
       value: 
-      objectReference: {fileID: 915322657}
+      objectReference: {fileID: 2808890143424733203}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[3]
       value: 
-      objectReference: {fileID: 1498182357}
+      objectReference: {fileID: 26256110}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[4]
       value: 
-      objectReference: {fileID: 2808890143424733203}
+      objectReference: {fileID: 597148341}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[5]
       value: 
-      objectReference: {fileID: 26256110}
+      objectReference: {fileID: 869643586}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[6]
       value: 
-      objectReference: {fileID: 869643586}
+      objectReference: {fileID: 898732363}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[7]
       value: 
-      objectReference: {fileID: 635286053}
+      objectReference: {fileID: 1546581138}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[8]
       value: 
-      objectReference: {fileID: 1546581138}
+      objectReference: {fileID: 1439881271}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[9]
       value: 
-      objectReference: {fileID: 1439881271}
+      objectReference: {fileID: 635286053}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: lights.Array.data[10]
       value: 
@@ -29318,38 +29322,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1964738082}
     - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: red.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: red.g
-      value: 0.113484085
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: red.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: red.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: blue.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: blue.g
-      value: 0.6293888
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: blue.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
-      propertyPath: blue.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: ambiantLight
       value: 
       objectReference: {fileID: 1964738082}
@@ -29361,6 +29333,10 @@ PrefabInstance:
       propertyPath: roomTransition
       value: 
       objectReference: {fileID: 367928367}
+    - target: {fileID: 8423128678905559298, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
+      propertyPath: isRed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8423128678905559302, guid: 4f1dd7744e49fa94cb790437e84b828a, type: 3}
       propertyPath: m_Name
       value: Lever
