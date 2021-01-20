@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
         Movement();
         manageVirtualRawAxis();
         manageVirtualAxis();
-        ActivateLever();
         MGSBox();
     }
 
@@ -176,38 +175,6 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = virtualXRawAxis;
         movement.y = virtualYRawAxis;
-    }
-
-    void ActivateLever()
-    {
-        if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
-        {
-            if (levertrigger.lights[0].color == levertrigger.red)
-            {
-                levertrigger.BlueLight();
-            }
-            else if (levertrigger.lights[0].color == levertrigger.blue)
-            {
-                levertrigger.RedLight();
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<LeverTrigger>())
-        {
-            closeToLever = true;
-
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<LeverTrigger>())
-        {
-            closeToLever = false;
-        }
     }
 
     void MGSBox()

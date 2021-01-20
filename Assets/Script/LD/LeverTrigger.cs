@@ -8,14 +8,16 @@ public class LeverTrigger : MonoBehaviour
 {
     //public UnityEngine.Experimental.Rendering.Universal.Light2D GlobalLight;
 
-    public bool lightMilestone = false;
+    public bool isRed;
+    public bool isBlue;
     public float lightIntensity;
     public YT_RoomTransition roomTransition;
     public Light2D[] lights;
     public Light2D ambiantLight;
     public Color red;
     public Color blue;
-    float chooseColor;
+    bool closeToLever;
+    Animator leverAnim;
 
     public bool stopLever; //Relier directement le script au pathfinding, ce sera plus simple dans l'autre sens.
 
@@ -25,14 +27,14 @@ public class LeverTrigger : MonoBehaviour
     
     public void Start()
     {
-        chooseColor = Random.Range(1, 3);
+        leverAnim = GetComponent<Animator>();
         lightIntensity = 0.5f;
 
-        if (chooseColor == 1)
+        if (isRed == true)
         {
             RedLight();
         }
-        else if (chooseColor == 2)
+        else if (isBlue == true)
         {
             BlueLight();
         }
@@ -53,9 +55,48 @@ public class LeverTrigger : MonoBehaviour
         }
     }
 
+    void ActivateLever()
+    {
+        if (Input.GetKeyDown(KeyCode.T) && closeToLever == true)
+        {
+            if (isRed == true)
+            {
+                BlueLight();
+                isRed = false;
+                isBlue = true;
+            }
+            else if (isBlue == true)
+            {
+                RedLight();
+                isBlue = false;
+                isRed = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            closeToLever = true;
+            Debug.Log("Close To Lever");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            closeToLever = false;
+        }
+    }
+
     private void Update()
     {
+        ActivateLever();
         ambiantLight.intensity = lightIntensity;
+        leverAnim.SetBool("IsRed", isRed);
+        leverAnim.SetBool("IsBlue", isBlue);
 
         if (ennemiDetection.hiveMind == true )
         {
@@ -68,7 +109,6 @@ public class LeverTrigger : MonoBehaviour
             {
                 lightIntensity -= Time.deltaTime;
             }
-
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
