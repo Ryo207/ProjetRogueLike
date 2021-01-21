@@ -74,6 +74,7 @@ public class PathFindingBoss : MonoBehaviour
             case EnemyStates.Patrolling:
                 agent.SetDestination(Player.position);
                 agent.stoppingDistance = (Random.Range(minimumRange, maximumRange));
+                StartCoroutine(nameof(StateManager));
                 print("PatrollingEffectué");
                 break;
             case EnemyStates.Jump:

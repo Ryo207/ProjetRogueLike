@@ -1796,7 +1796,7 @@ Tilemap:
       - {fileID: -4453628274939628172, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
       - {fileID: -1026503192004843020, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
       - {fileID: 7002252761513847822, guid: 6bfbe3050a58f6342918ec9f53e36555, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 9, z: 0}
@@ -2071,7 +2071,7 @@ Tilemap:
       - {fileID: -6335110320106800805, guid: b536299151a2840409c3b690a24b134a, type: 3}
       - {fileID: 2658587838794060576, guid: b536299151a2840409c3b690a24b134a, type: 3}
       - {fileID: 8384667410778899175, guid: b536299151a2840409c3b690a24b134a, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 32, y: 16, z: 0}
@@ -2588,7 +2588,7 @@ Tilemap:
       - {fileID: 8062599979729859474, guid: 74d4e7a54b791504188981555e3b8cb9, type: 3}
       - {fileID: -7802985892790294729, guid: 74d4e7a54b791504188981555e3b8cb9, type: 3}
       - {fileID: 7496732844810515631, guid: 74d4e7a54b791504188981555e3b8cb9, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: 22, z: 0}
@@ -25975,7 +25975,11 @@ PrefabInstance:
     - target: {fileID: 6674664318459133758, guid: 5df31d5cdfbe1434bb6a12e41a4365a9, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: f3cf4b6ad0415614cb7eea508edcbe1c, type: 2}
+      objectReference: {fileID: 23800000, guid: 76de11c325b91a4428188377a641596e, type: 2}
+    - target: {fileID: 6674664318459133758, guid: 5df31d5cdfbe1434bb6a12e41a4365a9, type: 3}
+      propertyPath: m_UseMeshPrefab
+      value: 
+      objectReference: {fileID: 6110368084382945349, guid: 0f48c9d4e7d2d7e4aa8b9ef3bc318071, type: 3}
     - target: {fileID: 6674664318459133759, guid: 5df31d5cdfbe1434bb6a12e41a4365a9, type: 3}
       propertyPath: m_Name
       value: NavMesh
