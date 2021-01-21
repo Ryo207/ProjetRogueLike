@@ -350,6 +350,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xCoordinates: 0
   yCoordinates: -31.8
+  pC: {fileID: 0}
+  xPCCoordinates: 0
+  yPCCoordinates: -20
 --- !u!1 &2808890144147926956
 GameObject:
   m_ObjectHideFlags: 0

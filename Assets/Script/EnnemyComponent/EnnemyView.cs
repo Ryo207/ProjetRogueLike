@@ -81,7 +81,6 @@ public class EnnemyView : MonoBehaviour
         {
             pathFinding.FightingPhase = true;
             print("Hello Sir");
-            TilemapDestructor.Raise();
         }
     }
 

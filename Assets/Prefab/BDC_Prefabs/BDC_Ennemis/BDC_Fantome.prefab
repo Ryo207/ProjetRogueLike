@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   currentWaypoint: 0
-  FightingPhase: 1
+  FightingPhase: 0
   isCrystalSpawner: 0
   isPhantom: 1
   isPillar: 0

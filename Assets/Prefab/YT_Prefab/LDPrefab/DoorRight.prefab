@@ -179,6 +179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xCoordinates: 45
   yCoordinates: 0
+  pC: {fileID: 0}
+  xPCCoordinates: 25
+  yPCCoordinates: 0
 --- !u!61 &2334935120318220854
 BoxCollider2D:
   m_ObjectHideFlags: 0
