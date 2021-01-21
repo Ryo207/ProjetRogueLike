@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6876394585663418635}
   - component: {fileID: 3267094214666230978}
+  - component: {fileID: 781567744}
   m_Layer: 0
   m_Name: PointDeSpawn Set up
   m_TagString: Untagged
@@ -43,19 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71816de084f2f9741ac078823e9d69af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 14
+  type: 7
   Broom:
   - {fileID: 7850360777778323880, guid: e981669bd6bc03445806933a84ac0a62, type: 3}
+  - {fileID: 8576213974864638075, guid: f8a8ace08e760f94e8a1fe9e2045f517, type: 3}
   BLroom:
-  - {fileID: 4561361718455111946, guid: bed32de5cc333a643b383e70e4c54da5, type: 3}
-  - {fileID: 8665236797938149136, guid: d19e9a252f973ae4ba134a4a91fc7fb5, type: 3}
   - {fileID: 396743132044752286, guid: 06ef38e5be42fca49a3d4d6cd6490f6f, type: 3}
-  - {fileID: 3162279277201366166, guid: 94735b855bf9fdc42b6f09c038a6f2a0, type: 3}
   - {fileID: 7139713456216126988, guid: 24af783cd164dc347b312d9c753df468, type: 3}
-  - {fileID: 2336125879860280987, guid: 11a4cd266f6f11b4fa088cea627e5f97, type: 3}
   - {fileID: 5104095571668475512, guid: b9971a9aa00d1d54485dbdf7d06eb237, type: 3}
-  BLRroom: []
-  BRroom: []
+  BLRroom:
+  - {fileID: 4561361718455111946, guid: bed32de5cc333a643b383e70e4c54da5, type: 3}
+  BRroom:
+  - {fileID: 3162279277201366166, guid: 94735b855bf9fdc42b6f09c038a6f2a0, type: 3}
   Lroom:
   - {fileID: 3168080110954409586, guid: addf289ed3ce24d49a8c0c44324bb6b4, type: 3}
   - {fileID: 8678272280798214459, guid: 36452bf58006a4f45890a533ba04e0f4, type: 3}
@@ -71,8 +71,10 @@ MonoBehaviour:
   - {fileID: 7399755087061952085, guid: 46e24bfdd7cc27b42845ecf1425f1e2b, type: 3}
   - {fileID: 8576213974864638075, guid: b390d3fdf102f9d4493847e8363895cd, type: 3}
   TBroom:
-  - {fileID: 5117964224424699921, guid: fa62d322a6cb1a94baf1f9d5cd522b44, type: 3}
-  TBLroom: []
+  - {fileID: 5117964224424699921, guid: f821e5a10a90c05479b6b579072a0ac8, type: 3}
+  TBLroom:
+  - {fileID: 8665236797938149136, guid: d19e9a252f973ae4ba134a4a91fc7fb5, type: 3}
+  - {fileID: 2336125879860280987, guid: 11a4cd266f6f11b4fa088cea627e5f97, type: 3}
   TBLRroom:
   - {fileID: 7200351963951569129, guid: 5b36dcbe536155749a2e5e7a9ba1a09e, type: 3}
   - {fileID: 8439918737924605524, guid: 7f946fae93d3d5d4e80f8be93c26c3f4, type: 3}
@@ -84,8 +86,60 @@ MonoBehaviour:
   - {fileID: 8230497878270614868, guid: e3b396276f19ae849a549d23e9f2aa3c, type: 3}
   - {fileID: 5073003264262848225, guid: 51af8e51a125e5d42a62e732d950fc04, type: 3}
   - {fileID: 7752480946474293328, guid: 6808ea05d73ed524bbb038d5d8daf9c1, type: 3}
-  TRroom: []
+  TRroom:
+  - {fileID: 5117964224424699921, guid: fa62d322a6cb1a94baf1f9d5cd522b44, type: 3}
   Marketroom:
   - {fileID: 6980673568156634385, guid: 2ef458d285c6d694e817a5c6fbdf9e0c, type: 3}
   Bossroom:
   - {fileID: 2005877050260117599, guid: b3f4c2577ad285144ba135dc362dd172, type: 3}
+--- !u!212 &781567744
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811446064341745217}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 393ba3f82126ef7408392c0d2537f2df, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 64, y: 64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
