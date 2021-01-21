@@ -299,6 +299,7 @@ public class ItemDetection : MonoBehaviour
             else if (consumableType == ConsumablesTypesEnum.Coin)
             {
                 currentCoins += _Scriptable.coinValue;
+                FindObjectOfType<AudioManager>().Play("LootGold");
                 isUsed = true;
             }
         }

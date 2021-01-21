@@ -60,6 +60,7 @@ public class ItemUpgrade : MonoBehaviour
             level2 = true;
             Instantiate(swordLvL2, gameObject.transform.position, Quaternion.identity);
             Instantiate(distLvL2, gameObject.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("Upgrade");
             Debug.Log("Level2 Taken");
             itemD.currentCoins -= necessaryCoinsPhase1;
             isInside = false;
@@ -76,6 +77,7 @@ public class ItemUpgrade : MonoBehaviour
             level3 = true;
             Instantiate(swordLvL3, gameObject.transform.position, Quaternion.identity);
             Instantiate(distLvL3, gameObject.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("Upgrade");
             Debug.Log("Level3 Taken");
             itemD.currentCoins -= necessaryCoinsPhase2;
             isInside = false;

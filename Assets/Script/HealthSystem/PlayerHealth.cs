@@ -56,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
     private void GetDamage(float damage)
     {
         PlayerLife -= damage;
+        FindObjectOfType<AudioManager>().Play("MiloHit");
         print(PlayerLife);
 
     }

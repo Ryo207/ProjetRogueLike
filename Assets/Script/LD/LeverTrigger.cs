@@ -62,12 +62,14 @@ public class LeverTrigger : MonoBehaviour
         {
             if (isRed == true)
             {
+                FindObjectOfType<AudioManager>().Play("Levier");
                 BlueLight();
                 isRed = false;
                 isBlue = true;
             }
             else if (isBlue == true)
             {
+                FindObjectOfType<AudioManager>().Play("Levier");
                 RedLight();
                 isBlue = false;
                 isRed = true;

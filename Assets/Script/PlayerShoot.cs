@@ -87,6 +87,7 @@ public class PlayerShoot : MonoBehaviour
     {
         Shoot = DontShoot;
         yield return new WaitForSeconds(0.15f);
+        FindObjectOfType<AudioManager>().Play("Tirer");
         GameObject fireBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         fireBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletForce;
     }

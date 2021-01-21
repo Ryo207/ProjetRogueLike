@@ -58,6 +58,7 @@ public class BuyItem : MonoBehaviour
         if (itemCost <= coinCount.currentCoins && Input.GetKeyDown(KeyCode.I) && isInside == true)
         {
             Instantiate(item, gameObject.transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("Paid");
             Debug.Log("ObjectTaken");
             coinCount.currentCoins -= itemCost;
             Destroy(gameObject);
