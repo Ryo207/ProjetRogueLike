@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3619703553628116160, guid: c22e42f529a40eb4b880ccbe066ddc4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -181,7 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123474770f5bdb34a95121d6d58e206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentWaypoint: 0
   FightingPhase: 0
   isCrystalSpawner: 0
@@ -191,7 +195,7 @@ MonoBehaviour:
   teleportTime: 1.5
   minimumRange: 0
   maximumRange: 0
-  speed: 0
+  speed: 3
   currentState: 0
 --- !u!114 &9168432826113494452
 MonoBehaviour:
