@@ -50,19 +50,26 @@ public class PathFindingBoss : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-       
 
+        if (currentState == EnemyStates.Patrolling && currentState == EnemyStates.AttackCac)
+        {
+            agent.SetDestination(Player.position);
+            agent.stoppingDistance = (Random.Range(minimumRange, maximumRange));
+
+
+        }
     }
 
     private IEnumerator StateManager()
     {
-
+        yield return new WaitForSeconds(timeBetweenState);
         currentState = EnemyStates.Patrolling;
     
         ChooseState();
-        yield return new WaitForSeconds(timeBetweenState);
+        
+
 
     } 
 
@@ -72,24 +79,22 @@ public class PathFindingBoss : MonoBehaviour
         switch (currentState)
         {
             case EnemyStates.Patrolling:
-                agent.SetDestination(Player.position);
-                agent.stoppingDistance = (Random.Range(minimumRange, maximumRange));
+              
                 StartCoroutine(nameof(StateManager));
                 print("PatrollingEffectué");
                 break;
             case EnemyStates.Jump:
                 break;
             case EnemyStates.AttackCac:
-                agent.SetDestination(Player.position);
-                agent.stoppingDistance = (Random.Range(minimumRange, maximumRange));
-                griffe.StartCoroutine(nameof(griffe.AttackCac));
                 print("AttackCacEffectué");
                 break;
             case EnemyStates.Laser:
+
                 break;
             case EnemyStates.Awake:
                 wakeUp.StartCoroutine(nameof(wakeUp.DoShoot));
                 rand = Random.Range(0, 1f);
+                StartCoroutine(nameof(StateManager));
                 print("AwakeEffectué");
                 break;
                 
