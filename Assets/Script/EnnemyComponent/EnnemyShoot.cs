@@ -47,7 +47,7 @@ public class EnnemyShoot : MonoBehaviour
 
         pCDirection = (perso.transform.position - transform.position).normalized * bulletForce;
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < firePoint.Length; i++)
         {
             GameObject fireBullet = Instantiate(bulletPrefab, firePoint[i].position, firePoint[i].rotation);
             fireBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(pCDirection.x, pCDirection.y);

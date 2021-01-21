@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6606524366941554255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6606524366941554253}
+  - component: {fileID: 6606524366941554252}
+  m_Layer: 8
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6606524366941554253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606524366941554255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8730888, y: 2.472273, z: 0}
+  m_LocalScale: {x: 2.525201, y: 1.0191387, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6606524366941554252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606524366941554255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b4af0922e6aee42bd59dac17db2e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: FootSteps
+    clip: {fileID: 8300000, guid: 8f1fcbad9cfee154c979fc9447ed993a, type: 3}
+    volume: 0.16
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Slide
+    clip: {fileID: 8300000, guid: 0a9c72f4d2d036741941f3c0897556e1, type: 3}
+    volume: 0.16
+    volumeVariance: 0
+    pitch: 1.6
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: ClickInterface
+    clip: {fileID: 8300000, guid: 576440401f1aef94a86d68c6a13ab47a, type: 3}
+    volume: 0.22
+    volumeVariance: 0
+    pitch: 1.6
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: JumpSound
+    clip: {fileID: 8300000, guid: 380f278ece6f0174d9153efee6ba845d, type: 3}
+    volume: 0.22
+    volumeVariance: 0.5
+    pitch: 1.3
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SpawnNighmare
+    clip: {fileID: 8300000, guid: 8d1b1777a46c71d41932dc62024371be, type: 3}
+    volume: 0.605
+    volumeVariance: 0.554
+    pitch: 0.905
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: 2dcbb2fd3d5cdcf4ba80367e40050180, type: 3}
+    volume: 0.9
+    volumeVariance: 0.5
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: OpenDoor
+    clip: {fileID: 8300000, guid: 1bad83bf8d3ead448b335d6b7a6fe8a3, type: 3}
+    volume: 0.55
+    volumeVariance: 0.3
+    pitch: 0.8
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PickUpKey
+    clip: {fileID: 8300000, guid: 88c1ce380e84a274eb55e25cacf3f15a, type: 3}
+    volume: 0.55
+    volumeVariance: 0.3
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Thunder
+    clip: {fileID: 8300000, guid: d3741bc7074a174479c4e0ec751dd370, type: 3}
+    volume: 0.2
+    volumeVariance: 0.493
+    pitch: 1
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 50bd4d47a76be514f94ab525a1b6663c, type: 3}
+    volume: 0.08
+    volumeVariance: 0.25
+    pitch: 0.9
+    pitchVariance: 0.192
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Run
+    clip: {fileID: 8300000, guid: 8f1fcbad9cfee154c979fc9447ed993a, type: 3}
+    volume: 0.18
+    volumeVariance: 0.2
+    pitch: 1.25
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Epic Music
+    clip: {fileID: 8300000, guid: 1a4c8c31dde844442802091014508244, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}

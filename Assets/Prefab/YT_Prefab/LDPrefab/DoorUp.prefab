@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 2518123224907067868}
   - component: {fileID: 2518123224907067869}
   - component: {fileID: 6797768361209227044}
+  - component: {fileID: 6638639369098672404}
   m_Layer: 0
   m_Name: DoorUp
   m_TagString: Untagged
@@ -266,6 +267,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xCoordinates: 0
   yCoordinates: 31.8
+  pC: {fileID: 0}
+  xPCCoordinates: 0
+  yPCCoordinates: 20
+--- !u!61 &6638639369098672404
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518123224907067866}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10205054, y: 0.6123042}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.375, y: 4.6875}
+    newSize: {x: 6.375, y: 4.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.5380883, y: 3.4628916}
+  m_EdgeRadius: 0
 --- !u!1 &2518123225394760616
 GameObject:
   m_ObjectHideFlags: 0

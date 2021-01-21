@@ -28,6 +28,7 @@ public class LeverTrigger : MonoBehaviour
     public void Start()
     {
         leverAnim = GetComponent<Animator>();
+        ambiantLight = GameObject.Find("AmbiantLight").GetComponent<Light2D>();
         lightIntensity = 0.5f;
 
         if (isRed == true)
