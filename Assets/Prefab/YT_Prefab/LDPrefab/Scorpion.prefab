@@ -186,6 +186,7 @@ MonoBehaviour:
   FightingPhase: 0
   isCrystalSpawner: 0
   isPhantom: 0
+  isPillar: 0
   Phantom: {fileID: 0}
   teleportTime: 1.5
   minimumRange: 0
@@ -222,7 +223,8 @@ MonoBehaviour:
   bulletForce: 15
   shootIntervale: 0.6
   bulletPrefab: {fileID: 7816432986287666342, guid: 12b264d31db03914da771d3c8d7e434d, type: 3}
-  firePoint: {fileID: 9168432825539846805}
+  firePoint:
+  - {fileID: 9168432825539846805}
   isShooting: 0
 --- !u!95 &520256655655781984
 Animator:

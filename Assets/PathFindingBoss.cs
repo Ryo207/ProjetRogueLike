@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PathFindingBoss : MonoBehaviour
-{
+{/*
     
 
     
@@ -65,5 +65,5 @@ public class PathFindingBoss : MonoBehaviour
         
 
     yield return new WaitForSeconds(timeBetweenState);
-    } 
+    } */
 }

@@ -153,10 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ecf59517de4ae4e80b56a5d33429ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRed: 0
+  isBlue: 1
   pathFinding: {fileID: 6631039286920734897}
+  ennemyDetectionLight: {fileID: 2850402076753388698}
+  blue: {r: 0, g: 0.627451, b: 1, a: 1}
+  red: {r: 1, g: 0.11372549, b: 0, a: 1}
   fpManager: {fileID: 0}
   TilemapDestructor: {fileID: 11400000, guid: a30cb9b5a43c6854c86b0d60d08ca8e8, type: 2}
-  speed: 5
 --- !u!1 &3959126246188396071
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,12 +328,12 @@ GameObject:
   - component: {fileID: 8750201798277481543}
   - component: {fileID: 8998129360695483222}
   - component: {fileID: 8000934653327725295}
-  - component: {fileID: 8268797466649007617}
   - component: {fileID: 1895103958963297558}
   - component: {fileID: 2522401472210887073}
   - component: {fileID: 1145205377829152917}
   - component: {fileID: 6631039286920734896}
   - component: {fileID: 6631039286920734897}
+  - component: {fileID: -8573148993215775859}
   m_Layer: 11
   m_Name: BDC_CrystalSpawner
   m_TagString: Ennemy
@@ -424,23 +428,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8268797466649007617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6631039286920734911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7beba286a4d24d49b2023440114e015, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnnemyLife: 50
-  normalLife: 0
-  item: {fileID: 1273961589800361513, guid: dde3ccd521b728c4f8bc7afb7fd79d70, type: 3}
-  roomColor: {fileID: 0}
-  isHit: 0
 --- !u!58 &1895103958963297558
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -512,7 +499,7 @@ MonoBehaviour:
   - {fileID: 4171125926277512327}
   - {fileID: 4171125926277512327}
   - {fileID: 4171125926144721799}
-  fpManager: {fileID: 0}
+  fpManager: {fileID: 6631039286920734911}
   shootIntervale: 1
 --- !u!114 &6631039286920734897
 MonoBehaviour:
@@ -532,9 +519,27 @@ MonoBehaviour:
   FightingPhase: 0
   isCrystalSpawner: 1
   isPhantom: 0
+  isPillar: 0
   Phantom: {fileID: 0}
   teleportTime: 1.5
   minimumRange: 0
   maximumRange: 0
   speed: 0
   currentState: 0
+--- !u!114 &-8573148993215775859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6631039286920734911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8637348c13c0ad43af938f1de9bf4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnnemyLife: 50
+  normalLife: 50
+  item: {fileID: 1273961589800361513, guid: dde3ccd521b728c4f8bc7afb7fd79d70, type: 3}
+  roomColor: {fileID: 0}
+  isHit: 0
